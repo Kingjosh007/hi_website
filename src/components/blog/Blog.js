@@ -11,14 +11,14 @@ export class Blog extends Component {
             <div className="site-main">
                 <Header />
                 {/* page-title */}
-                <div className="ttm-page-title-row">
+                {/* <div className="ttm-page-title-row">
                     <div className="container-xl">
                         <div className="row">
                             <div className="col-md-12"> 
                             <div className="title-box text-center">
                                 <div className="page-title-heading">
                                 <h1 className="title">Blog</h1>
-                                </div>{/* /.page-title-captions */}
+                                </div>
                                 <div className="breadcrumb-wrapper">
                                 <span>
                                     <a title="Homepage" href={process.env.PUBLIC_URL + '/'}><i className="ti ti-home" />&nbsp;&nbsp;Home</a>
@@ -27,10 +27,10 @@ export class Blog extends Component {
                                 <span>Blog</span>
                                 </div>  
                             </div>
-                            </div>{/* /.col-md-12 */}  
-                        </div>{/* /.row */}  
-                    </div>{/* /.container */}                      
-                </div>
+                            </div>
+                        </div>
+                    </div>                     
+                </div> */}
                 <div className="sidebar ttm-bgcolor-white clearfix">
                     <div className="container-xl">
                         {/* row */}

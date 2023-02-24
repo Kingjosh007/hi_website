@@ -9,7 +9,7 @@ export class Menu extends Component {
                 <ul>
                     <li className="menu"><a href="/">Accueil</a>
                     </li>
-                    <li className="menu-hasdropdown"><a href="/">À propos de nous</a>
+                    <li className="menu-hasdropdown"><a href="/">À propos</a>
                         <ul className="menu-dropdown">
                             <li><a href={process.env.PUBLIC_URL + '/aboutus_01'}>Qui sommes-nous ?</a></li>        
                             <li><a href={process.env.PUBLIC_URL + '/Our_expert'}>Notre équipe</a></li>
@@ -47,16 +47,12 @@ export class Menu extends Component {
                             </li>
                         </ul> */}
                     </li>
-                    <li className="menu-hasdropdown"><a>Blog</a>
-                        <ul className="menu-dropdown">
-                            <li><a href={process.env.PUBLIC_URL + '/blog'}>Blog Classic</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/blog_grid'}>Blog Grid View</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/blog_top_image'}>Blog Top Image</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/blog_left_image'}>Blog Left Image</a></li>
+                    <li className="menu"><a href={process.env.PUBLIC_URL + '/blog'}>Blog</a>
+                        {/* <ul className="menu-dropdown">
                             <li><a href={process.env.PUBLIC_URL + '/single_blog'}>Blog Single View</a></li>
-                        </ul>
+                            </ul> */}
                     </li>
-                    <li className="menu-hasdropdown"><a>Offres d'emploi</a>
+                    <li className="menu-hasdropdown"><a>Carrières</a>
                         {/* <ul className="menu-dropdown">
                             <li><a href={process.env.PUBLIC_URL + '/Shop'}>Default Shop</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Product_details'}>Single Product Details</a></li>
