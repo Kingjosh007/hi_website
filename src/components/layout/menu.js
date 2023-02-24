@@ -7,34 +7,34 @@ export class Menu extends Component {
         return (
             <nav id="menu" role="navigation" className="menu">
                 <ul>
-                    <li className="menu-hasdropdown"><a href="/">Accueil</a>
+                    <li className="menu"><a href="/">Accueil</a>
                     </li>
                     <li className="menu-hasdropdown"><a href="/">À propos de nous</a>
                         <ul className="menu-dropdown">
-                            <li><a href={process.env.PUBLIC_URL + '/aboutus_01'}>About Us 1</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/aboutus_02'}>About Us 2</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/Services_01'}>Services 1</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/aboutus_01'}>Qui sommes-nous ?</a></li>        
+                            <li><a href={process.env.PUBLIC_URL + '/Our_expert'}>Notre équipe</a></li>
+                            {/* <li><a href={process.env.PUBLIC_URL + '/Services_01'}>Services 1</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Services_02'}>Services 2</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/Our_expert'}>Our Expert</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Faq'}>FAQs</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Contact_01'}>Contact Us 1</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Contact_02'}>Contact Us 2</a></li>                                                    
                             <li><a href={process.env.PUBLIC_URL + '/Error'}>Error Page</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/Element'}>Elements</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/Element'}>Elements</a></li> */}
                         </ul>
                     </li>
-                    <li className="menu-hasdropdown"><a>S ervices</a>
+                    <li className="menu-hasdropdown"><a>Nos services</a>
                         <ul className="menu-dropdown">
-                            <li><a href={process.env.PUBLIC_URL + '/it_consultancy'}>IT Consultancy</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/digital_services'}>Digital Services</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/advisory_services'}>Advisory Services</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/data_structuring'}>Data Structuring</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/experience_design'}>Experience Design</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/content_engineering'}>Content Engineering</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/digital_services'}>Développement d'applications mobiles</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/advisory_services'}>Développement d'applications web</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/advisory_services'}>Développement de sites vitrines</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/it_consultancy'}>Développement de logiciels spécialisés</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/experience_design'}>Digitalisation de structures</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/content_engineering'}>Intelligence Artificielle</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/data_structuring'}>Conseil en informatique</a></li>
                         </ul>
                     </li>
-                    <li className="menu-hasdropdown"><a>Project</a>
-                        <ul className="menu-dropdown">
+                    <li className="menu"><a>Nos réalisations</a>
+                        {/* <ul className="menu-dropdown">
                             <li><a href={process.env.PUBLIC_URL + '/project_style1'}>Project Style 1</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/project_style2'}>Project Style 2</a></li>
                             <li className="menu-hasdropdown menu-hasflyout">
@@ -45,7 +45,7 @@ export class Menu extends Component {
                                     <li><a href={process.env.PUBLIC_URL + '/single_style3'}>Single Style 3</a></li>
                                 </ul>
                             </li>
-                        </ul>
+                        </ul> */}
                     </li>
                     <li className="menu-hasdropdown"><a>Blog</a>
                         <ul className="menu-dropdown">
@@ -56,13 +56,21 @@ export class Menu extends Component {
                             <li><a href={process.env.PUBLIC_URL + '/single_blog'}>Blog Single View</a></li>
                         </ul>
                     </li>
-                    <li className="menu-hasdropdown"><a>Shop</a>
-                        <ul className="menu-dropdown">
+                    <li className="menu-hasdropdown"><a>Offres d'emploi</a>
+                        {/* <ul className="menu-dropdown">
                             <li><a href={process.env.PUBLIC_URL + '/Shop'}>Default Shop</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Product_details'}>Single Product Details</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Cart'}>Cart</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Checkout'}>Checkout</a></li>
-                        </ul>
+                        </ul> */}
+                    </li>
+                    <li className="menu-hasdropdown"><a>Contact</a>
+                        {/* <ul className="menu-dropdown">
+                            <li><a href={process.env.PUBLIC_URL + '/Shop'}>Default Shop</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/Product_details'}>Single Product Details</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/Cart'}>Cart</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/Checkout'}>Checkout</a></li>
+                        </ul> */}
                     </li>
                 </ul>
             </nav>
