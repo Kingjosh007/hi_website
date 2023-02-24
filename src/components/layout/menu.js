@@ -7,22 +7,9 @@ export class Menu extends Component {
         return (
             <nav id="menu" role="navigation" className="menu">
                 <ul>
-                    <li className="menu-hasdropdown"><a>Home</a>
-                        <ul className="menu-dropdown">
-                            <li><a href={process.env.PUBLIC_URL + '/'}>Homepage 1</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/Home2'}>Homepage 2</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/Home3'}>Homepage 3</a></li>
-                            <li className="menu-hasdropdown menu-hasflyout">
-                                <a>header styles</a>
-                                <ul className="menu-dropdown">
-                                <li><a href={process.env.PUBLIC_URL + '/'}>Header Style 01</a></li>
-                                <li><a target="_blank" href={process.env.PUBLIC_URL + '/Header_style_02'}>Header Style 02</a></li>
-                                <li><a target="_blank" href={process.env.PUBLIC_URL + '/Header_style_03'}>Header Style 03</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <li className="menu-hasdropdown"><a href="/">Accueil</a>
                     </li>
-                    <li className="menu-hasdropdown"><a>pages</a>
+                    <li className="menu-hasdropdown"><a href="/">À propos de nous</a>
                         <ul className="menu-dropdown">
                             <li><a href={process.env.PUBLIC_URL + '/aboutus_01'}>About Us 1</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/aboutus_02'}>About Us 2</a></li>
@@ -36,7 +23,7 @@ export class Menu extends Component {
                             <li><a href={process.env.PUBLIC_URL + '/Element'}>Elements</a></li>
                         </ul>
                     </li>
-                    <li className="menu-hasdropdown"><a>services</a>
+                    <li className="menu-hasdropdown"><a>S ervices</a>
                         <ul className="menu-dropdown">
                             <li><a href={process.env.PUBLIC_URL + '/it_consultancy'}>IT Consultancy</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/digital_services'}>Digital Services</a></li>

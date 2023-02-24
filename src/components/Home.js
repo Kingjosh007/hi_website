@@ -72,7 +72,9 @@ export class Home extends Component {
           <div className="site-main">   
             <Header/>            
             {/* home banner */}
-            <CarouselPage/>{/* home banner end*/}            
+            <CarouselPage/>
+            {/* home banner end*/}    
+                    
             {/* service-section */}     
             <section className="ttm-row service-section position-relative z-1 clearfix">
               <div className="container-xl">
