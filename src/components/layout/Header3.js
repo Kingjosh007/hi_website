@@ -17,7 +17,7 @@ export class Header3 extends Component {
                             <div className="container-xl">
                                 <div className="d-xl-flex flex-xl-row align-items-xl-center justify-content-xl-between">
                                     <div className="site-branding">
-                                        <a className="home-link" href={process.env.PUBLIC_URL + '/'} title="Altech" rel="home">
+                                        <a className="home-link" href={process.env.PUBLIC_URL + '/'} title="House Innovation" rel="home">
                                             <img id="logo-img" className="img-fluid" alt="logo" src="images/logo.png" />
                                         </a>
                                     </div>

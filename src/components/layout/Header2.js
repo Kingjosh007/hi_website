@@ -56,7 +56,7 @@ export class Header2 extends Component {
                                     <div className="d-flex flex-rowalign-items-center">
                                         {/* site-branding */}
                                         <div className="site-branding mr-auto">
-                                        <a className="home-link" href={process.env.PUBLIC_URL + '/'} title="Altech" rel="home">
+                                        <a className="home-link" href={process.env.PUBLIC_URL + '/'} title="House Innovation" rel="home">
                                             <img id="logo-img" className="img-center" src="images/logo.png"alt="logo" />
                                         </a>
                                         </div>{/* site-branding end */}

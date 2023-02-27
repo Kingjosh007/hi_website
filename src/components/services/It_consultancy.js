@@ -9,28 +9,7 @@ export class It_consultancy extends Component {
         return (
             <div className="site-main">
                 <Header/>
-                {/* page-title */}
-                <div className="ttm-page-title-row">
-                    <div className="container-xl">
-                    <div className="row">
-                        <div className="col-md-12"> 
-                        <div className="title-box text-center">
-                            <div className="page-title-heading">
-                            <h1 className="title">IT Consultancy</h1>
-                            </div>{/* /.page-title-captions */}
-                            <div className="breadcrumb-wrapper">
-                            <span>
-                                <a title="Homepage" href={process.env.PUBLIC_URL + '/'}><i className="ti ti-home" />&nbsp;&nbsp;Home</a>
-                            </span>
-                            <span className="ttm-bread-sep">&nbsp; : : &nbsp;</span>
-                            <span>IT-Consultancy</span>
-                            </div>  
-                        </div>
-                        </div>{/* /.col-md-12 */}  
-                    </div>{/* /.row */}  
-                    </div>{/* /.container */}                      
-                </div>
-                {/* page-title end*/}
+                
                 <div className="sidebar ttm-sidebar ttm-bgcolor-white clearfix">
                     <div className="container-xl">
                         {/* row */}

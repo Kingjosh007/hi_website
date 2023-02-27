@@ -138,21 +138,8 @@ export class Footer extends Component {
                     <div className="row copyright align-items-center res-767-text-center">
                     <div className="col-md-6">
                         <div>
-                        <span>Copyright © 2020&nbsp;<a to="/">Altech</a> by <a to="https://themetechmount.com/" target="_blank">Themetechmount</a></span>
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="text-md-right res-767-mt-10">
-                        <div className="d-lg-inline-flex">
-                            <ul id="menu-footer-menu" className="footer-nav-menu">
-                            <li><a>About Us</a></li>
-                            <li><a>Services</a></li>
-                            <li><a>Privacy</a></li>
-                            </ul>
-                            <div className="float-md-right ml-20 res-767-ml-0">
-                            <img data-src="images/footer-payment-img.png" alt="payment-img" src="images/footer-payment-img.png" />
-                            </div>
-                        </div>
+                        <span>Copyright © 2023&nbsp;<a href="/">House Innovation</a>.</span>&nbsp;&nbsp;
+                        <span class="hide-on-mobile">Tous droits réservés.</span>
                         </div>
                     </div>
                     </div>

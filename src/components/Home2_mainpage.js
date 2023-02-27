@@ -65,7 +65,7 @@ export class Home2_mainpage extends Component {
                       {/* section title */}
                       <div className="section-title with-desc clearfix">
                         <div className="title-header">
-                          <h5>About Altech</h5>
+                          <h5>About House Innovation</h5>
                           <h2 className="title">We deal with the aspects of professional <span>IT Services</span></h2>
                         </div>
                         <div className="title-desc">
@@ -130,7 +130,7 @@ export class Home2_mainpage extends Component {
                                 <h5>Jhon Martin</h5>
                               </div>
                               <div className="featured-desc">{/*  featured-desc */}
-                                <p>Chairman &amp; Founder Altech</p>
+                                <p>Chairman &amp; Founder House Innovation</p>
                               </div>
                             </div>
                           </div>{/*  featured-icon-box END */}
@@ -158,7 +158,7 @@ export class Home2_mainpage extends Component {
                           {/* section title */}
                           <div className="section-title mb-4 clearfix">
                             <div className="title-header">
-                              <h5>About Altech</h5>
+                              <h5>About House Innovation</h5>
                               <h2 className="title">Trusted by 5,000+ <span>Happy Customers</span></h2>
                             </div>
                             <div className="title-desc">

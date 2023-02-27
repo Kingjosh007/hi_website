@@ -23,7 +23,7 @@ export class Header extends Component {
                             <div className="col-lg-7">
                                 <div className="topbar-right text-right d-flex justify-content-end">
                                     <ul className="top-contact">
-                                        <li><i className="far fa-clock" />&nbsp;&nbsp;Horaires: 08:00 - 18:00pm</li>
+                                        <li><i className="far fa-clock" />&nbsp;&nbsp;Horaires: 08:00 - 18:00</li>
                                     </ul>
                                     <div className="ttm-social-links-wrapper list-inline">
                                         <ul className="social-icons">
@@ -56,8 +56,13 @@ export class Header extends Component {
                         <div className="site-header-menu">
                             <div className="container-xl">
                                 {/* site-branding */}
-                                <div className="site-branding">
-                                    <a className="home-link" href={process.env.PUBLIC_URL + '/'} title="Altech" rel="home">
+                                <div className="site-branding hide-on-desktop">
+                                    <a className="home-link" href={process.env.PUBLIC_URL + '/'} title="House Innovation" rel="home">
+                                        <img id="logo-img" className="img-fluid" alt="logo" src="images/logo_hi-nobg.png"/>
+                                    </a>
+                                </div>
+                                <div className="site-branding hide-on-mobile">
+                                    <a className="home-link" href={process.env.PUBLIC_URL + '/'} title="House Innovation" rel="home">
                                         <img id="logo-img" className="img-fluid" alt="logo" src="images/logo_hi-nobg.png"/>
                                     </a>
                                 </div>

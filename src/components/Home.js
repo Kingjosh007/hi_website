@@ -352,7 +352,7 @@ export class Home extends Component {
                         {/* section title */}
                         <div className="section-title with-desc clearfix">
                           <div className="title-header">
-                            <h5>Why Altech</h5>
+                            <h5>Why House Innovation</h5>
                             <h2 className="title">We deal with the aspects of professional <span>IT Services</span></h2>
                           </div>
                           <div className="title-desc">

@@ -50,28 +50,6 @@ export class Aboutus_01 extends Component {
         return (
             <div className="site-main">
                 <Header />
-                {/* page-title */}
-                <div className="ttm-page-title-row">
-                    <div className="container-xl">
-                    <div className="row">
-                        <div className="col-md-12"> 
-                        <div className="title-box text-center">
-                            <div className="page-title-heading">
-                            <h1 className="title">About Us</h1>
-                            </div>{/* /.page-title-captions */}
-                            <div className="breadcrumb-wrapper">
-                            <span>
-                                <a title="Homepage" href={process.env.PUBLIC_URL + '/'} ><i className="ti ti-home" />&nbsp;&nbsp;Home</a>
-                            </span>
-                            <span className="ttm-bread-sep">&nbsp; : : &nbsp;</span>
-                            <span>About Us 01</span>
-                            </div>  
-                        </div>
-                        </div>{/* /.col-md-12 */}  
-                    </div>{/* /.row */}  
-                    </div>{/* /.container */}                      
-                </div>
-                {/* page-title end*/}
                 {/* aboutus-section */}
                 <section className="ttm-row aboutus-section clearfix">
                     <div className="container-xl">
@@ -80,7 +58,7 @@ export class Aboutus_01 extends Component {
                         {/* section title */}
                         <div className="section-title with-desc clearfix">
                             <div className="title-header">
-                            <h5>About us</h5>
+                            <h5>À propos de nous</h5>
                             <h2 className="title">We are here to IT Solution with 20 years of <span>experience</span></h2>
                             </div>
                             <div className="title-desc">
@@ -149,7 +127,7 @@ export class Aboutus_01 extends Component {
                                     {/* section title */}
                                     <div className="section-title with-desc clearfix">
                                     <div className="title-header">
-                                        <h5>About Altech</h5>
+                                        <h5>About House Innovation</h5>
                                         <h2 className="title">We deal with the aspects of professional <span>IT Services</span></h2>
                                     </div>
                                     <div className="title-desc">
