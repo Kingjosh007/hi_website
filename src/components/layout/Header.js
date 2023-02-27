@@ -42,7 +42,7 @@ export class Header extends Component {
                                         </ul>
                                     </div>
                                     <div className="header-btn">
-                                        < a className="ttm-btn ttm-btn-size-md ttm-bgcolor-skincolor" to="#">Envoyer un message</ a>
+                                        < a className="ttm-btn ttm-btn-size-md ttm-bgcolor-skincolor" href="/contact_01">Envoyer un message</ a>
                                     </div>
                                 </div>
                             </div>

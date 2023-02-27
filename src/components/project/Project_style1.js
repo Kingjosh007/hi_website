@@ -8,28 +8,6 @@ export class Project_style1 extends Component {
         return (
             <div className="site-main">
                 <Header />
-                {/* page-title */}
-                <div className="ttm-page-title-row">
-                    <div className="container-xl">
-                    <div className="row">
-                        <div className="col-md-12"> 
-                        <div className="title-box text-center">
-                            <div className="page-title-heading">
-                            <h1 className="title">Gallery Style 1</h1>
-                            </div>{/* /.page-title-captions */}
-                            <div className="breadcrumb-wrapper">
-                            <span>
-                                <a title="Homepage" to={process.env.PUBLIC_URL + '/'}><i className="ti ti-home" />&nbsp;&nbsp;Home</a>
-                            </span>
-                            <span className="ttm-bread-sep">&nbsp; : : &nbsp;</span>
-                            <span>Project-Style-01</span>
-                            </div>  
-                        </div>
-                        </div>{/* /.col-md-12 */}  
-                    </div>{/* /.row */}  
-                    </div>{/* /.container */}                      
-                </div>
-                {/* page-title end*/}
                 <div className="ttm-row tab-section clearfix">
                     <div className="container-xl">
                         <div className="row">
@@ -37,7 +15,7 @@ export class Project_style1 extends Component {
                                 <div className="ttm-tabs text-center ttm-tab-style-classic style2">
                                     <Tabs>
                                         <TabList className="text-uppercase mb-4">
-                                            <Tab><span>all</span></Tab>
+                                            <Tab><span>All</span></Tab>
                                             <Tab><span>Business </span></Tab>
                                             <Tab><span>Campaign</span></Tab>
                                             <Tab><span>Technology</span></Tab>

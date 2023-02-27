@@ -22,7 +22,7 @@ export class Menu extends Component {
                             <li><a href={process.env.PUBLIC_URL + '/Element'}>Elements</a></li> */}
                         </ul>
                     </li>
-                    <li className="menu-hasdropdown"><a>Nos services</a>
+                    <li className="menu-hasdropdown"><a href="#">Nos services</a>
                         <ul className="menu-dropdown">
                             <li><a href={process.env.PUBLIC_URL + '/digital_services'}>Développement d'applications mobiles</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/advisory_services'}>Développement d'applications web</a></li>
@@ -33,7 +33,7 @@ export class Menu extends Component {
                             <li><a href={process.env.PUBLIC_URL + '/data_structuring'}>Conseil en informatique</a></li>
                         </ul>
                     </li>
-                    <li className="menu"><a>Nos réalisations</a>
+                    <li className="menu"><a href="/project_style1">Nos réalisations</a>
                         {/* <ul className="menu-dropdown">
                             <li><a href={process.env.PUBLIC_URL + '/project_style1'}>Project Style 1</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/project_style2'}>Project Style 2</a></li>
@@ -60,7 +60,7 @@ export class Menu extends Component {
                             <li><a href={process.env.PUBLIC_URL + '/Checkout'}>Checkout</a></li>
                         </ul> */}
                     </li>
-                    <li className="menu-hasdropdown"><a>Contact</a>
+                    <li className="menu-hasdropdown"><a href="/contact_01">Contact</a>
                         {/* <ul className="menu-dropdown">
                             <li><a href={process.env.PUBLIC_URL + '/Shop'}>Default Shop</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Product_details'}>Single Product Details</a></li>

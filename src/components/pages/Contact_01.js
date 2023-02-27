@@ -7,28 +7,6 @@ export class Contact_01 extends Component {
         return (
             <div className="site-main">
                 <Header />
-                {/* page-title */}
-                <div className="ttm-page-title-row">
-                    <div className="container-xl">
-                    <div className="row">
-                        <div className="col-md-12"> 
-                        <div className="title-box text-center">
-                            <div className="page-title-heading">
-                            <h1 className="title">Contact Us</h1>
-                            </div>{/* /.page-title-captions */}
-                            <div className="breadcrumb-wrapper">
-                            <span>
-                                <a title="Homepage" href={process.env.PUBLIC_URL + '/'}><i className="ti ti-home" />&nbsp;&nbsp;Home</a>
-                            </span>
-                            <span className="ttm-bread-sep">&nbsp; : : &nbsp;</span>
-                            <span>Contact 01</span>
-                            </div>  
-                        </div>
-                        </div>{/* /.col-md-12 */}  
-                    </div>{/* /.row */}  
-                    </div>{/* /.container */}                      
-                </div>
-                {/* page-title end*/}
                 <section className="ttm-row zero-padding-section clearfix">
                     <div className="container-xl">
                     <div className="row no-gutters">{/* row */}
@@ -37,8 +15,8 @@ export class Contact_01 extends Component {
                             {/* section title */}
                             <div className="section-title with-desc clearfix">
                             <div className="title-header">
-                                <h5>Come Visit Us At</h5>
-                                <h2 className="title">Our Address</h2>
+                                <h5>Passez nous voir dans nos locaux!</h5>
+                                <h2 className="title">Coordonnées</h2>
                             </div>
                             </div>{/* section title end */}
                             <div className="row">
@@ -52,10 +30,10 @@ export class Contact_01 extends Component {
                                 </div>
                                 <div className="featured-content">
                                     <div className="featured-title">{/* featured title */}
-                                    <h5>Office Address</h5>
+                                    <h5>Adresse</h5>
                                     </div>
                                     <div className="featured-desc">{/* featured desc */}
-                                    <p>229 Young Street Irwin, PA 15642</p>
+                                    <p>Carrefour Lycée Makepe, Douala, Cameroun</p>
                                     </div>
                                 </div>
                                 </div>
@@ -77,10 +55,10 @@ export class Contact_01 extends Component {
                                 </div>
                                 <div className="featured-content">
                                     <div className="featured-title">{/* featured title */}
-                                    <h5>Our Phone Number</h5>
+                                    <h5>Téléphone</h5>
                                     </div>
                                     <div className="featured-desc">{/* featured desc */}
-                                    <p>+12-323-778-4054</p>
+                                    <p>+237 697 098 859</p>
                                     </div>
                                 </div>
                                 </div>
@@ -102,10 +80,10 @@ export class Contact_01 extends Component {
                                 </div>
                                 <div className="featured-content">
                                     <div className="featured-title">{/* featured title */}
-                                    <h5>Our Email</h5>
+                                    <h5>Email</h5>
                                     </div>
                                     <div className="featured-desc">{/* featured desc */}
-                                    <p>info@example.com</p>
+                                    <p>info@houseinnovationgroup.com</p>
                                     </div>
                                 </div>
                                 </div>
@@ -113,7 +91,7 @@ export class Contact_01 extends Component {
                             </div>
                         </div>
                         </div>
-                        <div className="col-lg-7">
+                        <div className="col-lg-7" id="message">
                         <div className="spacing-10 ttm-bgcolor-grey ttm-bg ttm-col-bgcolor-yes ttm-right-span">
                             <div className="ttm-col-wrapper-bg-layer ttm-bg-layer">
                             <div className="ttm-bg-layer-inner" />
@@ -121,40 +99,40 @@ export class Contact_01 extends Component {
                             {/* section title */}
                             <div className="section-title with-desc clearfix">
                             <div className="title-header">
-                                <h5>Send Message</h5>
-                                <h2 className="title">Drop Us A Line</h2>
+                                <h5>Laissez un message</h5>
+                                <h2 className="title">Qu'avez-vous à dire?</h2>
                             </div>
                             </div>{/* section title end */}
                             <form id="ttm-quote-form" className="row ttm-quote-form clearfix" method="post" action="#">
                             <div className="col-sm-6 col-md-6">
                                 <div className="form-group">
-                                <input name="name" type="text" className="form-control bg-white" placeholder="Full Name*" required="required" />
+                                <input name="name" type="text" className="form-control bg-white" placeholder="Votre nom complet*" required="required" />
                                 </div>
                             </div>
                             <div className="col-sm-6 col-md-6">
                                 <div className="form-group">
-                                <input name="phone" type="text" placeholder="Phone Number*" required="required" className="form-control bg-white" />
+                                <input name="phone" type="text" placeholder="Numéro de téléphone*" required="required" className="form-control bg-white" />
                                 </div>
                             </div>
                             <div className="col-sm-6 col-md-6">
                                 <div className="form-group">
-                                <input name="address" type="text" placeholder="Email Address*" required="required" className="form-control bg-white" />
+                                <input name="address" type="text" placeholder="Adresse email*" required="required" className="form-control bg-white" />
                                 </div>
                             </div>
                             <div className="col-sm-6 col-md-6">
                                 <div className="form-group">
-                                <input name="subject" type="text" placeholder="Subject" required="required" className="form-control bg-white" />
+                                <input name="subject" type="text" placeholder="Sujet" required="required" className="form-control bg-white" />
                                 </div>
                             </div>
                             <div className="col-sm-12 col-md-12">
                                 <div className="form-group">
-                                <textarea name="Massage" rows={5} placeholder="Write A Massage..." required="required" className="form-control bg-white" defaultValue={""} />
+                                <textarea name="Massage" rows={6} placeholder="Votre message ici..." required="required" className="form-control bg-white" defaultValue={""} />
                                 </div>
                             </div>
                             <div className="col-md-12">
                                 <div className="text-left">
                                 <button type="submit" id="submit" className="mt-3 ttm-btn ttm-btn-size-md ttm-bgcolor-skincolor" value>
-                                    Submit Quote
+                                    Envoyer
                                 </button>
                                 </div>
                             </div>
