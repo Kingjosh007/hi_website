@@ -24,8 +24,8 @@ export class Menu extends Component {
                     </li>
                     <li className="menu-hasdropdown"><a href="#">Nos services</a>
                         <ul className="menu-dropdown">
-                            <li><a href={process.env.PUBLIC_URL + '/digital_services'}>Développement d'applications mobiles</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/advisory_services'}>Développement d'applications web</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/digital_services'}>Développement d'applications mobiles</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/advisory_services'}>Développement de sites vitrines</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/it_consultancy'}>Développement de logiciels spécialisés</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/experience_design'}>Digitalisation de structures</a></li>
@@ -33,40 +33,19 @@ export class Menu extends Component {
                             <li><a href={process.env.PUBLIC_URL + '/data_structuring'}>Conseil en informatique</a></li>
                         </ul>
                     </li>
-                    <li className="menu"><a href="/project_style1">Nos réalisations</a>
-                        {/* <ul className="menu-dropdown">
-                            <li><a href={process.env.PUBLIC_URL + '/project_style1'}>Project Style 1</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/project_style2'}>Project Style 2</a></li>
-                            <li className="menu-hasdropdown menu-hasflyout">
-                                <a href={process.env.PUBLIC_URL + '/single_style1'}>Project Single</a>
-                                <ul className="menu-dropdown">
-                                    <li><a href={process.env.PUBLIC_URL + '/single_style1'}>Single Style 1</a></li>
-                                    <li><a href={process.env.PUBLIC_URL + '/single_style2'}>Single Style 2</a></li>
-                                    <li><a href={process.env.PUBLIC_URL + '/single_style3'}>Single Style 3</a></li>
-                                </ul>
-                            </li>
-                        </ul> */}
+                    <li className="menu">
+                        <a href="/project_style1">Nos réalisations</a>
                     </li>
-                    <li className="menu"><a href={process.env.PUBLIC_URL + '/blog'}>Blog</a>
-                        {/* <ul className="menu-dropdown">
-                            <li><a href={process.env.PUBLIC_URL + '/single_blog'}>Blog Single View</a></li>
-                            </ul> */}
+
+                    <li className="menu">
+                        <a href={process.env.PUBLIC_URL + '/blog'}>Blog</a>
                     </li>
-                    <li className="menu-hasdropdown"><a>Carrières</a>
-                        {/* <ul className="menu-dropdown">
-                            <li><a href={process.env.PUBLIC_URL + '/Shop'}>Default Shop</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/Product_details'}>Single Product Details</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/Cart'}>Cart</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/Checkout'}>Checkout</a></li>
-                        </ul> */}
+
+                    <li className="menu-hasdropdown">
+                        <a href="#">Carrières</a>
                     </li>
-                    <li className="menu-hasdropdown"><a href="/contact_01">Contact</a>
-                        {/* <ul className="menu-dropdown">
-                            <li><a href={process.env.PUBLIC_URL + '/Shop'}>Default Shop</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/Product_details'}>Single Product Details</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/Cart'}>Cart</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/Checkout'}>Checkout</a></li>
-                        </ul> */}
+                    <li className="menu-hasdropdown">
+                        <a href="/contact_01">Contact</a>
                     </li>
                 </ul>
             </nav>
