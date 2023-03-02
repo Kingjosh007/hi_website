@@ -75,27 +75,31 @@ export class Home extends Component {
             <CarouselPage/>
             {/* home banner end*/}    
                     
+
             {/* service-section */}     
+
             <section className="ttm-row service-section position-relative z-1 clearfix">
               <div className="container-xl">
                 <div className="row no-gutters featured-icon-box-style1-row ttm-bgcolor-darkgrey">
-                  <div className="col-md-4">
-                    <div className="featured-icon-box left-icon style1 ttm-bgcolor-skincolor ttm-textcolor-white h-100">
+                <div className="col-md-4">
+                    {/*  featured-icon-box */} 
+                    <div className="featured-icon-box left-icon style1 ttm-bgcolor-skincolor ttm-textcolor-white">
                       <div className="featured-icon">{/*  featured-icon */} 
                         <div className="ttm-icon ttm-bgcolor-darkgrey ttm-icon_element-size-md">
-                          <i className="flaticon flaticon-system" />{/*  ttm-icon */} 
+                          <i className="flaticon flaticon-developer" />{/*  ttm-icon */} 
                         </div>
                       </div>
                       <div className="featured-content">{/*  featured-content */}
                         <div className="featured-title">{/*  featured-title */}
-                          <h5>Trusted Services</h5>
+                          <h5>Expertise technique</h5>
                         </div>
                         <div className="featured-desc">{/*  featured-desc */}
-                          <p>We Are Trusted Our Customers</p>
+                          <p>À la pointe de la technologie</p>
                         </div>
                       </div>
-                    </div>
+                    </div>{/*  featured-icon-box END */}
                   </div>
+
                   <div className="col-md-4">
                     {/*  featured-icon-box */} 
                     <div className="featured-icon-box left-icon style1 ttm-bgcolor-darkgrey ttm-textcolor-white">
@@ -106,35 +110,37 @@ export class Home extends Component {
                       </div>
                       <div className="featured-content">{/*  featured-content */}
                         <div className="featured-title">{/*  featured-title */}
-                          <h5>24/7 Support</h5>
+                          <h5>Expérience personnalisée</h5>
                         </div>
                         <div className="featured-desc">{/*  featured-desc */}
-                          <p>000 7845 114- 123 4567 890</p>
+                          <p>Chaque projet est unique</p>
                         </div>
                       </div>
                     </div>{/*  featured-icon-box END */}
                   </div>
+
                   <div className="col-md-4">
-                    {/*  featured-icon-box */} 
-                    <div className="featured-icon-box left-icon style1 ttm-bgcolor-skincolor ttm-textcolor-white">
+                    <div className="featured-icon-box left-icon style1 ttm-bgcolor-skincolor ttm-textcolor-white h-100">
                       <div className="featured-icon">{/*  featured-icon */} 
                         <div className="ttm-icon ttm-bgcolor-darkgrey ttm-icon_element-size-md">
-                          <i className="flaticon flaticon-developer" />{/*  ttm-icon */} 
+                          <i className="flaticon flaticon-system" />{/*  ttm-icon */} 
                         </div>
                       </div>
                       <div className="featured-content">{/*  featured-content */}
                         <div className="featured-title">{/*  featured-title */}
-                          <h5>Expert &amp; Professional</h5>
+                          <h5>Qualité de service</h5>
                         </div>
                         <div className="featured-desc">{/*  featured-desc */}
-                          <p>We Are Trusted Our Customers</p>
+                          <p>Clients satisfaits à l'international</p>
                         </div>
                       </div>
-                    </div>{/*  featured-icon-box END */}
+                    </div>
                   </div>
+                  
                 </div>
               </div>
             </section>
+
             {/* service-section end */}
             {/* aboutus-section */}
             <section className="ttm-row aboutus-section clearfix">

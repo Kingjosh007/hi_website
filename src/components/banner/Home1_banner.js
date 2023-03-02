@@ -17,48 +17,49 @@ export class CarouselPage extends Component {
             <MDBCarouselInner>
                 <MDBCarouselItem itemId="1">
                 <MDBView>
-                    <img className="d-block w-100" src="https://via.placeholder.com/1920X850/888888.jpg" alt="First slide" />
+                    <div class="image-container" style={{display: "flex", backgroundColor: "#888"}}>
+                        <img className="d-block w-100" src="images/technology-innovation.jpg" alt="First slide" style={{opacity: 0.25}}/>
+                    </div>
                 </MDBView>
                 <MDBCarouselCaption>
-                    <div className="container-xl">
+                     <div className="container-xl">
                         <div className="carousel-caption-inner banner1">
                             <MDBAnimation className="slideInUp" count={1} delay="2s" >
-                                <h2 className="ttm-textcolor-darkgrey flipInY">Best <strong className="ttm-textcolor-skincolor">Platform</strong> to Grow Your Bussiness</h2>
+                                <h2 className="ttm-textcolor-darkgrey flipInY">Innovation technologique <strong className="ttm-textcolor-skincolor">sur mesure</strong></h2>
                             </MDBAnimation>
+
                             <MDBAnimation className="slideInUp" count={1} delay="2.5s" >
-                            <p className="text">We are equipped with an updated technical knowledge to serve our customers<br /> properly. Our method of application maintains the industry.</p>
+                            <p className="text">Nous concevons des solutions digitales innovantes<br /> et personnalisées, adaptées aux besoins spécifiques des clients.</p>
                             </MDBAnimation>
                             <MDBAnimation className="slideInUp" count={1} delay="3s" >
                             <p>
-                                <button className="ttm-btn ttm-btn-size-md ttm-bgcolor-skincolor ttm-textcolor-white">Discuss Your Project </button>&nbsp; &nbsp;
-                                <button className="ttm-btn btn-inline ttm-btn-size-md ttm-textcolor-darkgrey ml-3"><i className="ti-arrow-circle-right" />get a Quote</button>
+                            <a className="ttm-btn ttm-btn-size-md ttm-bgcolor-skincolor" href="/contact_01">Quel est votre projet?</a>&nbsp; &nbsp;
+                                {/* <button className="ttm-btn btn-inline ttm-btn-size-md ttm-textcolor-darkgrey ml-3"><i className="ti-arrow-circle-right" />get a Quote</button> */}
                             </p>                            
                             </MDBAnimation>
+                            
+                            
                         </div>
-                    </div>
+                      </div>
                 </MDBCarouselCaption>
                 </MDBCarouselItem>
                 <MDBCarouselItem itemId="2">
                 <MDBView>
-                    <img className="d-block w-100" src="https://via.placeholder.com/1920X850/888888.jpg" alt="Second slide" />
+                    <div class="image-container" style={{display: "flex", backgroundColor: "#988"}}>
+                        <img className="d-block w-100" src="images/black-people-coding.jpg" alt="First slide" style={{opacity: 0.25}}/>
+                    </div>
                 </MDBView>
                 <MDBCarouselCaption>
-                    <div className="container-xl">
-                        <div className="carousel-caption-inner banner2">
+                <div className="container-xl">
+                        <div className="carousel-caption-inner banner1" >
                             <MDBAnimation className="slideInUp" count={1} delay="5s" >
-                                <h2 className="ttm-textcolor-darkgrey">Real-Time Monitoring Your <strong className="ttm-textcolor-skincolor">Infrstracture</strong></h2>
+                                <h2 className="ttm-textcolor-darkgrey flipInY">Une équipe <strong className="ttm-textcolor-skincolor">hautement qualifiée</strong></h2>
                             </MDBAnimation>
-                            <MDBAnimation className="slideInUp" count={1} delay="5.5s" >
-                                <p className="text">We are equipped with an updated technical knowledge to serve our customers<br /> properly. Our method of application maintains the industry.</p>
+                            <MDBAnimation className="slideInUp" count={1} delay="5.5s">
+                                <p className="text"> Notre équipe est composée d'experts passionnés et talentueux dans leur domaine. <br />Avec des années d'expérience et une formation approfondie, ils sont équipés pour résoudre les problèmes les plus complexes et offrir des solutions innovantes à nos clients.</p>
                             </MDBAnimation>
-                            <MDBAnimation className="slideInUp" count={1} delay="6s" >
-                                <p>
-                                    <button className="ttm-btn ttm-btn-size-md ttm-bgcolor-skincolor ttm-textcolor-white mr-3">read more</button>
-                                    <button className="ttm-btn ttm-btn-size-md ttm-bgcolor-darkgrey ttm-textcolor-white">get hi_website_front</button>
-                                </p>
-                          </MDBAnimation>
                         </div>
-                      </div>
+                    </div>
                 </MDBCarouselCaption>
                 </MDBCarouselItem>
             </MDBCarouselInner>

@@ -63,7 +63,7 @@ export class Header extends Component {
                                 </div>
                                 <div className="site-branding hide-on-mobile">
                                     <a className="home-link" href={process.env.PUBLIC_URL + '/'} title="House Innovation" rel="home">
-                                        <img id="logo-img" className="img-fluid" alt="logo" src="images/logo_hi-nobg.png"/>
+                                        <img id="logo-img" className="img-fluid" alt="logo" src="images/hi12x.png"/>
                                     </a>
                                 </div>
                                 {/* site-branding end*/}
