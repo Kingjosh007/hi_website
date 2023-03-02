@@ -15,3 +15,11 @@
         display: none;
     }
 }
+
+.col-bg-img-one.ttm-col-bgimage-yes .ttm-col-wrapper-bg-layer {
+    background-image: url('/images/why-question-mark-wider.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+}

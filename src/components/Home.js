@@ -325,6 +325,29 @@ export class Home extends Component {
                     <div className="featured-icon-box">
                       <div className="featured-icon">{/*  featured-icon */}
                         <div className="ttm-icon ttm-bgcolor-white ttm-icon_element-size-md">
+                          <i className="flaticon flaticon-process" />{/*  ttm-icon */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="ttm-history-box-border" />{/* ttm-history-box-border  */}
+                  <div className="ttm-history-box-details ttm-bgcolor-white">
+                    <div className="ttm-historybox-title"><h5>Design graphique</h5></div>{/* historybox-title  */}
+                    <div className="ttm-historybox-description">{/* description  */}
+                        Votre identité visuelle et vos supports de communication en ligne et hors ligne.
+                    </div>
+                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20">En savoir plus <i className="ti ti-angle-double-right" /></a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="ttm-box-col-wrapper">
+                <div className="ttm-history-box-wrapper">{/* ttm-history-box-wrapper  */}
+                  <div className="ttm-history-box-icon-wrapper">{/* ttm-history-box-icon-wrapper  */}
+                    {/*  featured-icon-box */}
+                    <div className="featured-icon-box">
+                      <div className="featured-icon">{/*  featured-icon */}
+                        <div className="ttm-icon ttm-bgcolor-white ttm-icon_element-size-md">
                           <i className="flaticon flaticon-smartphone" />{/*  ttm-icon */}
                         </div>
                       </div>
@@ -364,8 +387,10 @@ export class Home extends Component {
                     <div className="ttm-bg-layer-inner" />
                   </div>
                 </div>
+
+
                 {/* Responsive View image */}
-                <img src="https://via.placeholder.com/1533X720/888888.jpg" className="ttm-equal-height-image img-fluid" alt="col-bgimage-1" />
+                <img src="images/why-question-mark.jpg" className="ttm-equal-height-image img-fluid" alt="col-bgimage-1" />
               </div>
               <div className="col-lg-6 z-9">
                 <div className="ttm-bgcolor-skincolor ttm-textcolor-white position-relative ttm-right-span">
@@ -373,11 +398,11 @@ export class Home extends Component {
                     {/* section title */}
                     <div className="section-title with-desc clearfix">
                       <div className="title-header">
-                        <h5>Why House Innovation</h5>
-                        <h2 className="title">We deal with the aspects of professional <span>IT Services</span></h2>
+                        <h5>Pourquoi choisir House Innovation</h5>
+                        <h2 className="title">Nous vous accompagnons de bout en bout dans la <span>digitalisation de votre structure</span></h2>
                       </div>
                       <div className="title-desc">
-                        <p>Our IT services converge business and technology experts to help to manage business processes of all categories.</p>
+                        <p></p>
                       </div>
                     </div>{/* section title end */}
                     <div className="row mt-40">
