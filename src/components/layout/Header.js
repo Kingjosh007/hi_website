@@ -42,7 +42,7 @@ export class Header extends Component {
                                         </ul>
                                     </div>
                                     <div className="header-btn">
-                                        < a className="ttm-btn ttm-btn-size-md ttm-bgcolor-skincolor" href="/contact_01">Envoyer un message</ a>
+                                        <a className="ttm-btn ttm-btn-size-md ttm-bgcolor-skincolor" href="/contact_01">Envoyer un message</ a>
                                     </div>
                                 </div>
                             </div>
@@ -56,11 +56,6 @@ export class Header extends Component {
                         <div className="site-header-menu">
                             <div className="container-xl">
                                 {/* site-branding */}
-                                <div className="site-branding hide-on-desktop">
-                                    <a className="home-link" href={process.env.PUBLIC_URL + '/'} title="House Innovation" rel="home">
-                                        <img id="logo-img" className="img-fluid" alt="logo" src="images/logo_hi-nobg.png"/>
-                                    </a>
-                                </div>
                                 <div className="site-branding hide-on-mobile">
                                     <a className="home-link" href={process.env.PUBLIC_URL + '/'} title="House Innovation" rel="home">
                                         <img id="logo-img" className="img-fluid" alt="logo" src="images/hi12x.png"/>
@@ -72,7 +67,7 @@ export class Header extends Component {
                                     <div className="ttm-right-header">
                                         <ul className="ttm-header-icons">
                                             <li className="ttm-header-search-link ttm-bgcolor-skincolor ttm-textcolor-white">
-                                                <a onClick={this.toggle}> {this.state.show ? <i className="ti-close" /> : <i className="ti-search" />}</a>
+                                                {/* <a onClick={this.toggle}> {this.state.show ? <i className="ti-close" /> : <i className="ti-search" />}</a>
                                                 {this.state.show && <div className="ttm-search-overlay">
                                                     <form className="ttm-site-searchform">
                                                         <div className="w-search-form-h">
@@ -86,9 +81,13 @@ export class Header extends Component {
                                                             </div>
                                                         </div>
                                                     </form>
-                                                </div>}
+                                                </div>} */}
+                                                <div className="site-branding hide-on-desktop">
+                                                    <a className="home-link" href={process.env.PUBLIC_URL + '/'} title="House Innovation" rel="home">
+                                                        <img id="logo-img" className="img-fluid" alt="logo" src="images/logo_hi-nobg.png"/>
+                                                    </a>
+                                                </div>
                                             </li>
-                                            {/* <li className="ttm-header-cart-link ttm-bgcolor-darkgrey ttm-textcolor-white"><a><i className="ti-shopping-cart" /><span>0</span></a></li> */}
                                         </ul>
                                     </div>
                                     <Menu />

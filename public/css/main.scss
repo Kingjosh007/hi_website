@@ -930,7 +930,10 @@ li.menu-hasdropdown {
         font-family: 'themify';
         content: "\e661";
     }
-    &:hover{color: $skin-color}
+    &:hover{
+        color: #fff; 
+        font-weight: bold;
+    }
 }
 
 /* ===============================================

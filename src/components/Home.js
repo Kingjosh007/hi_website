@@ -302,7 +302,7 @@ export class Home extends Component {
                     <div className="featured-icon-box">
                       <div className="featured-icon">{/*  featured-icon */}
                         <div className="ttm-icon ttm-bgcolor-white ttm-icon_element-size-md">
-                          <i className="flaticon flaticon-business-and-finance" />{/*  ttm-icon */}
+                          <i className="flaticon flaticon-process" />{/*  ttm-icon */}
                         </div>
                       </div>
                     </div>
@@ -325,7 +325,7 @@ export class Home extends Component {
                     <div className="featured-icon-box">
                       <div className="featured-icon">{/*  featured-icon */}
                         <div className="ttm-icon ttm-bgcolor-white ttm-icon_element-size-md">
-                          <i className="flaticon flaticon-process" />{/*  ttm-icon */}
+                          <i className="flaticon flaticon-ui" />{/*  ttm-icon */}
                         </div>
                       </div>
                     </div>
@@ -348,7 +348,7 @@ export class Home extends Component {
                     <div className="featured-icon-box">
                       <div className="featured-icon">{/*  featured-icon */}
                         <div className="ttm-icon ttm-bgcolor-white ttm-icon_element-size-md">
-                          <i className="flaticon flaticon-smartphone" />{/*  ttm-icon */}
+                          <i className="flaticon flaticon-interaction" />{/*  ttm-icon */}
                         </div>
                       </div>
                     </div>
@@ -392,14 +392,14 @@ export class Home extends Component {
                 {/* Responsive View image */}
                 <img src="images/why-question-mark.jpg" className="ttm-equal-height-image img-fluid" alt="col-bgimage-1" />
               </div>
-              <div className="col-lg-6 z-9">
+              <div className="col-lg-6 z-9 mt-n5">
                 <div className="ttm-bgcolor-skincolor ttm-textcolor-white position-relative ttm-right-span">
                   <div className="spacing-1">
                     {/* section title */}
                     <div className="section-title with-desc clearfix">
                       <div className="title-header">
-                        <h5>Pourquoi choisir House Innovation</h5>
-                        <h2 className="title">Nous vous accompagnons de bout en bout dans la <span>digitalisation de votre structure</span></h2>
+                        <h5>Pourquoi choisir House Innovation ?</h5>
+                        <h2 className="title">Nous vous accompagnons <span>de bout en bout</span></h2>
                       </div>
                       <div className="title-desc">
                         <p></p>
@@ -411,15 +411,15 @@ export class Home extends Component {
                         <div className="featured-icon-box style2 left-icon icon-align-top">
                           <div className="featured-icon">{/* featured-icon */}
                             <div className="ttm-icon ttm-icon_element-border ttm-icon_element-color-white ttm-icon_element-size-md">
-                              <i className="flaticon flaticon-process" />
+                              <i className="flaticon flaticon-web" />
                             </div>
                           </div>
                           <div className="featured-content">
                             <div className="featured-title">{/* featured title */}
-                              <h5>Product Designs</h5>
+                              <h5>Analyse &amp; Conception</h5>
                             </div>
                             <div className="featured-desc">{/* featured desc */}
-                              <p>Our firm is expert to create an efficient user interface that makes user interaction is lively.</p>
+                              <p>Nous travaillons en étroite collaboration avec vous pour comprendre vos besoins spécifiques en matière de digitalisation. Nous analysons votre structure et vos processus métiers, puis concevons une solution sur mesure qui répond à vos attentes.</p>
                             </div>
                           </div>
                         </div>
@@ -436,15 +436,15 @@ export class Home extends Component {
                         <div className="featured-icon-box style2 left-icon icon-align-top">
                           <div className="featured-icon">{/* featured-icon */}
                             <div className="ttm-icon ttm-icon_element-border ttm-icon_element-color-white ttm-icon_element-size-md">
-                              <i className="flaticon flaticon-system" />
+                              <i className="flaticon flaticon-code" />
                             </div>
                           </div>
                           <div className="featured-content">
                             <div className="featured-title">{/* featured title */}
-                              <h5>Big Data &amp; Analytics</h5>
+                              <h5>Réalisation du projet</h5>
                             </div>
                             <div className="featured-desc">{/* featured desc */}
-                              <p>Statistical analysis to help an organization to gain insights from large information web sets.</p>
+                              <p>Une fois que la solution a été conçue et validée, nous passons à sa réalisation concrète. Nous procédons par étapes, en développant chaque fonctionnalité de manière modulaire pour assurer une progression régulière et minimiser les risques de dysfonctionnement.</p>
                             </div>
                           </div>
                         </div>
@@ -461,15 +461,15 @@ export class Home extends Component {
                         <div className="featured-icon-box style2 left-icon icon-align-top">
                           <div className="featured-icon">{/* featured-icon */}
                             <div className="ttm-icon ttm-icon_element-border ttm-icon_element-color-white ttm-icon_element-size-md">
-                              <i className="flaticon flaticon-data" />
+                              <i className="flaticon flaticon-computer" />
                             </div>
                           </div>
                           <div className="featured-content">
                             <div className="featured-title">{/* featured title */}
-                              <h5>Maintain App Data</h5>
+                              <h5>Formation et maintenance</h5>
                             </div>
                             <div className="featured-desc">{/* featured desc */}
-                              <p>We Create the optimal platform to develop and run digital applications for our clients app.</p>
+                              <p>Nous ne nous contentons pas de livrer la solution : nous vous accompagnons dans la prise en main de vos nouveaux outils. Si nécessaire, nous proposons des formations adaptées aux utilisateurs, ainsi qu'un suivi régulier pour s'assurer que la solution fonctionne parfaitement.</p>
                             </div>
                           </div>
                         </div>
@@ -489,16 +489,16 @@ export class Home extends Component {
               <div className="col-lg-5 res-991-text-center">
                 <div className="section-title style2 mb-0 clearfix">
                   <div className="title-header mb-0">
-                    <h5>About us</h5>
-                    <h2 className="title">Meet our <span>Leadership</span></h2>
+                    <h5>À propos de nous</h5>
+                    <h2 className="title">Rencontrez notre <span>équipe</span></h2>
                   </div>
                 </div>
               </div>
               <div className="col-lg-5 res-991-text-center">
-                <div className="title-desc">The positive distinction within the World Inspiring of Success and Connections of People and Organizations.</div>
+                <div className="title-desc"><em>"Le talent remporte des matchs, mais c'est le travail d'équipe et l'intelligence collective qui remportent des championnats."</em> - Michael Jordan</div>
               </div>
               <div className="col-lg-2 text-right res-991-text-center res-991-mt-20">
-                <a className="ttm-btn ttm-btn-size-md ttm-btn-style-border ttm-btn-color-darkgrey"> En savoir plus </a>
+                <a className="ttm-btn ttm-btn-size-md ttm-btn-style-border ttm-btn-color-darkgrey" href="/Our_expert">En savoir plus</a>
               </div>
             </div>
             <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={3}>

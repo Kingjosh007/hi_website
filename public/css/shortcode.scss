@@ -125,7 +125,7 @@
     @include replace-image(url("https://via.placeholder.com/1920X194/888888.jpg"));
 }
 .bg-img2 {
-    @include replace-image(url("https://via.placeholder.com/1920X485/888888.jpg"));
+    @include replace-image(url("../images/houseinnovation-warehouse.jpeg"));
 }
 .bg-img3 {
     @include replace-image(url("../images/bg-image/row-bgimage-3.png"));

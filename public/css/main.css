@@ -1227,7 +1227,8 @@ li.menu-hasdropdown ul li a {
 }
 
 .widget ul#menu-footer-services li a:hover {
-  color: #2d4a8a;
+  color: #fff;
+  font-weight: bold;
 }
 
 /* ===============================================
