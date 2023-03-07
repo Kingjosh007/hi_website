@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import articles from '../../data/articles.json'
-import { convertDateToReadableString } from '../../utils/dateUtils'
+import { convertDateToReadableString, dateComesBefore } from '../../utils/dateUtils'
 
 export class Footer extends Component {
     render() {
@@ -89,18 +89,20 @@ export class Footer extends Component {
                                 <div className="widget widget_text clearfix">
                                     <h3 className="widget-title">Articles récents</h3>
                                     {
-                                        articles.map((article, index) => {
+                                        articles.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
+                                                .slice(0, 3)
+                                                .map((article, index) => {
 
-                                            return (
-                                                <ul className="widget-post ttm-recent-post-list">
-                                                    <li>
-                                                        <a href={process.env.PUBLIC_URL + '/Single_blog'}><img className="img-fluid" alt={article.title} src={article.image} /></a>
-                                                        <a href={process.env.PUBLIC_URL + '/Single_blog'}>{article.title.slice(0, 60) + "..."}</a>
-                                                        <span className="post-date"><i className="fa fa-calendar" />{convertDateToReadableString(article.published_at)}</span>
-                                                    </li>
-                                                </ul>
-                                            )
-                                        })
+                                                    return (
+                                                        <ul className="widget-post ttm-recent-post-list">
+                                                            <li>
+                                                                <a href={process.env.PUBLIC_URL + '/Single_blog'}><img className="img-fluid" alt={article.title} src={article.image} /></a>
+                                                                <a href={process.env.PUBLIC_URL + '/Single_blog'}>{article.title.slice(0, 60) + "..."}</a>
+                                                                <span className="post-date"><i className="fa fa-calendar" />{convertDateToReadableString(article.published_at)}</span>
+                                                            </li>
+                                                        </ul>
+                                                    )
+                                                })
                                     }
                                     
                                 </div>
