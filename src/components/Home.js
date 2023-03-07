@@ -9,6 +9,7 @@ import staff from '../data/hiStaff.json';
 import mediaCoverage from '../data/mediaArticles.json';
 import latestProjects from '../data/projects.json';
 import articles from '../data/articles.json';
+import { convertDateToDayMonthYearArray, dateComesBefore } from '../utils/dateUtils';
 
 
 const images = latestProjects.map(p => p.image_mini);
@@ -700,8 +701,10 @@ export class Home extends Component {
             </div>
             <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={3}>
               {
-                articles.map((article, index) => {
-
+                articles.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
+                        .slice(0, 3)
+                        .map((article, index) => {
+                    const dateArr = convertDateToDayMonthYearArray(article.published_at);
                   return (
                     <div className="ttm-box-col-wrapper">
                       <div className="featured-imagebox featured-imagebox-blog">
@@ -715,7 +718,7 @@ export class Home extends Component {
                         <div className="featured-content">
                           <div className="ttm-box-post-date">
                             <span className="ttm-entry-date">
-                              <time className="entry-date" dateTime="2019-01-16T07:07:55+00:00">17<span className="entry-month entry-year">Apr</span></time>
+                              <time className="entry-date" dateTime="2019-01-16T07:07:55+00:00">{dateArr[0]}<span className="entry-month entry-year">{dateArr[1]}</span></time>
                             </span>
                           </div>
                           <div className="featured-title">

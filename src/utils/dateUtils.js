@@ -10,4 +10,21 @@ export const convertDateToReadableString = (dateString) => {
     const month = months[monthIndex];
     return `${day} ${month} ${year}`;
 }
-  
+
+export const dateComesBefore = (date1, date2) => {
+    const date1Arr = date1.split("-").map((el) => Number(el));
+    const date2Arr = date2.split("-").map((el) => Number(el));
+
+    if (date1Arr[2] < date2Arr[2]) {
+        return true;
+    } else if (date1Arr[2] === date2Arr[2]) {
+        if (date1Arr[1] < date2Arr[1]) {
+            return true;
+        } else if (date1Arr[1] === date2Arr[1]) {
+            if (date1Arr[0] < date2Arr[0]) {
+                return true;
+            }
+        }
+    }
+    return false;
+};
