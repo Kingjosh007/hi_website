@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import articles from '../../data/articles.json'
+import { convertDateToReadableString } from '../../utils/dateUtils'
 
 export class Footer extends Component {
     render() {
@@ -86,23 +88,21 @@ export class Footer extends Component {
                             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area res-991-mb-40 res-767-mb-0">
                                 <div className="widget widget_text clearfix">
                                     <h3 className="widget-title">Articles récents</h3>
-                                    <ul className="widget-post ttm-recent-post-list">
-                                        <li>
-                                            <a href={process.env.PUBLIC_URL + '/Single_blog'}><img className="img-fluid" alt="post-img" src="https://via.placeholder.com/150X150/444444.jpg" /></a>
-                                            <a href={process.env.PUBLIC_URL + '/Single_blog'}>Define World Best IT Solution Technology</a>
-                                            <span className="post-date"><i className="fa fa-calendar" />May 01, 2019</span>
-                                        </li>
-                                        <li>
-                                            <a href={process.env.PUBLIC_URL + '/Single_blog'}><img className="img-fluid" alt="post-img" src="https://via.placeholder.com/150X150/444444.jpg" /></a>
-                                            <a href={process.env.PUBLIC_URL + '/Single_blog'}>You Must Try 20 Secret Of Digital Transform</a>
-                                            <span className="post-date"><i className="fa fa-calendar" />May 03, 2019</span>
-                                        </li>
-                                        <li>
-                                            <a href={process.env.PUBLIC_URL + '/Single_blog'}><img className="img-fluid" alt="post-img" src="https://via.placeholder.com/150X150/444444.jpg" /></a>
-                                            <a href={process.env.PUBLIC_URL + '/Single_blog'}>10 PHP Frameworks You Need To Use Anywhere</a>
-                                            <span className="post-date"><i className="fa fa-calendar" />May 05, 2019</span>
-                                        </li>
-                                    </ul>
+                                    {
+                                        articles.map((article, index) => {
+
+                                            return (
+                                                <ul className="widget-post ttm-recent-post-list">
+                                                    <li>
+                                                        <a href={process.env.PUBLIC_URL + '/Single_blog'}><img className="img-fluid" alt={article.title} src={article.image} /></a>
+                                                        <a href={process.env.PUBLIC_URL + '/Single_blog'}>{article.title.slice(0, 60) + "..."}</a>
+                                                        <span className="post-date"><i className="fa fa-calendar" />{convertDateToReadableString(article.published_at)}</span>
+                                                    </li>
+                                                </ul>
+                                            )
+                                        })
+                                    }
+                                    
                                 </div>
                             </div>
                             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area res-767-mb-40">
