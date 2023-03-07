@@ -23,3 +23,32 @@
     background-position: center;
     opacity: 1;
 }
+
+/* I want .media-container to display two rows of 5 elements each. Each child, labelled as .media-item, has an img inside that should be responsive and no wider than 5em */
+
+/* Make .media-container to be two rows of 5 elements */
+@media (min-width: 768px) {
+    .media-container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 2em;
+    }
+}
+
+.media-container .media-item {
+    display: flex;
+    min-width: 9em;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.media-container .media-item:hover {
+    transform: scale(1.1);
+}
+
+.media-container .media-item img {
+    width: 100%;
+}

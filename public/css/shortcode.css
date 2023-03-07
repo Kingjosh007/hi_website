@@ -213,10 +213,11 @@
 }
 
 .bg-img4 {
-  background-image: url("https://via.placeholder.com/1920X622/888888.jpg");
+  background-image: url("../images/press-featured-1080x675.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: #2D4A8A;
 }
 
 .bg-img5 {

@@ -122,7 +122,7 @@ export class Footer extends Component {
                                         <h5>Suivez-nous !</h5>
                                         <div className="social-icons circle social-hover">
                                             <ul className="list-inline">
-                                                <li className="social-linkedin"><a className=" tooltip-top rounded-circle" target="_blank" data-tooltip="aedIn" href="https://www.linkedin.com/company/house-innovation-sarl"><i className="fab fa-linkedin-in" /></a></li>
+                                                <li className="social-linkedin"><a className=" tooltip-top rounded-circle" target="_blank" data-tooltip="LinkedIn" href="https://www.linkedin.com/company/house-innovation-sarl"><i className="fab fa-linkedin-in" /></a></li>
                                                 <li className="social-twitter"><a className="tooltip-top rounded-circle" target="_blank" data-tooltip="Twitter" href="https://twitter.com/House_INNOV"><i className="fab fa-twitter" /></a></li>
                                                 <li className="social-facebook"><a className="tooltip-top rounded-circle" target="_blank" data-tooltip="Facebook" href="https://www.facebook.com/housinnov"><i className="fab fa-facebook-f" /></a></li>
                                                 <li className="social-instagram"><a className=" tooltip-top rounded-circle" target="_blank" data-tooltip="Instagram" href="https://www.instagram.com/house_innovation_group"><i className="fab fa-instagram" /></a></li>

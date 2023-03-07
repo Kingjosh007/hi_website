@@ -64,9 +64,9 @@ export class Header extends Component {
                                 {/* site-branding end*/}
                                 {/*site-navigation */}
                                 <div className="site-navigation">
-                                    <div className="ttm-right-header">
+                                    <div className="ttm-right-header hide-on-desktop">
                                         <ul className="ttm-header-icons">
-                                            <li className="ttm-header-search-link ttm-bgcolor-skincolor ttm-textcolor-white">
+                                            {/* <li className="ttm-header-search-link ttm-bgcolor-skincolor ttm-textcolor-white"> */}
                                                 {/* <a onClick={this.toggle}> {this.state.show ? <i className="ti-close" /> : <i className="ti-search" />}</a>
                                                 {this.state.show && <div className="ttm-search-overlay">
                                                     <form className="ttm-site-searchform">
@@ -82,16 +82,16 @@ export class Header extends Component {
                                                         </div>
                                                     </form>
                                                 </div>} */}
-                                                <div className="site-branding hide-on-desktop">
+                                                <div className="site-branding">
                                                     <a className="home-link" href={process.env.PUBLIC_URL + '/'} title="House Innovation" rel="home">
                                                         <img id="logo-img" className="img-fluid" alt="logo" src="images/logo_hi-nobg.png"/>
                                                     </a>
                                                 </div>
-                                            </li>
+                                
                                         </ul>
                                     </div>
                                     <Menu />
-                                    <div className="mobilemenu"><Mobilemenu /></div>
+                                    <div className="mobilemenu hide-on-desktop"><Mobilemenu /></div>
                                 </div>
                                 {/*site-navigation end*/}
                             </div>

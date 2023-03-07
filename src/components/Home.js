@@ -5,6 +5,7 @@ import { Header } from './layout/Header';
 import { CarouselPage } from './banner/Home1_banner';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import mediaCoverage from '../data/mediaArticles.json';
 
 
 const images = [
@@ -226,7 +227,7 @@ export class Home extends Component {
 
             <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider}>
 
-            <div className="ttm-box-col-wrapper">
+              <div className="ttm-box-col-wrapper">
                 <div className="ttm-history-box-wrapper">{/* ttm-history-box-wrapper  */}
                   <div className="ttm-history-box-icon-wrapper">{/* ttm-history-box-icon-wrapper  */}
                     {/*  featured-icon-box */}
@@ -334,7 +335,7 @@ export class Home extends Component {
                   <div className="ttm-history-box-details ttm-bgcolor-white">
                     <div className="ttm-historybox-title"><h5>Design graphique</h5></div>{/* historybox-title  */}
                     <div className="ttm-historybox-description">{/* description  */}
-                        Votre identité visuelle et vos supports de communication en ligne et hors ligne.
+                      Votre identité visuelle et vos supports de communication en ligne et hors ligne.
                     </div>
                     <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20">En savoir plus <i className="ti ti-angle-double-right" /></a>
                   </div>
@@ -607,6 +608,8 @@ export class Home extends Component {
                   </div>
                 </div>
               </div>
+
+
               <div className="ttm-box-col-wrapper">
                 <div className="featured-imagebox featured-imagebox-team style1">
                   <div className="featured-thumbnail">{/* featured-thumbnail */}
@@ -716,75 +719,62 @@ export class Home extends Component {
           </div>
         </section>
         {/* team-section end*/}
+
+
         {/* first-row-title-section */}
-        <section className="ttm-row first-row-title-section ttm-bgcolor-darkgrey ttm-textcolor-white ttm-bg ttm-bgimage-yes bg-img4 clearfix">
+        <section className="ttm-row first-row-title-section ttm-bgcolor-darkgrey ttm-textcolor-white ttm-bg ttm-bgimage-yes bg-img4">
           <div className="ttm-row-wrapper-bg-layer ttm-bg-layer" />
-          <div className="container-xl">
-            <div className="row">{/* row */}
-              <div className="col-lg-8 offset-lg-2">
-                <div className="text-center">
-                  <div className="ttm-play-icon-btn mb-5">
-                    <div className="ttm-play-icon-animation">
-                      <a id="playbutton">
-                        <div className="ttm-icon ttm-bgcolor-white ttm-textcolor-skincolor ttm-icon_element-size-sm rounded-circle">
-                          <i className="fas fa-play" />
-                        </div>
-                      </a>
-                      <div id="videobox">
-                        <i id="close-btn" className="fa fa-times"></i>
-                        <div id="video-wrapper">
-                          <iframe width="500" height="500" src="https://www.youtube.com/embed/7e90gBu4pas" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                        </div>
+          <div className="overlay" style={{ backgroundColor: "#2D4A8A", opacity: 0.95 }}>
+            <div className="container-xl">
+              <h3 className="title">Ils parlent de nous</h3>
+              <div className="container media-container">
+                {
+                  mediaCoverage.map((item, index) => {
+
+                    return (
+                      <div className="media-item" key={index}>
+                        <a href={item.url} target="_blank" rel="noopener noreferrer">
+                          <img src={`images/medias/${item.logo}`} alt={item.media} />
+                        </a>
                       </div>
-                    </div>
-                  </div>
-                  {/* section-title */}
-                  <div className="section-title with-desc text-center clearfix">
-                    <div className="title-header">
-                      <h2 className="title">We Provide Outsourced IT Services For Small &amp; <span className="ttm-textcolor-white">Mid-Sized Business</span></h2>
-                    </div>
-                    <div className="title-desc">Appropriate for your specific business, making it easy for<br /> you to have quality IT services. What We Do</div>
-                  </div>{/* section-title end */}
-                  <div className="mt-5">
-                    <a className="ttm-btn ttm-btn-size-md ttm-btn-style-border ttm-btn-color-white">More Services</a>
-                  </div>
-                </div>
+                    )
+                  })
+                }
               </div>
+              {/* </div> */}
             </div>
           </div>
         </section>
         {/* first-row-title-section end*/}
+
+
+
         {/* testimonial-section */}
-        <section className="ttm-row zero-padding-section clearfix">
+        {/* <section className="ttm-row zero-padding-section clearfix">
           <div className="container-xl">
             <div className="row no-gutters mt_100 res-991-mt-0">
               <div className="col-md-6">
                 <div className="ttm-bgcolor-darkgrey ttm-textcolor-white z-11 position-relative h-100">
-                  <div className="layer-content">{/* layer-content */}
-                    <div className="spacing-2">{/* spacing-2 */}
-                      {/* section title */}
+                  <div className="layer-content">
+                    <div className="spacing-2">
                       <div className="section-title ttm with-desc clearfix">
                         <div className="title-header">
                           <h5>What We Do</h5>
                           <h2 className="title">We help you to grow your business <span className="ttm-textcolor-white">Exponentially</span></h2>
                         </div>
-                      </div>{/* section title end */}
-                      {/* progress-bar */}
+                      </div>
                       <div className="ttm-progress-bar">
-                        <div className="progress-bar-title float-left">UI/UX Design</div>{/* progress-bar-title */}
+                        <div className="progress-bar-title float-left">UI/UX Design</div>
                         <label className="float-right">90%</label>
                         <MDBProgress className="w-100" material value={90}></MDBProgress>
                       </div>
-                      {/* progress-bar END */}
-                      {/* progress-bar */}
                       <div className="ttm-progress-bar">
-                        <div className="progress-bar-title float-left">App Development</div>{/* progress-bar-title */}
+                        <div className="progress-bar-title float-left">App Development</div>
                         <label className="float-right">80%</label>
                         <MDBProgress className="w-100" material value={80}></MDBProgress>
                       </div>
-                      {/* progress-bar END */}
-                    </div>{/* spacing-2 END */}
-                  </div>{/* layer-content END */}
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="col-md-6">
@@ -797,9 +787,9 @@ export class Home extends Component {
                       <Slider className="row slick_slider" arrows={false} dots={true}>
                         <div className="col-lg-12">
                           <div className="testimonials text-center">
-                            <div className="testimonial-content">{/* testimonials-content */}
+                            <div className="testimonial-content">
                               <div className="testimonial-avatar">
-                                <div className="testimonial-img">{/* testimonials-img */}
+                                <div className="testimonial-img">
                                   <img className="img-center" alt="testimonial-img" src="https://via.placeholder.com/150X150/444444.jpg" />
                                 </div>
                               </div>
@@ -811,7 +801,7 @@ export class Home extends Component {
                                 <i className="fa fa-star" />&nbsp;
                                 <i className="fa fa-star" />
                               </div>
-                              <div className="testimonial-caption">{/* testimonials-caption */}
+                              <div className="testimonial-caption">
                                 <h6>Victor Williamson</h6>
                                 <label>Web Devloper</label>
                               </div>
@@ -820,9 +810,9 @@ export class Home extends Component {
                         </div>
                         <div className="col-lg-12">
                           <div className="testimonials text-center">
-                            <div className="testimonial-content">{/* testimonials-content */}
+                            <div className="testimonial-content">
                               <div className="testimonial-avatar">
-                                <div className="testimonial-img">{/* testimonials-img */}
+                                <div className="testimonial-img">
                                   <img className="img-center" src="https://via.placeholder.com/150X150/444444.jpg" alt="testimonial-img" />
                                 </div>
                               </div>
@@ -834,7 +824,7 @@ export class Home extends Component {
                                 <i className="fa fa-star" />&nbsp;
                                 <i className="fa fa-star" />
                               </div>
-                              <div className="testimonial-caption">{/* testimonials-caption */}
+                              <div className="testimonial-caption">
                                 <h6>Victor Williamson</h6>
                                 <label>Web Devloper</label>
                               </div>
@@ -843,9 +833,9 @@ export class Home extends Component {
                         </div>
                         <div className="col-lg-12">
                           <div className="testimonials text-center">
-                            <div className="testimonial-content">{/* testimonials-content */}
+                            <div className="testimonial-content">
                               <div className="testimonial-avatar">
-                                <div className="testimonial-img">{/* testimonials-img */}
+                                <div className="testimonial-img">
                                   <img className="img-center" alt="testimonial-img" src="https://via.placeholder.com/150X150/444444.jpg" />
                                 </div>
                               </div>
@@ -857,7 +847,7 @@ export class Home extends Component {
                                 <i className="fa fa-star" />&nbsp;
                                 <i className="fa fa-star" />
                               </div>
-                              <div className="testimonial-caption">{/* testimonials-caption */}
+                              <div className="testimonial-caption">
                                 <h6>Victor Williamson</h6>
                                 <label>Web Devloper</label>
                               </div>
@@ -871,8 +861,11 @@ export class Home extends Component {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         {/* testimonial-section end */}
+
+
+
         {/* process-section */}
         <section className="ttm-row process-section clearfix">
           <div className="container-xl">
@@ -881,8 +874,8 @@ export class Home extends Component {
                 {/* section title */}
                 <div className="section-title text-center with-desc clearfix">
                   <div className="title-header">
-                    <h5>how it work</h5>
-                    <h2 className="title">Check Out Our Work <span>Process</span></h2>
+                    <h5>Comment ça marche?</h5>
+                    <h2 className="title">Voici le <span>process standard</span></h2>
                   </div>
                 </div>{/* section title end */}
               </div>
@@ -893,50 +886,50 @@ export class Home extends Component {
                 <div className="ttm-processbox-wrapper">
                   <div className="ttm-processbox text-center">
                     <div className="ttm-box-image">
-                      <img className="img-fluid" alt="step-one" title="step-one" src="https://via.placeholder.com/185X185/444444.jpg" />
+                      <img className="img-fluid" alt="Étape 1" title="Étape 1" src="images/choose-service.jpeg" />
                       <div className="process-num">
                         <span className="number">01</span>
                       </div>
                     </div>
                     <div className="featured-content">
-                      <div className="featured-title"><h5>Choose a Service</h5></div>
-                      <div className="ttm-box-description">Aute irure dolor reprehenderit velit esse cillum dolore fugiat</div>
+                      <div className="featured-title"><h5>Choisissez un service</h5></div>
+                      <div className="ttm-box-description">Explorez notre liste de services et choisissez celui qui correspond le mieux à vos besoins.</div>
                     </div>
                   </div>
                   <div className="ttm-processbox text-center">
                     <div className="ttm-box-image">
-                      <img className="img-fluid" alt="step-two" title="step-two" src="https://via.placeholder.com/185X185/444444.jpg" />
+                      <img className="img-fluid" alt="Étape 2" title="Étape 2" src="images/request-meeting.png" />
                       <div className="process-num">
                         <span className="number">02</span>
                       </div>
                     </div>
                     <div className="featured-content">
-                      <div className="featured-title"><h5>Request a Meeting</h5></div>
-                      <div className="ttm-box-description">Aute irure dolor reprehenderit velit esse cillum dolore fugiat</div>
+                      <div className="featured-title"><h5>Demander une rencontre</h5></div>
+                      <div className="ttm-box-description">Entrez en contact avec nous pour planifier une rencontre. Nous discuterons pour mieux comprendre vos besoins et vos objectifs.</div>
                     </div>
                   </div>
                   <div className="ttm-processbox text-center">
                     <div className="ttm-box-image">
-                      <img className="img-fluid" alt="step-three" title="step-three" src="https://via.placeholder.com/185X185/444444.jpg" />
+                      <img className="img-fluid" alt="Étape 3" title="Étape 3" src="images/custom-plan.jpg" />
                       <div className="process-num">
                         <span className="number">03</span>
                       </div>
                     </div>
                     <div className="featured-content">
-                      <div className="featured-title"><h5>Receive Custom Plan</h5></div>
-                      <div className="ttm-box-description">Aute irure dolor reprehenderit velit esse cillum dolore fugiat</div>
+                      <div className="featured-title"><h5>Recevez un plan personnalisé</h5></div>
+                      <div className="ttm-box-description">Nous travaillons avec vous pour élaborer un plan personnalisé qui répond à vos besoins et à votre budget.</div>
                     </div>
                   </div>
                   <div className="ttm-processbox text-center res-991-mb-0">
                     <div className="ttm-box-image">
-                      <img className="img-fluid" alt="step-four" title="step-four" src="https://via.placeholder.com/185X185/444444.jpg" />
+                      <img className="img-fluid" alt="Étape 4" title="Étape 4" src="images/action.jpeg" />
                       <div className="process-num">
                         <span className="number">04</span>
                       </div>
                     </div>
                     <div className="featured-content">
-                      <div className="featured-title"><h5>Let’s Make it Happen</h5></div>
-                      <div className="ttm-box-description">Aute irure dolor reprehenderit velit esse cillum dolore fugiat</div>
+                      <div className="featured-title"><h5>Passons à l'action !</h5></div>
+                      <div className="ttm-box-description">Après l'approbation du plan, nous passons à la réalisation du projet. Nous nous assurons en permanence que le projet est à la hauteur de vos attentes et que vous êtes satisfait.</div>
                     </div>
                   </div>
                 </div>

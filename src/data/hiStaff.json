@@ -1,0 +1,44 @@
+[
+    {
+        "id": "hi-1",
+        "name": "Ekani",
+        "surname": "Louis",
+        "role": "Robotic Engineer/CEO",
+        "linkedin": {
+            "link": "https://www.linkedin.com/in/louisekani/",
+            "display": true
+        },
+        "twitter": {
+            "link": "https://twitter.com/Louis_Ekani",
+            "display": true
+        }
+    },
+    {
+        "id": "hi-2",
+        "name": "Kenouya",
+        "surname": "Kevin",
+        "role": "Software Engineer/CTO",
+        "linkedin": {
+            "link": "",
+            "display": true
+        },
+        "twitter": {
+            "link": "",
+            "display": true
+        }
+    },
+    {
+        "id": "hi-3",
+        "name": "Kamssu",
+        "surname": "Patrick",
+        "role": "CFO/Mobile Developer",
+        "linkedin": {
+            "link": "",
+            "display": true
+        },
+        "twitter": {
+            "link": "",
+            "display": true
+        }
+    }
+]

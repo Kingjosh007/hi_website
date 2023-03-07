@@ -99,8 +99,8 @@ export class Contact_01 extends Component {
                             {/* section title */}
                             <div className="section-title with-desc clearfix">
                             <div className="title-header">
-                                <h5>Laissez un message</h5>
-                                <h2 className="title">Qu'avez-vous à dire?</h2>
+                                <h5>Une question? Un avis?</h5>
+                                <h2 className="title">Laissez un message</h2>
                             </div>
                             </div>{/* section title end */}
                             <form id="ttm-quote-form" className="row ttm-quote-form clearfix" method="post" action="#">
