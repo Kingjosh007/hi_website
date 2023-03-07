@@ -7,7 +7,7 @@ export class Contact_01 extends Component {
         return (
             <div className="site-main">
                 <Header />
-                <section className="ttm-row zero-padding-section clearfix">
+                <section className="ttm-row zero-padding-section clearfix" style={{ marginTop: "2em"}}>
                     <div className="container-xl">
                     <div className="row no-gutters">{/* row */}
                         <div className="col-lg-5">

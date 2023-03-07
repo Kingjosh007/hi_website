@@ -111,7 +111,7 @@ render() {
                             <span>Contact</span>
                         </MDBDropdownToggle>
                         <MDBDropdownMenu>
-                            <MDBDropdownItem href={process.env.PUBLIC_URL + '/contact_01'}>Nos coordonnées</MDBDropdownItem>
+                            <MDBDropdownItem href={process.env.PUBLIC_URL + '/contact'}>Nos coordonnées</MDBDropdownItem>
                         </MDBDropdownMenu>
                     </MDBDropdown>
                   </MDBNavItem>

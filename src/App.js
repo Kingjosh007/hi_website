@@ -71,7 +71,7 @@ function App() {
             <Route path="/our_expert" component={Our_expert} />
             <Route path="/team_detail" component={Team_detail} />
             <Route path="/faq" component={Faq} />
-            <Route path="/contact_01" component={Contact_01} />
+            <Route path="/contact" component={Contact_01} />
             <Route path="/contact_02" component={Contact_02} />
             <Route path="/error" component={Error} />
             <Route path="/element" component={Element} />
@@ -81,7 +81,7 @@ function App() {
             <Route path="/data_structuring" component={Data_structuring} />
             <Route path="/experience_design" component={Experience_design} />
             <Route path="/content_engineering" component={Content_engineering} />
-            <Route path="/project_style1" component={Project_style1} />
+            <Route path="/projects" component={Project_style1} />
             <Route path="/project_style2" component={Project_style2} />
             <Route path="/single_style1" component={Single_style1} />
             <Route path="/single_style2" component={Single_style2} />

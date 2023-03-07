@@ -73,14 +73,13 @@ export class Footer extends Component {
                                 <div className="widget link-widget clearfix">
                                     <h3 className="widget-title">Liens rapides</h3>
                                     <ul id="menu-footer-services">
-                                        <li><a >Make Appointment</a></li>
-                                        <li><a >Customer Services</a></li>
-                                        <li><a >Department Services</a></li>
-                                        <li><a >About Company</a></li>
-                                        <li><a >Our Case Studies</a></li>
-                                        <li><a >Free Consultation</a></li>
-                                        <li><a >Meet Our Experts</a></li>
-                                        <li><a >Our Business Growth</a></li>
+                                        <li><a>À propos de nous</a></li>
+                                        <li><a>Nous contacter</a></li>
+                                        <li><a>Nos services</a></li>
+                                        <li><a>Notre équipe</a></li>
+                                        <li><a>Blog</a></li>
+                                        <li><a>Portfolio</a></li>
+                                        <li><a>Carrières</a></li>
                                     </ul>
                                 </div>
                             </div>

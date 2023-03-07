@@ -33,7 +33,7 @@ export class CarouselPage extends Component {
                             </MDBAnimation>
                             <MDBAnimation className="slideInUp" count={1} delay="3s" >
                             <p>
-                            <a className="ttm-btn ttm-btn-size-md ttm-bgcolor-skincolor" href="/contact_01">Quel est votre projet?</a>&nbsp; &nbsp;
+                            <a className="ttm-btn ttm-btn-size-md ttm-bgcolor-skincolor" href="/contact">Quel est votre projet?</a>&nbsp; &nbsp;
                                 {/* <button className="ttm-btn btn-inline ttm-btn-size-md ttm-textcolor-darkgrey ml-3"><i className="ti-arrow-circle-right" />get a Quote</button> */}
                             </p>                            
                             </MDBAnimation>

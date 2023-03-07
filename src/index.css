@@ -45,6 +45,18 @@
 
 }
 
+/* On mobile devices, .media-item should be a grid of 2 per row */
+
+@media (max-width: 768px) {
+    .media-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-width: 5em;
+        grid-template-rows: repeat(6, 1fr);
+        grid-gap: 1.5em;
+    }
+}
+
 .media-container .media-item:hover {
     transform: scale(1.1);
 }

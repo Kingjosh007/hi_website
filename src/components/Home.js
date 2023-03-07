@@ -5,6 +5,7 @@ import { Header } from './layout/Header';
 import { CarouselPage } from './banner/Home1_banner';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import staff from '../data/hiStaff.json';
 import mediaCoverage from '../data/mediaArticles.json';
 
 
@@ -360,7 +361,7 @@ export class Home extends Component {
                     <div className="ttm-historybox-description">{/* description  */}
                       Solutions pour aider votre entreprise à optimiser son utilisation de la technologie.
                     </div>
-                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20">En savoir plus <i className="ti ti-angle-double-right" /></a>
+                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" >En savoir plus <i className="ti ti-angle-double-right" /></a>
                   </div>
                 </div>
               </div>
@@ -368,7 +369,7 @@ export class Home extends Component {
 
             <div className="row">
               <div className="col-md-12 text-center mt-5 res-991-mt-30">
-                <p className="mb-0">N'hésitez pas à <strong><u><a className="ttm-textcolor-darkgrey" href="/contact_01">nous contacter</a></u></strong> en cas de question.</p>
+                <p className="mb-0">N'hésitez pas à <strong><u><a className="ttm-textcolor-darkgrey" href="/contact">nous contacter</a></u></strong> en cas de question.</p>
               </div>
             </div>
           </div>
@@ -503,251 +504,44 @@ export class Home extends Component {
               </div>
             </div>
             <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={3}>
-              <div className="ttm-box-col-wrapper">
-                <div className="featured-imagebox featured-imagebox-team style1">
-                  <div className="featured-thumbnail">{/* featured-thumbnail */}
-                    <img className="img-fluid" src="https://via.placeholder.com/480X520/444444.jpg" alt="" />
-                    <div className="ttm-social-links-wrapper">
-                      <ul className="social-icons list-inline">{/* social-icons */}
-                        <li className="social-facebook"><a><i className="fab fa-facebook-f" /></a></li>
-                        <li className="social-twitter"><a><i className="fab fa-twitter" /></a></li>
-                        <li className="social-linkedin"><a><i className="fab fa-linkedin-in" /></a></li>
-                        <li className="social-googleplus"><a><i className="fab fa-google-plus-g" /></a></li>
-                      </ul>
+              {
+                staff.map((staffMember, index) => {
+                  return (
+                    <div className="ttm-box-col-wrapper">
+                      <div className="featured-imagebox featured-imagebox-team style1">
+                        <div className="featured-thumbnail">{/* featured-thumbnail */}
+                          <img className="img-fluid" src={staffMember.photo} alt={`${staffMember.surname} ${staffMember.name.toUpperCase()}`} />
+                          <div className="ttm-social-links-wrapper">
+                            <ul className="social-icons list-inline">{/* social-icons */}
+                              {
+                                staffMember.linkedin?.display && staffMember.linkedin.link.length > 5 && (
+                                  <li className="social-linkedin"><a target="_blank" rel="noopener noreferrer" href={staffMember.linkedin.link}><i className="fab fa-linkedin-in" /></a></li>
+                                )
+                              }
+                              {
+                                staffMember.twitter?.display && staffMember.twitter.link.length > 5 && (
+                                  <li className="social-twitter"><a target="_blank" rel="noopener noreferrer" href={staffMember.twitter.link}><i className="fab fa-twitter" /></a></li>
+                                )
+                              }
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="featured-content box-shadow">
+                          <div className="featured-title">{/* featured-title */}
+                            <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>{staffMember.surname} {staffMember.name.toUpperCase()}</a></h5>
+                          </div>
+                          <p className="category">{staffMember.role}</p>{/* category */}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="featured-content box-shadow">
-                    <div className="featured-title">{/* featured-title */}
-                      <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>Robert Liamss</a></h5>
-                    </div>
-                    <p className="category">Web Designer</p>{/* category */}
-                  </div>
-                </div>
-              </div>
-              <div className="ttm-box-col-wrapper">
-                <div className="featured-imagebox featured-imagebox-team style1">
-                  <div className="featured-thumbnail">{/* featured-thumbnail */}
-                    <img className="img-fluid" src="https://via.placeholder.com/480X520/444444.jpg" alt="" />
-                    <div className="ttm-social-links-wrapper">
-                      <ul className="social-icons list-inline">{/* social-icons */}
-                        <li className="social-facebook"><a ><i className="fab fa-facebook-f" /></a></li>
-                        <li className="social-twitter"><a ><i className="fab fa-twitter" /></a></li>
-                        <li className="social-linkedin"><a ><i className="fab fa-linkedin-in" /></a></li>
-                        <li className="social-googleplus"><a ><i className="fab fa-google-plus-g" /></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="featured-content box-shadow">
-                    <div className="featured-title">{/* featured-title */}
-                      <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>Jessica Ethan</a></h5>
-                    </div>
-                    <p className="category">Project Manager</p>{/* category */}
-                  </div>
-                </div>
-              </div>
-              <div className="ttm-box-col-wrapper">
-                <div className="featured-imagebox featured-imagebox-team style1">
-                  <div className="featured-thumbnail">{/* featured-thumbnail */}
-                    <img className="img-fluid" alt="" src="https://via.placeholder.com/480X520/444444.jpg" />
-                    <div className="ttm-social-links-wrapper">
-                      <ul className="social-icons list-inline">{/* social-icons */}
-                        <li className="social-facebook"><a ><i className="fab fa-facebook-f" /></a></li>
-                        <li className="social-twitter"><a ><i className="fab fa-twitter" /></a></li>
-                        <li className="social-linkedin"><a ><i className="fab fa-linkedin-in" /></a></li>
-                        <li className="social-googleplus"><a ><i className="fab fa-google-plus-g" /></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="featured-content box-shadow">
-                    <div className="featured-title">{/* featured-title */}
-                      <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>Amanda Brown</a></h5>
-                    </div>
-                    <p className="category">Consultant Officer</p>{/* category */}
-                  </div>
-                </div>
-              </div>
-              <div className="ttm-box-col-wrapper">
-                <div className="featured-imagebox featured-imagebox-team style1">
-                  <div className="featured-thumbnail">{/* featured-thumbnail */}
-                    <img className="img-fluid" alt="" src="https://via.placeholder.com/480X520/444444.jpg" />
-                    <div className="ttm-social-links-wrapper">
-                      <ul className="social-icons list-inline">{/* social-icons */}
-                        <li className="social-facebook"><a ><i className="fab fa-facebook-f" /></a></li>
-                        <li className="social-twitter"><a ><i className="fab fa-twitter" /></a></li>
-                        <li className="social-linkedin"><a ><i className="fab fa-linkedin-in" /></a></li>
-                        <li className="social-googleplus"><a ><i className="fab fa-google-plus-g" /></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="featured-content box-shadow">
-                    <div className="featured-title">{/* featured-title */}
-                      <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>Jennifer Garcia</a></h5>
-                    </div>
-                    <p className="category">IT Service Officer</p>{/* category */}
-                  </div>
-                </div>
-              </div>
-              <div className="ttm-box-col-wrapper">
-                <div className="featured-imagebox featured-imagebox-team style1">
-                  <div className="featured-thumbnail">{/* featured-thumbnail */}
-                    <img className="img-fluid" alt="" src="https://via.placeholder.com/480X520/444444.jpg" />
-                    <div className="ttm-social-links-wrapper">
-                      <ul className="social-icons list-inline">{/* social-icons */}
-                        <li className="social-facebook"><a ><i className="fab fa-facebook-f" /></a></li>
-                        <li className="social-twitter"><a ><i className="fab fa-twitter" /></a></li>
-                        <li className="social-linkedin"><a ><i className="fab fa-linkedin-in" /></a></li>
-                        <li className="social-googleplus"><a ><i className="fab fa-google-plus-g" /></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="featured-content box-shadow">
-                    <div className="featured-title">{/* featured-title */}
-                      <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>Robert Liam</a></h5>
-                    </div>
-                    <p className="category">Web Designer</p>{/* category */}
-                  </div>
-                </div>
-              </div>
+                  )
+                })
+              }
 
-
-              <div className="ttm-box-col-wrapper">
-                <div className="featured-imagebox featured-imagebox-team style1">
-                  <div className="featured-thumbnail">{/* featured-thumbnail */}
-                    <img className="img-fluid" alt="" src="https://via.placeholder.com/480X520/444444.jpg" />
-                    <div className="ttm-social-links-wrapper">
-                      <ul className="social-icons list-inline">{/* social-icons */}
-                        <li className="social-facebook"><a ><i className="fab fa-facebook-f" /></a></li>
-                        <li className="social-twitter"><a ><i className="fab fa-twitter" /></a></li>
-                        <li className="social-linkedin"><a ><i className="fab fa-linkedin-in" /></a></li>
-                        <li className="social-googleplus"><a ><i className="fab fa-google-plus-g" /></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="featured-content box-shadow">
-                    <div className="featured-title">{/* featured-title */}
-                      <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>Jessica Ethan</a></h5>
-                    </div>
-                    <p className="category">Project Manager</p>{/* category */}
-                  </div>
-                </div>
-              </div>
-              <div className="ttm-box-col-wrapper">
-                <div className="featured-imagebox featured-imagebox-team style1">
-                  <div className="featured-thumbnail">{/* featured-thumbnail */}
-                    <img className="img-fluid" alt="" src="https://via.placeholder.com/480X520/444444.jpg" />
-                    <div className="ttm-social-links-wrapper">
-                      <ul className="social-icons list-inline">{/* social-icons */}
-                        <li className="social-facebook"><a ><i className="fab fa-facebook-f" /></a></li>
-                        <li className="social-twitter"><a ><i className="fab fa-twitter" /></a></li>
-                        <li className="social-linkedin"><a ><i className="fab fa-linkedin-in" /></a></li>
-                        <li className="social-googleplus"><a ><i className="fab fa-google-plus-g" /></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="featured-content box-shadow">
-                    <div className="featured-title">{/* featured-title */}
-                      <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>Amanda Brown</a></h5>
-                    </div>
-                    <p className="category">Consultant Officer</p>{/* category */}
-                  </div>
-                </div>
-              </div>
-              <div className="ttm-box-col-wrapper">
-                <div className="featured-imagebox featured-imagebox-team style1">
-                  <div className="featured-thumbnail">{/* featured-thumbnail */}
-                    <img className="img-fluid" alt="" src="https://via.placeholder.com/480X520/444444.jpg" />
-                    <div className="ttm-social-links-wrapper">
-                      <ul className="social-icons list-inline">{/* social-icons */}
-                        <li className="social-facebook"><a ><i className="fab fa-facebook-f" /></a></li>
-                        <li className="social-twitter"><a ><i className="fab fa-twitter" /></a></li>
-                        <li className="social-linkedin"><a ><i className="fab fa-linkedin-in" /></a></li>
-                        <li className="social-googleplus"><a ><i className="fab fa-google-plus-g" /></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="featured-content box-shadow">
-                    <div className="featured-title">{/* featured-title */}
-                      <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>Jennifer Garcia</a></h5>
-                    </div>
-                    <p className="category">IT Service Officer</p>{/* category */}
-                  </div>
-                </div>
-              </div>
-              <div className="ttm-box-col-wrapper">
-                <div className="featured-imagebox featured-imagebox-team style1">
-                  <div className="featured-thumbnail">{/* featured-thumbnail */}
-                    <img className="img-fluid" alt="" src="https://via.placeholder.com/480X520/444444.jpg" />
-                    <div className="ttm-social-links-wrapper">
-                      <ul className="social-icons list-inline">{/* social-icons */}
-                        <li className="social-facebook"><a ><i className="fab fa-facebook-f" /></a></li>
-                        <li className="social-twitter"><a ><i className="fab fa-twitter" /></a></li>
-                        <li className="social-linkedin"><a ><i className="fab fa-linkedin-in" /></a></li>
-                        <li className="social-googleplus"><a ><i className="fab fa-google-plus-g" /></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="featured-content box-shadow">
-                    <div className="featured-title">{/* featured-title */}
-                      <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>Robert Liam</a></h5>
-                    </div>
-                    <p className="category">Web Designer</p>{/* category */}
-                  </div>
-                </div>
-              </div>
-              <div className="ttm-box-col-wrapper">
-                <div className="featured-imagebox featured-imagebox-team style1">
-                  <div className="featured-thumbnail">{/* featured-thumbnail */}
-                    <img className="img-fluid" alt="" src="https://via.placeholder.com/480X520/444444.jpg" />
-                    <div className="ttm-social-links-wrapper">
-                      <ul className="social-icons list-inline">{/* social-icons */}
-                        <li className="social-facebook"><a ><i className="fab fa-facebook-f" /></a></li>
-                        <li className="social-twitter"><a ><i className="fab fa-twitter" /></a></li>
-                        <li className="social-linkedin"><a ><i className="fab fa-linkedin-in" /></a></li>
-                        <li className="social-googleplus"><a ><i className="fab fa-google-plus-g" /></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="featured-content box-shadow">
-                    <div className="featured-title">{/* featured-title */}
-                      <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>Jessica Ethan</a></h5>
-                    </div>
-                    <p className="category">Project Manager</p>{/* category */}
-                  </div>
-                </div>
-              </div>
             </Slider>
           </div>
         </section>
         {/* team-section end*/}
-
-
-        {/* first-row-title-section */}
-        <section className="ttm-row first-row-title-section ttm-bgcolor-darkgrey ttm-textcolor-white ttm-bg ttm-bgimage-yes bg-img4">
-          <div className="ttm-row-wrapper-bg-layer ttm-bg-layer" />
-          <div className="overlay" style={{ backgroundColor: "#2D4A8A", opacity: 0.95 }}>
-            <div className="container-xl">
-              <h3 className="title">Ils parlent de nous</h3>
-              <div className="container media-container">
-                {
-                  mediaCoverage.map((item, index) => {
-
-                    return (
-                      <div className="media-item" key={index}>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer">
-                          <img src={`images/medias/${item.logo}`} alt={item.media} />
-                        </a>
-                      </div>
-                    )
-                  })
-                }
-              </div>
-              {/* </div> */}
-            </div>
-          </div>
-        </section>
-        {/* first-row-title-section end*/}
-
-
 
         {/* testimonial-section */}
         {/* <section className="ttm-row zero-padding-section clearfix">
@@ -945,16 +739,16 @@ export class Home extends Component {
               <div className="col-lg-5 res-991-text-center">
                 <div className="section-title style3 mb-0 clearfix">
                   <div className="title-header mb-0">
-                    <h5>We Make Connections</h5>
-                    <h2 className="title">Explore recent <span className="ttm-textcolor-white">Projects</span></h2>
+                    <h5>Nous donnons vie à vos envies</h5>
+                    <h2 className="title">Consultez nos <span className="ttm-textcolor-white">projets récents</span></h2>
                   </div>
                 </div>
               </div>
               <div className="col-lg-5 res-991-text-center">
-                <div className="title-desc">A project is a temporary endeavor with a defined beginning and end, scope, and assigned resources.</div>
+                <div className="title-desc">Plongez dans notre portfolio et voyez notre passion pour la création de technologies de pointe répondant à des besoins concrets.</div>
               </div>
               <div className="col-lg-2 text-right res-991-text-center res-991-mt-20">
-                <a className="ttm-btn ttm-btn-size-md ttm-btn-style-border ttm-btn-color-white"> En savoir plus </a>
+                <a className="ttm-btn ttm-btn-size-md ttm-btn-style-border ttm-btn-color-white" href="/projects"> En savoir plus </a>
               </div>
             </div>
           </div>
@@ -1243,7 +1037,31 @@ export class Home extends Component {
             </Slider>
           </div>
         </section>
-        {/* blog-section end */}
+        
+        <section className="ttm-row first-row-title-section ttm-bgcolor-darkgrey ttm-textcolor-white ttm-bg ttm-bgimage-yes bg-img4">
+          <div className="ttm-row-wrapper-bg-layer ttm-bg-layer" />
+          <div className="overlay" style={{ backgroundColor: "#2D4A8A", opacity: 0.95 }}>
+            <div className="container-xl">
+              <h3 className="title">Ils parlent de nous</h3>
+              <div className="container media-container">
+                {
+                  mediaCoverage.map((item, index) => {
+
+                    return (
+                      <div className="media-item" key={index}>
+                        <a href={item.url} target="_blank" rel="noopener noreferrer">
+                          <img src={`images/medias/${item.logo}`} alt={item.media} />
+                        </a>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+              {/* </div> */}
+            </div>
+          </div>
+        </section>
+
       </div>
     )
   }

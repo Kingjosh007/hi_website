@@ -34,7 +34,7 @@ export class Menu extends Component {
                         </ul>
                     </li>
                     <li className="menu">
-                        <a href="/project_style1">Nos réalisations</a>
+                        <a href="/projects">Nos réalisations</a>
                     </li>
 
                     <li className="menu">
@@ -45,7 +45,7 @@ export class Menu extends Component {
                         <a href="#">Carrières</a>
                     </li>
                     <li className="menu-hasdropdown">
-                        <a href="/contact_01">Contact</a>
+                        <a href="/contact">Contact</a>
                     </li>
                 </ul>
             </nav>

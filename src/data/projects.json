@@ -1,0 +1,89 @@
+[
+    {
+        "id": "hi-pro-1",
+        "name": "Le Cocon De Nayki",
+        "description": "",
+        "short_desc": "Le Cocon de Nayki est une plateforme qui sert d'intermédiaire entre les propriétaires de logements, de locations de voitures ou de caves et leurs clients.",
+        "link": "https://lecocondenayki.com/",
+        "date": "2022-03-31",
+        "client_name": "Le Cocon De Nayki",
+        "client_location": "Douala, Cameroun",
+        "image": "le_cocon_de_nayki_mini.jpg",
+        "image_mini": "le_cocon_de_nayki_mini.jpg",
+        "categories": [
+            "Site web",
+            "App. web",
+            "Conseil"
+        ]
+      },
+      {
+        "id": "hi-pro-2",
+        "name": "CAFMAC",
+        "description": "Site et application web multilingue pour le compte d'un centre de renforcement de compétences professionnelles",
+        "short_desc": "Ce projet consistait à développer un site vitrine avec blog, et une application back-office pour administrer le site. le site et le back-office sont multilingues (français et anglais) et s'adaptent à toutes les tailles d'écran.",
+        "link": "https://cafmacsarl.com/",
+        "date": "2023-02-28",
+        "client_name": "CAFMAC Sarl",
+        "client_location": "Douala, Cameroun",
+        "image": "cafmac.PNG",
+        "image_mini": "cafmac_mini.PNG",
+        "categories": [
+            "Site web",
+            "App. web",
+            "Site vitrine",
+            "Digitalisation"
+        ]
+      },
+      {
+        "id": "hi-pro-3",
+        "name": "NAT Digital CV",
+        "description": "NAT Digital CV est une plateforme qui permet de créer des CV personnalisables à partir d'une variété de modèles. Cette plateforme permet aux utilisateurs de créer des CV personnalisés à partir d'une variété de modèles et de les télécharger au format PDF quand ils le souhaitent. Depuis un espace de gestion, ils peuvent non seulement consulter ou modifier un CV mais aussi en créer autant qu'ils le souhaitent.",
+        "short_desc": "Plateforme de création de CVs personnalisables à partir d'une variété de modèles. Cette plateforme permet aux utilisateurs de créer des CV personnalisés à partir d'une variété de modèles, et téléchargeables au format PDF.",
+        "link": "https://natcv-camer.com/app",
+        "date": "2022-01-31",
+        "client_name": "NATCV Camer",
+        "client_location": "Douala, Cameroun",
+        "image": "natcv_camer.PNG",
+        "image_mini": "natcv_camer_mini.PNG",
+        "categories": [
+            "Site web",
+            "App. web",
+            "Digitalisation"
+        ]
+      },
+      {
+        "id": "hi-pro-4",
+        "name": "CBM",
+        "description": "CBM est un site vitrine de présentation des services proposés par l'entreprise CBM.",
+        "short_desc": "Site vitrine de présentation des services de CBM.",
+        "link": "https://cbm-cameroun.com",
+        "date": "2022-09-31",
+        "client_name": "CBM",
+        "client_location": "Douala, Cameroun",
+        "image": "cbm.PNG",
+        "image_mini": "cbm_mini.PNG",
+        "categories": [
+            "Site vitrine",
+            "Site web",
+            "Digitalisation"
+        ]
+      },
+      {
+        "id": "hi-pro-5",
+        "name": "Invest & Partners",
+        "description": "Cette plateforme permet à Invest & Partner d'accompagner non seulement les porteurs de projets dans leur recherche d'investissements pour leurs projets, mais aussi les investisseurs qui souhaitent investir dans des projets prometteurs et rentables.  Elle est composée d'un \"Front Office\" et d'un \"Back Office\". Le Front Office permet aux investisseurs et aux porteurs de projets de créer un projet ou de demander un investissement sur un projet. Le Back Office (espace de gestion) permet aux employés d'Invest & Partners de traiter les projets soumis par les porteurs de projets et de gérer les investissements qui ont été donnés.",
+        "short_desc": "Cette plateforme permet à Invest & Partner d'accompagner non seulement les porteurs de projets dans leur recherche d'investissements pour leurs projets, mais aussi les investisseurs qui souhaitent investir dans des projets prometteurs et rentables.",
+        "link": "https://invest--partners.com/",
+        "date": "2022-02-28",
+        "client_name": "CBM",
+        "client_location": "Douala, Cameroun",
+        "image": "cbm.PNG",
+        "image_mini": "cbm_mini.PNG",
+        "categories": [
+            "App. web",
+            "Site web",
+            "Digitalisation"
+        ]
+
+      }
+]
