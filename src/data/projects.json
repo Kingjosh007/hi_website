@@ -8,8 +8,8 @@
         "date": "2022-03-31",
         "client_name": "Le Cocon De Nayki",
         "client_location": "Douala, Cameroun",
-        "image": "le_cocon_de_nayki_mini.jpg",
-        "image_mini": "le_cocon_de_nayki_mini.jpg",
+        "image": "/images/projects/le_cocon_de_nayki_mini.jpg",
+        "image_mini": "/images/projects/le_cocon_de_nayki_mini.jpg",
         "categories": [
             "Site web",
             "App. web",
@@ -25,8 +25,8 @@
         "date": "2023-02-28",
         "client_name": "CAFMAC Sarl",
         "client_location": "Douala, Cameroun",
-        "image": "cafmac.PNG",
-        "image_mini": "cafmac_mini.PNG",
+        "image": "/images/projects/cafmac.PNG",
+        "image_mini": "/images/projects/cafmac_mini.jpg",
         "categories": [
             "Site web",
             "App. web",
@@ -43,8 +43,8 @@
         "date": "2022-01-31",
         "client_name": "NATCV Camer",
         "client_location": "Douala, Cameroun",
-        "image": "natcv_camer.PNG",
-        "image_mini": "natcv_camer_mini.PNG",
+        "image": "/images/projects/natcv_camer.PNG",
+        "image_mini": "/images/projects/natcv_camer_mini.PNG",
         "categories": [
             "Site web",
             "App. web",
@@ -60,8 +60,8 @@
         "date": "2022-09-31",
         "client_name": "CBM",
         "client_location": "Douala, Cameroun",
-        "image": "cbm.PNG",
-        "image_mini": "cbm_mini.PNG",
+        "image": "/images/projects/cbm.PNG",
+        "image_mini": "/images/projects/cbm_mini.PNG",
         "categories": [
             "Site vitrine",
             "Site web",
@@ -77,13 +77,12 @@
         "date": "2022-02-28",
         "client_name": "CBM",
         "client_location": "Douala, Cameroun",
-        "image": "cbm.PNG",
-        "image_mini": "cbm_mini.PNG",
+        "image": "/images/projects/invest_partners.PNG",
+        "image_mini": "/images/projects/invest_partners_mini.PNG",
         "categories": [
             "App. web",
             "Site web",
             "Digitalisation"
         ]
-
       }
 ]
