@@ -497,7 +497,7 @@ export class Home extends Component {
                 <div className="title-desc"><em>"Le talent remporte des matchs, mais c'est le travail d'équipe et l'intelligence collective qui remportent des championnats."</em> - Michael Jordan</div>
               </div>
               <div className="col-lg-2 text-right res-991-text-center res-991-mt-20">
-                <a className="ttm-btn ttm-btn-size-md ttm-btn-style-border ttm-btn-color-darkgrey" href="/Our_expert">En savoir plus</a>
+                <a className="ttm-btn ttm-btn-size-md ttm-btn-style-border ttm-btn-color-darkgrey" href="/staff">En savoir plus</a>
               </div>
             </div>
             <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={3}>

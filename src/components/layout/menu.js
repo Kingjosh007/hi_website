@@ -11,8 +11,8 @@ export class Menu extends Component {
                     </li>
                     <li className="menu-hasdropdown"><a href="/">À propos</a>
                         <ul className="menu-dropdown">
-                            <li><a href={process.env.PUBLIC_URL + '/aboutus_01'}>Qui sommes-nous ?</a></li>        
-                            <li><a href={process.env.PUBLIC_URL + '/Our_expert'}>Notre équipe</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/presentation'}>Qui sommes-nous ?</a></li>        
+                            <li><a href={process.env.PUBLIC_URL + '/staff'}>Notre équipe</a></li>
                             {/* <li><a href={process.env.PUBLIC_URL + '/Services_01'}>Services 1</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Services_02'}>Services 2</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Faq'}>FAQs</a></li>
@@ -24,13 +24,13 @@ export class Menu extends Component {
                     </li>
                     <li className="menu-hasdropdown"><a href="#">Nos services</a>
                         <ul className="menu-dropdown">
-                            <li><a href={process.env.PUBLIC_URL + '/advisory_services'}>Développement d'applications web</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/digital_services'}>Développement d'applications mobiles</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/advisory_services'}>Développement de sites vitrines</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/it_consultancy'}>Développement de logiciels spécialisés</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/experience_design'}>Digitalisation de structures</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/content_engineering'}>Intelligence Artificielle</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/data_structuring'}>Conseil en informatique</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/service_apps_web'}>Développement d'applications web</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/service_apps_mobiles'}>Développement d'applications mobiles</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/service_sites_vitrines'}>Développement de sites vitrines</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/service_progiciels'}>Développement de logiciels spécialisés</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/service_digitalisation'}>Digitalisation de structures</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/service_robotique_ia'}>Robotique et Intelligence Artificielle</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/service_conseil'}>Conseil en informatique</a></li>
                         </ul>
                     </li>
                     <li className="menu">

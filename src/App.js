@@ -13,7 +13,7 @@ import Home2 from './components/Home2';
 import Home3 from './components/Home3';
 import Home2_Header2 from './components/Header_style_02';
 import Home3_Header3 from './components/Header_style_03';
-import Aboutus_01 from './components/pages/Aboutus_01';
+import Presentation from './components/pages/Presentation';
 import Aboutus_02 from './components/pages/Aboutus_02';
 import Services_01 from './components/pages/Services_01';
 import Services_02 from './components/pages/Services_02';
@@ -64,23 +64,24 @@ function App() {
             <Route path='/home3' component={ Home3 } />
             <Route path='/header_style_02' component={ Home2_Header2 } />
             <Route path='/header_style_03' component={ Home3_Header3 } />
-            <Route path="/aboutus_01" component={Aboutus_01} />
+            <Route path="/presentation" component={Presentation} />
             <Route path="/aboutus_02" component={Aboutus_02} />
             <Route path="/services_01" component={Services_01} />
             <Route path="/services_02" component={Services_02} />
-            <Route path="/our_expert" component={Our_expert} />
+            <Route path="/staff" component={Our_expert} />
             <Route path="/team_detail" component={Team_detail} />
             <Route path="/faq" component={Faq} />
             <Route path="/contact" component={Contact_01} />
             <Route path="/contact_02" component={Contact_02} />
             <Route path="/error" component={Error} />
             <Route path="/element" component={Element} />
-            <Route path="/it_consultancy" component={It_consultancy} />
-            <Route path="/digital_services" component={Digital_services} />
-            <Route path="/advisory_services" component={Advisory_services} />
-            <Route path="/data_structuring" component={Data_structuring} />
-            <Route path="/experience_design" component={Experience_design} />
-            <Route path="/content_engineering" component={Content_engineering} />
+            <Route path="/service_digitalisation" component={It_consultancy} />
+            <Route path="/service_apps_mobiles" component={Digital_services} />
+            <Route path="/service_apps_web" component={Advisory_services} />
+            <Route path="/service_conseil" component={Data_structuring} />
+            <Route path="/service_progiciels" component={It_consultancy} />
+            <Route path="/service_robotique_ia" component={Experience_design} />
+            <Route path="/service_sites_vitrines" component={Content_engineering} />
             <Route path="/projects" component={Project_style1} />
             <Route path="/project_style2" component={Project_style2} />
             <Route path="/single_style1" component={Single_style1} />
