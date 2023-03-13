@@ -60,8 +60,6 @@ function App() {
         </div>   
         <ScrollToTop />
             <Route exact path='/' component={ Home } /> 
-            <Route path='/home2' component={ Home2 } /> 
-            <Route path='/home3' component={ Home3 } />
             <Route path='/header_style_02' component={ Home2_Header2 } />
             <Route path='/header_style_03' component={ Home3_Header3 } />
             <Route path="/presentation" component={Presentation} />
