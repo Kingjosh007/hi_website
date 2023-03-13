@@ -3,6 +3,9 @@ import { MDBProgress } from 'mdbreact';
 import Slider from 'react-slick';
 import CountUp from 'react-countup';
 import Header from '../layout/Header';
+import partners from '../../data/partners.json';
+import articles from '../../data/articles.json';
+import { convertDateToDayMonthYearArray, dateComesBefore } from '../../utils/dateUtils';
 
 export class Presentation extends Component {
     render() {
@@ -143,24 +146,24 @@ export class Presentation extends Component {
                                                             <h3 className="title"><span>Quelques dates clés</span></h3>
                                                         </div>
                                                         <div className="title-desc">
-                                                            <ul style={{listStyleType: "none"}}>
+                                                            <ul style={{ listStyleType: "none" }}>
                                                                 <li><b>Nov. 2017</b>: <span> Naissance de House Innovation à l'initiative de 5 jeunes étudiants talentueux.</span></li>
 
                                                             </ul>
 
-                                                            <ul style={{listStyleType: "none"}}>
+                                                            <ul style={{ listStyleType: "none" }}>
                                                                 <li><b>Avr. 2018</b>: <span> Premier client étranger</span></li>
                                                             </ul>
 
-                                                            <ul style={{listStyleType: "none"}}>
+                                                            <ul style={{ listStyleType: "none" }}>
                                                                 <li><b>Mars 2022</b>: <span> Acquisition des nouveaux locaux. Déménagement.</span></li>
                                                             </ul>
 
 
                                                         </div>
                                                     </div>
-                                                    
-                                                   
+
+
 
                                                 </div>
                                             </div>
@@ -254,51 +257,21 @@ export class Presentation extends Component {
                         <div className="row">
                             <div className="col-12 text-center">
                                 <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={5}>
-                                    <div className="ttm-box-col-wrapper">
-                                        <div className="client-box ttm-box-view-boxed-logo">
-                                            <div className="client">
-                                                <div className="ttm-client-logo-tooltip" data-tooltip="client-01">
-                                                    <img className="img-fluid" src="https://via.placeholder.com/94X47/444444.png" alt="image" />
+                                    {
+                                        partners.map((partner, index) => (
+                                            <div className="ttm-box-col-wrapper">
+                                                <div className="client-box ttm-box-view-boxed-logo">
+                                                    <div className="client">
+                                                        <div className="ttm-client-logo-tooltip" data-tooltip={partner.name}>
+                                                            <img className="img-fluid" src={partner.image} alt={`Logo du partenaire ${partner.name}`} style={{height: "50px"}} />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div className="ttm-box-col-wrapper">
-                                        <div className="client-box ttm-box-view-boxed-logo">
-                                            <div className="client">
-                                                <div className="ttm-client-logo-tooltip" data-tooltip="client-02">
-                                                    <img className="img-fluid" src="https://via.placeholder.com/94X47/444444.png" alt="image" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="ttm-box-col-wrapper">
-                                        <div className="client-box ttm-box-view-boxed-logo">
-                                            <div className="client">
-                                                <div className="ttm-client-logo-tooltip" data-tooltip="client-03">
-                                                    <img className="img-fluid" src="https://via.placeholder.com/94X47/444444.png" alt="image" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="ttm-box-col-wrapper">
-                                        <div className="client-box ttm-box-view-boxed-logo">
-                                            <div className="client">
-                                                <div className="ttm-client-logo-tooltip" data-tooltip="client-04">
-                                                    <img className="img-fluid" src="https://via.placeholder.com/94X47/444444.png" alt="image" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="ttm-box-col-wrapper">
-                                        <div className="client-box ttm-box-view-boxed-logo">
-                                            <div className="client">
-                                                <div className="ttm-client-logo-tooltip" data-tooltip="client-05">
-                                                    <img className="img-fluid" src="https://via.placeholder.com/94X47/444444.png" alt="image" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        )
+                                        )}
+
+
                                 </Slider>
 
                             </div>
@@ -321,107 +294,47 @@ export class Presentation extends Component {
                             </div>
                         </div>
                         <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={3}>
-                            <div className="ttm-box-col-wrapper">
-                                <div className="featured-imagebox featured-imagebox-blog style2">
-                                    <div className="featured-thumbnail">{/* featured-thumbnail */}
-                                        <img className="img-fluid" alt="" src="https://via.placeholder.com/654X490/444444.jpg" />
-                                        <div className="ttm-blog-overlay-iconbox">
-                                            <a href={process.env.PUBLIC_URL + '/Single_blog'}><i className="ti ti-plus" /></a>
-                                        </div>
-                                        <div className="ttm-box-view-overlay" />
-                                    </div>
-                                    <div className="featured-content">{/* featured-content */}
-                                        <div className="ttm-box-post-date">{/* ttm-box-post-date */}
-                                            <span className="ttm-entry-date">
-                                                <time className="entry-date" dateTime="2019-01-16T07:07:55+00:00">17<span className="entry-month entry-year">Apr</span></time>
-                                            </span>
-                                        </div>
-                                        <div className="featured-title">{/* featured-title */}
-                                            <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>You Must Try 20 Secret Of Digital Transform</a></h5>
-                                        </div>
-                                        <div className="post-meta">{/* post-meta */}
-                                            <span className="ttm-meta-line"><i className="fa fa-comments" />2,comments</span>
-                                            <span className="ttm-meta-line"><i className="fa fa-user" />Admin</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="ttm-box-col-wrapper">
-                                <div className="featured-imagebox featured-imagebox-blog style2">
-                                    <div className="featured-thumbnail">{/* featured-thumbnail */}
-                                        <img className="img-fluid" alt="" src="https://via.placeholder.com/654X490/444444.jpg" />
-                                        <div className="ttm-blog-overlay-iconbox">
-                                            <a href={process.env.PUBLIC_URL + '/Single_blog'}><i className="ti ti-plus" /></a>
-                                        </div>
-                                        <div className="ttm-box-view-overlay" />
-                                    </div>
-                                    <div className="featured-content">{/* featured-content */}
-                                        <div className="ttm-box-post-date">{/* ttm-box-post-date */}
-                                            <span className="ttm-entry-date">
-                                                <time className="entry-date" dateTime="2019-01-16T07:07:55+00:00">12<span className="entry-month entry-year">Dec</span></time>
-                                            </span>
-                                        </div>
-                                        <div className="featured-title">{/* featured-title */}
-                                            <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>Define World Best IT Solution Technology</a></h5>
-                                        </div>
-                                        <div className="post-meta">{/* post-meta */}
-                                            <span className="ttm-meta-line"><i className="fa fa-comments" />3,comments</span>
-                                            <span className="ttm-meta-line"><i className="fa fa-user" />Admin</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="ttm-box-col-wrapper">
-                                <div className="featured-imagebox featured-imagebox-blog style2">
-                                    <div className="featured-thumbnail">{/* featured-thumbnail */}
-                                        <img className="img-fluid" alt="" src="https://via.placeholder.com/654X490/444444.jpg" />
-                                        <div className="ttm-blog-overlay-iconbox">
-                                            <a href={process.env.PUBLIC_URL + '/Single_blog'}><i className="ti ti-plus" /></a>
-                                        </div>
-                                        <div className="ttm-box-view-overlay" />
-                                    </div>
-                                    <div className="featured-content">{/* featured-content */}
-                                        <div className="ttm-box-post-date">{/* ttm-box-post-date */}
-                                            <span className="ttm-entry-date">
-                                                <time className="entry-date" dateTime="2019-01-16T07:07:55+00:00">22<span className="entry-month entry-year">May</span></time>
-                                            </span>
-                                        </div>
-                                        <div className="featured-title">{/* featured-title */}
-                                            <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>10 PHP Frameworks You Need To Use Anywhere</a></h5>
-                                        </div>
-                                        <div className="post-meta">{/* post-meta */}
-                                            <span className="ttm-meta-line"><i className="fa fa-comments" />1,comments</span>
-                                            <span className="ttm-meta-line"><i className="fa fa-user" />Admin</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="ttm-box-col-wrapper">
-                                <div className="featured-imagebox featured-imagebox-blog style2">
-                                    <div className="featured-thumbnail">{/* featured-thumbnail */}
-                                        <img className="img-fluid" alt="" src="https://via.placeholder.com/654X490/444444.jpg" />
-                                        <div className="ttm-blog-overlay-iconbox">
-                                            <a href={process.env.PUBLIC_URL + '/Single_blog'}><i className="ti ti-plus" /></a>
-                                        </div>
-                                        <div className="ttm-box-view-overlay" />
-                                    </div>
-                                    <div className="featured-content">{/* featured-content */}
-                                        <div className="ttm-box-post-date">{/* ttm-box-post-date */}
-                                            <span className="ttm-entry-date">
-                                                <time className="entry-date" dateTime="2019-01-16T07:07:55+00:00">04<span className="entry-month entry-year">Aug</span></time>
-                                            </span>
-                                        </div>
-                                        <div className="featured-title">{/* featured-title */}
-                                            <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>Digital Conference Of IT Tech Events in 2019</a></h5>
-                                        </div>
-                                        <div className="post-meta">{/* post-meta */}
-                                            <span className="ttm-meta-line"><i className="fa fa-comments" />4,comments</span>
-                                            <span className="ttm-meta-line"><i className="fa fa-user" />Admin</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Slider>
+              {
+                articles.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
+                        .slice(0, 3)
+                        .map((article, index) => {
+                    const dateArr = convertDateToDayMonthYearArray(article.published_at);
+                  return (
+                    <div className="ttm-box-col-wrapper">
+                      <div className="featured-imagebox featured-imagebox-blog">
+                        <div className="featured-thumbnail">
+                          <img className="img-fluid" alt={article.title} src={article.image} />
+                          <div className="ttm-blog-overlay-iconbox">
+                            <a href={process.env.PUBLIC_URL + '/Single_blog'}><i className="ti ti-plus" /></a>
+                          </div>
+                          <div className="ttm-box-view-overlay" />
+                        </div>
+                        <div className="featured-content">
+                          <div className="ttm-box-post-date">
+                            <span className="ttm-entry-date">
+                              <time className="entry-date" dateTime="2019-01-16T07:07:55+00:00">{dateArr[0]}<span className="entry-month entry-year">{dateArr[1]}</span></time>
+                            </span>
+                          </div>
+                          <div className="featured-title">
+                            <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>{article.title}</a></h5>
+                          </div>
+                          <div className="post-meta">
+                            <span className="ttm-meta-line"><i className="fa fa-comments" />{article.nb_commentaires} commentaires</span>
+                            <span className="ttm-meta-line"><i className="fa fa-user" />{article.author_name}</span>
+                          </div>
+                          <div className="featured-desc">
+                            <p>{article.description.slice(0, 150) + "..."}</p>
+                          </div>
+                          <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/Single_blog'}>Lire plus <i className="ti ti-angle-double-right" /></a>
+                        </div>
+                      </div>
+                    </div>
+                  )
+
+                })
+              }
+
+            </Slider>
                     </div>
                 </section>
                 {/* blog-section end */}

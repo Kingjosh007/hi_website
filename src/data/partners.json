@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Phoenix Lab",
+        "image": "/images/partenaires/phoenix-lab.jpg"
+    },
+    {
+        "name": "Cameroon Flying Labs",
+        "image": "/images/partenaires/cameroon-flying-labs.png"
+    },
+    {
+        "name": "Algo Drone",
+        "image": "/images/partenaires/algo-drone.jpeg"
+    },
+    {
+        "name": "Sparte Robotics",
+        "image": "/images/partenaires/sparte-robotics.jpg"
+    },
+    {
+        "name": "TME Education",
+        "image": "/images/partenaires/tme-education.webp"
+    },
+    {
+        "name": "Cytoh",
+        "image": "/images/partenaires/cytoh.png"
+    },
+    {
+        "name": "Afrobots Association",
+        "image": "/images/partenaires/afrobots-association.jpg"
+    },
+    {
+        "name": "Green House Ventures",
+        "image": "/images/partenaires/green-house-ventures.png"
+    },
+    {
+        "name": "AgriBizz",
+        "image": "/images/partenaires/agribizz.jpg"
+    }
+]
