@@ -26,7 +26,7 @@ import Error from './components/pages/Error';
 import Element from './components/pages/Element';
 import It_consultancy from './components/services/It_consultancy';
 import Digital_services from './components/services/Digital_services';
-import Advisory_services from './components/services/Advisory_services';
+import AppsWeb from './components/services/AppsWeb';
 import Data_structuring from './components/services/Data_structuring';
 import Experience_design from './components/services/Experience_design';
 import Content_engineering from './components/services/Content_engineering';
@@ -81,8 +81,8 @@ function App() {
             {/* <Route path="/service_apps_mobiles" component={Digital_services} /> */}
             <Route path="/service_apps_mobiles" component={ComingSoon} />
 
-            {/* <Route path="/service_apps_web" component={Advisory_services} /> */}
-            <Route path="/service_apps_web" component={ComingSoon} />
+            <Route path="/service_apps_web" component={AppsWeb} />
+            {/* <Route path="/service_apps_web" component={ComingSoon} /> */}
 
             {/* <Route path="/service_conseil" component={Data_structuring} /> */}
             <Route path="/service_conseil" component={ComingSoon} />
@@ -108,7 +108,7 @@ function App() {
 
             <Route path="/carrieres" component={ComingSoon} />
 
-            
+
 
             <Route path="/blog_grid" component={Blog_grid} />
             <Route path="/blog_left_image" component={Blog_left_image} />
