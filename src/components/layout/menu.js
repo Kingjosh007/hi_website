@@ -9,7 +9,7 @@ export class Menu extends Component {
                 <ul>
                     <li className="menu"><a href="/">Accueil</a>
                     </li>
-                    <li className="menu-hasdropdown"><a href="/">À propos</a>
+                    <li className="menu-hasdropdown"><a href="#">À propos</a>
                         <ul className="menu-dropdown">
                             <li><a href={process.env.PUBLIC_URL + '/presentation'}>Qui sommes-nous ?</a></li>        
                             <li><a href={process.env.PUBLIC_URL + '/staff'}>Notre équipe</a></li>
@@ -42,7 +42,7 @@ export class Menu extends Component {
                     </li>
 
                     <li className="menu-hasdropdown">
-                        <a href="#">Carrières</a>
+                        <a href="/carrieres">Carrières</a>
                     </li>
                     <li className="menu-hasdropdown">
                         <a href="/contact">Contact</a>

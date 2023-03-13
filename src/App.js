@@ -45,6 +45,7 @@ import Product_details from './components/shop/Product_details';
 import Cart from './components/shop/Cart';
 import Checkout from './components/shop/Checkout';
 import ScrollToTop from './components/layout/Gotop';
+import ComingSoon from './components/pages/ComingSoon';
 
 const appHistory = {
   basename: process.env.PUBLIC_URL
@@ -73,19 +74,42 @@ function App() {
             <Route path="/contact_02" component={Contact_02} />
             <Route path="/error" component={Error} />
             <Route path="/element" component={Element} />
-            <Route path="/service_digitalisation" component={It_consultancy} />
-            <Route path="/service_apps_mobiles" component={Digital_services} />
-            <Route path="/service_apps_web" component={Advisory_services} />
-            <Route path="/service_conseil" component={Data_structuring} />
-            <Route path="/service_progiciels" component={It_consultancy} />
-            <Route path="/service_robotique_ia" component={Experience_design} />
-            <Route path="/service_sites_vitrines" component={Content_engineering} />
+
+            {/* <Route path="/service_digitalisation" component={It_consultancy} /> */}
+            <Route path="/service_digitalisation" component={ComingSoon} />
+
+            {/* <Route path="/service_apps_mobiles" component={Digital_services} /> */}
+            <Route path="/service_apps_mobiles" component={ComingSoon} />
+
+            {/* <Route path="/service_apps_web" component={Advisory_services} /> */}
+            <Route path="/service_apps_web" component={ComingSoon} />
+
+            {/* <Route path="/service_conseil" component={Data_structuring} /> */}
+            <Route path="/service_conseil" component={ComingSoon} />
+
+            {/* <Route path="/service_progiciels" component={It_consultancy} /> */}
+            <Route path="/service_progiciels" component={ComingSoon} />
+
+            {/* <Route path="/service_robotique_ia" component={Experience_design} /> */}
+            <Route path="/service_robotique_ia" component={ComingSoon} />
+
+            {/* <Route path="/service_sites_vitrines" component={Content_engineering} /> */}
+            <Route path="/service_sites_vitrines" component={ComingSoon} />
+
+
             <Route path="/projects" component={Project_style1} />
             <Route path="/project_style2" component={Project_style2} />
             <Route path="/single_style1" component={Single_style1} />
             <Route path="/single_style2" component={Single_style2} />
             <Route path="/single_style3" component={Single_style3} />
-            <Route path="/blog" component={Blog} />
+
+            {/* <Route path="/blog" component={Blog} /> */}
+            <Route path="/blog" component={ComingSoon} />
+
+            <Route path="/carrieres" component={ComingSoon} />
+
+            
+
             <Route path="/blog_grid" component={Blog_grid} />
             <Route path="/blog_left_image" component={Blog_left_image} />
             <Route path="/blog_top_image" component={Blog_top_image} />

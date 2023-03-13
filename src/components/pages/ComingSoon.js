@@ -14,7 +14,7 @@ export class ComingSoon extends Component {
                                     <div className="page-title-heading">
                                         <h1 className="title">En maintenance</h1>
                                     </div>
-                                    <div className="breadcrumb-wrapper">
+                                    <div className="">
                                         <span>La page que vous souhaitez consulter subit quelques modifications et sera bientôt disponible.</span>
                                     </div>
                                 </div>

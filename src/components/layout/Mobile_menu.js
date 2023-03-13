@@ -100,7 +100,7 @@ render() {
                             <span>Carrières</span>
                         </MDBDropdownToggle>
                         <MDBDropdownMenu>
-                            <MDBDropdownItem href={process.env.PUBLIC_URL + '#'}>Offres d'emploi</MDBDropdownItem>
+                            <MDBDropdownItem href={process.env.PUBLIC_URL + '/carrieres'}>Offres d'emploi</MDBDropdownItem>
                         </MDBDropdownMenu>
                     </MDBDropdown>
                   </MDBNavItem>
