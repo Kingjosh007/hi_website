@@ -17,7 +17,6 @@ export class Our_expert extends Component {
                 </div> 
                 <section className="ttm-row grid-section clearfix">
                     <div className="container-xl">
-                    {/* row */}
                     <div className="row">
                      {
                          staff.sort((a, b) => a.id - b.id).map((staffMember, index) => {
@@ -52,10 +51,9 @@ export class Our_expert extends Component {
                                 </div>
                             )
                         })
-                    }
+                     }
                         
                     </div>
-                    {/* row end*/}
                     </div>
                 </section>
             </div>
