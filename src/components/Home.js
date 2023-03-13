@@ -387,9 +387,8 @@ export class Home extends Component {
                   </div>
                 </div>
 
-
                 {/* Responsive View image */}
-                <img src="images/why-question-mark.jpg" className="ttm-equal-height-image img-fluid" alt="col-bgimage-1" />
+                <img src="images/illustrations/why-question-mark.jpg" className="ttm-equal-height-image img-fluid" alt="col-bgimage-1" />
               </div>
               <div className="col-lg-6 z-9 mt-n5">
                 <div className="ttm-bgcolor-skincolor ttm-textcolor-white position-relative ttm-right-span">

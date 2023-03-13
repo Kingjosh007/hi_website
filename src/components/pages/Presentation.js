@@ -111,7 +111,7 @@ export class Presentation extends Component {
                                         <div className="row">
                                             <div className="col-lg-6">
                                                 <div className="ttm_single_image-wrapper">
-                                                    <img className="img-fluid" src="https://via.placeholder.com/547X581/444444.jpg" title="single-img-eight" alt="single-img-eight" />
+                                                    <img className="img-fluid" src="/images/about-hi/about-coder.jpg" title="single-img-eight" alt="single-img-eight" />
                                                 </div>
                                                 <div className="about-overlay-02">
                                                     <h3>5 années d'expérience</h3>
@@ -183,7 +183,7 @@ export class Presentation extends Component {
                                 <div className="ttm-fid inside ttm-fid-view-topicon">
                                     <div className="ttm-fid-icon-wrapper">
                                         <div className="ttm-icon ttm-bgcolor-skincolor ttm-icon_element-size-lg">
-                                            <i className="flaticon flaticon-online-library" />{/*  ttm-icon */}
+                                            <i className="flaticon flaticon-call" />{/*  ttm-icon */}
                                         </div>
                                     </div>
                                     <div className="ttm-fid-contents">
@@ -199,7 +199,7 @@ export class Presentation extends Component {
                                 <div className="ttm-fid inside ttm-fid-view-topicon">
                                     <div className="ttm-fid-icon-wrapper">
                                         <div className="ttm-icon ttm-bgcolor-skincolor ttm-icon_element-size-lg">
-                                            <i className="flaticon flaticon-developer" />{/*  ttm-icon */}
+                                            <i className="flaticon flaticon-online-library" />{/*  ttm-icon */}
                                         </div>
                                     </div>
                                     <div className="ttm-fid-contents">{/*  ttm-fid-contents */}
@@ -215,7 +215,7 @@ export class Presentation extends Component {
                                 <div className="ttm-fid inside ttm-fid-view-topicon">
                                     <div className="ttm-fid-icon-wrapper">
                                         <div className="ttm-icon ttm-bgcolor-skincolor ttm-icon_element-size-lg">
-                                            <i className="flaticon flaticon-24h" />{/*  ttm-icon */}
+                                            <i className="flaticon flaticon-global" />{/*  ttm-icon */}
                                         </div>
                                     </div>
                                     <div className="ttm-fid-contents">{/*  ttm-fid-contents */}
@@ -231,7 +231,7 @@ export class Presentation extends Component {
                                 <div className="ttm-fid inside ttm-fid-view-topicon">
                                     <div className="ttm-fid-icon-wrapper">
                                         <div className="ttm-icon ttm-bgcolor-skincolor ttm-icon_element-size-lg">
-                                            <i className="flaticon flaticon-report" />{/*  ttm-icon */}
+                                            <i className="flaticon flaticon-global-1" />{/*  ttm-icon */}
                                         </div>
                                     </div>
                                     <div className="ttm-fid-contents">{/*  ttm-fid-contents */}
@@ -247,95 +247,7 @@ export class Presentation extends Component {
                     </div>
                 </section>
                 {/* fid-section end */}
-                {/* testimonial-section */}
-                <section className="ttm-row only-testimonial-section bg-img11 clearfix">
-                    <div className="container-xl">
-                        <div className="row">{/* row */}
-                            <div className="col-lg-12">
-                                {/* section title */}
-                                <div className="section-title with-desc text-center clearfix">
-                                    <div className="title-header">
-                                        <h5>Recent Projects</h5>
-                                        <h2 className="title">Check out our work <span>Process</span></h2>
-                                    </div>
-                                </div>{/* section title end */}
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md-8 offset-md-2">
-                                <Slider className="testimonial-slide style1 slick_slider pb-0" arrows={false} dots={false}>
-                                    <div className="testimonials text-center">
-                                        <div className="testimonial-content">{/* testimonials-content */}
-                                            <div className="testimonial-avatar">
-                                                <div className="testimonial-img">{/* testimonials-img */}
-                                                    <img className="img-center" alt="testimonial-img" src="https://via.placeholder.com/150X150/444444.jpg" />
-                                                </div>
-                                            </div>
-                                            <blockquote>Our team discussed every single detail to make sure Creatives Planet is the most versatile and unique theme created so far. No coding skills.</blockquote>
-                                            <div className="ttm-ratting-star">
-                                                <i className="fa fa-star" />
-                                                <i className="fa fa-star" />
-                                                <i className="fa fa-star" />
-                                                <i className="fa fa-star" />
-                                                <i className="fa fa-star" />
-                                            </div>
-                                            <div className="testimonial-caption">{/* testimonials-caption */}
-                                                <h6>Victor Williamson</h6>
-                                                <label className="mb-0">Web Devloper</label>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div className="testimonials text-center">
-                                        <div className="testimonial-content">{/* testimonials-content */}
-                                            <div className="testimonial-avatar">
-                                                <div className="testimonial-img">{/* testimonials-img */}
-                                                    <img className="img-center" alt="testimonial-img" src="https://via.placeholder.com/150X150/444444.jpg" />
-                                                </div>
-                                            </div>
-                                            <blockquote>Our team discussed every single detail to make sure Creatives Planet is the most versatile and unique theme created so far. No coding skills.</blockquote>
-                                            <div className="ttm-ratting-star">
-                                                <i className="fa fa-star" />
-                                                <i className="fa fa-star" />
-                                                <i className="fa fa-star" />
-                                                <i className="fa fa-star" />
-                                                <i className="fa fa-star" />
-                                            </div>
-                                            <div className="testimonial-caption">{/* testimonials-caption */}
-                                                <h6>Victor Williamson</h6>
-                                                <label className="mb-0">Web Devloper</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="testimonials text-center">
-                                        <div className="testimonial-content">{/* testimonials-content */}
-                                            <div className="testimonial-avatar">
-                                                <div className="testimonial-img">{/* testimonials-img */}
-                                                    <img className="img-center" alt="testimonial-img" src="https://via.placeholder.com/150X150/444444.jpg" />
-                                                </div>
-                                            </div>
-                                            <blockquote>Our team discussed every single detail to make sure Creatives Planet is the most versatile and unique theme created so far. No coding skills.</blockquote>
-                                            <div className="ttm-ratting-star">
-                                                <i className="fa fa-star" />
-                                                <i className="fa fa-star" />
-                                                <i className="fa fa-star" />
-                                                <i className="fa fa-star" />
-                                                <i className="fa fa-star" />
-                                            </div>
-                                            <div className="testimonial-caption">{/* testimonials-caption */}
-                                                <h6>Victor Williamson</h6>
-                                                <label className="mb-0">Web Devloper</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </Slider>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {/* testimonial-section end */}
                 {/* our-partner-section */}
                 <section className="ttm-row our-client-section res-991-p-0 ttm-bgcolor-skincolor clearfix">
                     <div className="container-xl">
@@ -402,8 +314,8 @@ export class Presentation extends Component {
                                 {/* section title */}
                                 <div className="section-title text-center with-desc clearfix">
                                     <div className="title-header">
-                                        <h5>Our Blog</h5>
-                                        <h2 className="title">Check Out Our <span>Latest News</span></h2>
+                                        <h5>HI Blog</h5>
+                                        <h2 className="title">Consultez nos derniers <span>billets de blog</span></h2>
                                     </div>
                                 </div>{/* section title end */}
                             </div>

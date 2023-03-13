@@ -17,8 +17,8 @@ export class CarouselPage extends Component {
             <MDBCarouselInner>
                 <MDBCarouselItem itemId="1">
                 <MDBView>
-                    <div class="image-container" style={{display: "flex", backgroundColor: "#888"}}>
-                        <img className="d-block w-100" src="images/technology-innovation.jpg" alt="First slide" style={{opacity: 0.25}}/>
+                    <div class="image-container" style={{display: "flex", backgroundColor: "#99b"}}>
+                        <img className="d-block w-100" src="images/illustrations/nice-double-screen-setup.webp" alt="First slide" style={{opacity: 0.25}}/>
                     </div>
                 </MDBView>
                 <MDBCarouselCaption>
@@ -45,18 +45,18 @@ export class CarouselPage extends Component {
                 </MDBCarouselItem>
                 <MDBCarouselItem itemId="2">
                 <MDBView>
-                    <div class="image-container" style={{display: "flex", backgroundColor: "#988"}}>
-                        <img className="d-block w-100" src="images/black-people-coding.jpg" alt="First slide" style={{opacity: 0.25}}/>
+                    <div class="image-container" style={{display: "flex", backgroundColor: "#99b"}}>
+                        <img className="d-block w-100" src="images/illustrations/businesspeople-using-computer-together-during-late-night-work.avif" alt="First slide" style={{opacity: 0.25}}/>
                     </div>
                 </MDBView>
                 <MDBCarouselCaption>
                 <div className="container-xl">
                         <div className="carousel-caption-inner banner1" >
-                            <MDBAnimation className="slideInUp" count={1} delay="5s" >
+                            <MDBAnimation className="slideInUp" count={1} delay="3s" >
                                 <h2 className="ttm-textcolor-darkgrey flipInY">Une équipe <strong className="ttm-textcolor-skincolor">hautement qualifiée</strong></h2>
                             </MDBAnimation>
-                            <MDBAnimation className="slideInUp" count={1} delay="5.5s">
-                                <p className="text"> Notre équipe est composée d'experts passionnés et talentueux dans leur domaine. <br />Avec des années d'expérience et une formation approfondie, ils sont équipés pour résoudre les problèmes les plus complexes et offrir des solutions innovantes à nos clients.</p>
+                            <MDBAnimation className="slideInUp" count={1} delay="3.3s">
+                                <p className="text"> Notre équipe est composée d'experts passionnés et talentueux dans leur domaine. <br />Avec des années d'expérience et une formation approfondie, nous sommes équipés pour résoudre les problèmes les plus complexes et offrir des solutions innovantes à nos clients.</p>
                             </MDBAnimation>
                         </div>
                     </div>
