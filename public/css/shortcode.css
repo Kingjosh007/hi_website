@@ -467,7 +467,6 @@
   overflow: hidden;
   z-index: 2;
   vertical-align: middle;
-  text-transform: capitalize;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }

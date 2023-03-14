@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Sidebar from './Sidebar';
+// import Sidebar from './Sidebar';
 import Header from '../layout/Header';
 
 export class AppsWeb extends Component {
@@ -82,7 +82,7 @@ export class AppsWeb extends Component {
                                     <p>Contactez-nous dès maintenant pour discuter de vos besoins en matière de dashboard personnalisé et découvrir comment nous pouvons vous aider à atteindre vos objectifs.
                                     </p>
                                     </div>
-                                    <div className="ttm-btn-size-md ttm-btn-style-border ttm-bgcolor-darkgrey" style={{ padding: "15px", textAlign: "center", fontSize: "1.5em", fontStyle: "italic", color: "#eee"}}>« Analyser vos données en un clic avec House Innovation »</div>
+                                    <div className="ttm-btn-size-md ttm-btn-style-border ttm-bgcolor-darkgrey" style={{ padding: "15px", textAlign: "center", fontSize: "1.5em", fontStyle: "italic", color: "#eee"}}>« Analysez vos données en un clic avec House Innovation »</div>
                                     </div>
                                 </div>
                                 </div>

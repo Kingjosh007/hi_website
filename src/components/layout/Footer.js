@@ -1,3 +1,4 @@
+import { findByLabelText } from '@testing-library/react'
 import React, { Component } from 'react'
 import articles from '../../data/articles.json'
 import { convertDateToReadableString, dateComesBefore } from '../../utils/dateUtils'
@@ -12,8 +13,8 @@ export class Footer extends Component {
                     <div className="container-xl">
                         <div className="row align-items-md-center">
                             <div className="col-lg-4 col-md-4 col-sm-12 order-md-2">
-                                <div className="footer-logo text-sm-center">
-                                    <img data-src="images/hi_logo_transparent_text.png" src="images/logo_hi-nobg.png" className="img-fluid" alt="footer-logo" />
+                                <div className="footer-logo text-sm-center hide-on-desktop">
+                                    <img data-src="images/hi_logo_transparent_text.png" src="images/hi12x.png" className="img-fluid" alt="footer-logo" style={{width: "70%"}} />
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-4 col-sm-6 order-md-1 res-767-mt-20">

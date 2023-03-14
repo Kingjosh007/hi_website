@@ -64,3 +64,7 @@
 .media-container .media-item img {
     width: 100%;
 }
+
+.capitalize {
+  text-transform: capitalize;
+}
