@@ -25,11 +25,11 @@ import Contact_02 from './components/pages/Contact_02';
 import Error from './components/pages/Error';
 import Element from './components/pages/Element';
 import It_consultancy from './components/services/It_consultancy';
-import Digital_services from './components/services/Digital_services';
+import AppsMobiles from './components/services/AppsMobiles';
 import AppsWeb from './components/services/AppsWeb';
 import Data_structuring from './components/services/Data_structuring';
 import Experience_design from './components/services/Experience_design';
-import Content_engineering from './components/services/Content_engineering';
+import SitesVitrines from './components/services/SitesVitrines';
 import Project_style1 from './components/project/Project_style1';
 import Project_style2 from './components/project/Project_style2';
 import Single_style1 from './components/project/Single_style1';
@@ -78,11 +78,11 @@ function App() {
             {/* <Route path="/service_digitalisation" component={It_consultancy} /> */}
             <Route path="/service_digitalisation" component={ComingSoon} />
 
-            {/* <Route path="/service_apps_mobiles" component={Digital_services} /> */}
-            <Route path="/service_apps_mobiles" component={ComingSoon} />
+            <Route path="/service_design_graphique" component={ComingSoon} />
+
+            <Route path="/service_apps_mobiles" component={AppsMobiles} />
 
             <Route path="/service_apps_web" component={AppsWeb} />
-            {/* <Route path="/service_apps_web" component={ComingSoon} /> */}
 
             {/* <Route path="/service_conseil" component={Data_structuring} /> */}
             <Route path="/service_conseil" component={ComingSoon} />
@@ -93,8 +93,8 @@ function App() {
             {/* <Route path="/service_robotique_ia" component={Experience_design} /> */}
             <Route path="/service_robotique_ia" component={ComingSoon} />
 
-            {/* <Route path="/service_sites_vitrines" component={Content_engineering} /> */}
-            <Route path="/service_sites_vitrines" component={ComingSoon} />
+            <Route path="/service_sites_vitrines" component={SitesVitrines} />
+            {/* <Route path="/service_sites_vitrines" component={ComingSoon} /> */}
 
 
             <Route path="/projects" component={Project_style1} />

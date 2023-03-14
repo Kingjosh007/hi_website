@@ -29,6 +29,7 @@ export class Menu extends Component {
                             <li><a href={process.env.PUBLIC_URL + '/service_sites_vitrines'}>Développement de sites vitrines</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/service_progiciels'}>Développement de logiciels spécialisés</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/service_digitalisation'}>Digitalisation de structures</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/service_design_graphique'}>Design graphique</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/service_robotique_ia'}>Robotique et Intelligence Artificielle</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/service_conseil'}>Conseil en informatique</a></li>
                         </ul>

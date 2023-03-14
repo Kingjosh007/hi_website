@@ -1,45 +1,53 @@
 import React, { Component } from 'react';
+import services from '../../data/services.json'
 
 
 export class Sidebar extends Component {
     render() {     
+
+        const { toHighlight } = this.props; 
+        const labelToHighlight = services[Number(toHighlight)].label;
         return (            
             <div>
                 <div className="widget widget-nav-menu">
+                    <h3 className="widget-title">Explorez nos services</h3>
                     <ul className="widget-menu">
-                        <li><a activeClassName="active" href={process.env.PUBLIC_URL + '/it_consultancy'}>IT Consultancy</a></li>
-                        <li><a href={process.env.PUBLIC_URL + '/digital_services'}>Digital Services</a></li>
-                        <li><a href={process.env.PUBLIC_URL + '/advisory_services'}>Advisory Services</a></li>
-                        <li><a href={process.env.PUBLIC_URL + '/data_structuring'}>Data Structuring</a></li>
-                        <li><a href={process.env.PUBLIC_URL + '/experience_design'}>Experience Design</a></li>
-                        <li><a href={process.env.PUBLIC_URL + '/content_engineering'}>Content Engineering</a></li>
+                        {
+
+                            services.sort((a, b) => {
+                                if(a.label == labelToHighlight) return -1;
+                                if(b.label == labelToHighlight) return 1;
+                                return 0;
+                            })
+                                .map((service, index) => {
+                                const myClass = service.label === labelToHighlight ? "highlight" : "active";
+                                
+                                return (
+                                    <li key={index}>
+                                        <a className={myClass} href={service.link}>{service.label}</a>
+                                    </li>
+                                )
+                            })
+                        }
                     </ul>
                 </div>
                 <div className="widget widget-text">
-                    <h3 className="widget-title">About Us</h3>
+                    <h3 className="widget-title">Qui sommes-nous ?</h3>
                     <div className="ttm-author-widget">
                     <div className="author-widget_img">
-                        <img className="author-img img-fluid" src="https://via.placeholder.com/294X190/444444.jpg" alt="author image" />
+                        <img className="author-img img-fluid" src="/images/houseinnovation-warehouse.jpeg" alt="Bâtiment portant l'enseigne House Innovation" />
                     </div>
-                    <h4 className="author-name">House Innovation-author</h4>
-                    <p className="author-widget_text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece orem Ipsum is not simply random text. It has roots in a piece of loream classical.</p>
+                    <h4 className="author-name">House Innovation</h4>
+                    <p className="author-widget_text">Nous sommes <b>House Innovation</b>, entreprise d'innovation technologique. Notre but est de mettre la technologie de pointe que nous maîtrisons au service des entreprises et des particuliers.</p>
                     </div>
                 </div>
                 <div className="widget widget-download">
-                    <h3 className="widget-title">Brouchers</h3>
+                    <h3 className="widget-title">Plaquette</h3>
                     <ul className="download">
-                    <li>
-                        <i className="far fa-file-pdf" />
-                        <a title="Download">Download.pdf</a>
-                    </li>
-                    <li>
-                        <i className="far fa-file-word" />
-                        <a title="Download">Our ISO Certificate</a>
-                    </li>
-                    <li>
-                        <i className="far fa-file" />
-                        <a title="Download">Download.txt</a>
-                    </li>
+                        <li>
+                            <i className="far fa-file-pdf" />
+                            <a title="Télécharger" href="/docs/ServiceHI.pdf" target="_blank" rel="noopener noreferrer">Télécharger la plaquette</a>
+                        </li>
                     </ul>
                 </div>
                 <div className="widget widget_media_image">
@@ -47,14 +55,14 @@ export class Sidebar extends Component {
                     <div className="featured-content featured-content-banner">
                         <i className="flaticon flaticon-call" />
                         <div className="featured-title ttm-box-title">
-                        <h5>How Can We Help?</h5>
+                        <h5>Besoin d'un service ?</h5>
                         </div>
                         <div className="featured-desc">
-                        <p>If you need any help, please<br /> feel free to contact us.</p>
+                        <p>N'hésitez pas à entrer en contact<br /> si vous avez besoin d'un service ou d'éclairages.</p>
                         </div>
                         <ul>
-                        <li><i className="fa fa-phone" />+1234567890</li>
-                        <li><i className="far fa-envelope" /><a href="mailto:info@example.com">info@example.com</a></li>
+                        <li><i className="fa fa-phone" /> (+237) 697 098 859</li>
+                        <li><i className="far fa-envelope" /><a href="mailto:info@houseinnovationgroup.com">info@houseinnovationgroup.com</a></li>
                         </ul>
                     </div>
                     </div>

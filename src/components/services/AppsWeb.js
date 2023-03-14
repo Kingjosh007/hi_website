@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import Sidebar from './Sidebar';
 import Header from '../layout/Header';
+import Sidebar from './Sidebar';
 
 export class AppsWeb extends Component {
     render() {
@@ -12,7 +13,7 @@ export class AppsWeb extends Component {
                     <div className="container-xl">
                     {/* row */}
                     <div className="row">
-                        <div className="col-lg-12 content-area order-lg-2">
+                        <div className="col-lg-9 content-area order-lg-2">
                             {/* ttm-service-single-content-are */}
                             {/* ttm-service-single-content-are */}
                             <div className="ttm-service-single-content-area">
@@ -89,9 +90,9 @@ export class AppsWeb extends Component {
                             </div>
                             {/* ttm-service-single-content-are end */}
                         </div>
-                        {/* <div className="col-lg-3 widget-area">
-                            <Sidebar/>
-                        </div> */}
+                        <div className="col-lg-3 widget-area">
+                            <Sidebar toHighlight={0}/>
+                        </div>
                     </div>{/* row end */}
                     </div>
                 </div>

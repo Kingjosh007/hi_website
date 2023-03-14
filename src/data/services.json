@@ -1,0 +1,38 @@
+[
+    {
+        "label": "Applications Web",
+        "link": "/service_apps_web"
+    },
+    {
+        "label": "Applications mobiles",
+        "link": "/service_apps_mobiles"
+    },
+    {
+        "label": "Sites vitrines",
+        "link": "/service_sites_vitrines"
+    },
+    {
+        "label": "Progiciels / Logiciels",
+        "link": "/service_progiciels"
+    },
+    {
+        "label": "Digitalisation",
+        "link": "/service_digitalisation"
+    },
+    {
+        "label": "Robotique",
+        "link": "/service_robotique_ia"
+    },
+    {
+        "label": "Intelligence Artificielle",
+        "link": "/service_robotique_ia"
+    },
+    {
+        "label": "Design graphique",
+        "link": "/service_design_graphique"
+    },
+    {
+        "label": "Conseil en informatique",
+        "link": "/service_conseil"
+    }
+]

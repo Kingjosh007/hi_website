@@ -64,6 +64,7 @@ render() {
                             <MDBDropdownItem href={process.env.PUBLIC_URL + '/service_sites_vitrines'}>Développement de sites vitrines</MDBDropdownItem>
                             <MDBDropdownItem href={process.env.PUBLIC_URL + '/service_progiciels'}>Développement de logiciels spécialisés</MDBDropdownItem>
                             <MDBDropdownItem href={process.env.PUBLIC_URL + '/service_digitalisation'}>Digitalisation de structures</MDBDropdownItem>
+                            <MDBDropdownItem href={process.env.PUBLIC_URL + '/service_design_graphique'}>Design graphique</MDBDropdownItem>
                             <MDBDropdownItem href={process.env.PUBLIC_URL + '/service_robotique_ia'}>Robotique et Intelligence Artificielle</MDBDropdownItem>
                             <MDBDropdownItem href={process.env.PUBLIC_URL + '/service_conseil'}>Conseil en informatique</MDBDropdownItem>
                         </MDBDropdownMenu>

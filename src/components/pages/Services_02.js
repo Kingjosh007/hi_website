@@ -142,12 +142,12 @@ export class Services_02 extends Component {
                             </div> 
                             <div className="featured-content box-shadow">
                             <div className="featured-title">{/* featured-title */}
-                                <h5><a href={process.env.PUBLIC_URL + '/Content_engineering'}>Content Engineering</a></h5>
+                                <h5><a href={process.env.PUBLIC_URL + '/SitesVitrines'}>Content Engineering</a></h5>
                             </div>
                             <div className="featured-desc">{/* featured-title */}
                                 <p>Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                             </div>
-                            <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-2" href={process.env.PUBLIC_URL + '/Content_engineering'}>Read More <i className="ti ti-angle-double-right" /></a>
+                            <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-2" href={process.env.PUBLIC_URL + '/SitesVitrines'}>Read More <i className="ti ti-angle-double-right" /></a>
                             </div>
                         </div>
                         {/* featured-imagebox-services */}

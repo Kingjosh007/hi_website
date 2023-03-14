@@ -2989,7 +2989,7 @@ ul.ttm-recent-post-list li .post-date i, ul.ttm-recent-post-list li .post-date s
 
 .widget.widget-nav-menu ul li a::before {
   font-family: "FontAwesome";
-  content: "\f101";
+  content: "\2192";
   position: absolute;
   top: 0;
   left: 0;
@@ -2999,25 +2999,36 @@ ul.ttm-recent-post-list li .post-date i, ul.ttm-recent-post-list li .post-date s
   height: 100%;
   width: 50px;
   text-align: center;
+  color: #263045;
   background-color: transparent;
   -webkit-transition: width 0.3s linear;
   transition: width 0.3s linear;
 }
 
-.widget.widget-nav-menu ul li a::after {
-  content: "";
+.widget.widget-nav-menu ul li a.highlight::after {
   background-color: #2d4a8a;
   width: 0;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transition: width 0.3s linear;
-  transition: width 0.3s linear;
   z-index: -2;
 }
 
 .widget.widget-nav-menu ul li a:hover, .widget.widget-nav-menu ul li a.active {
+  color: #263045;
+  cursor: pointer;
+}
+
+.widget.widget-nav-menu ul li a.highlight {
+  color: #fff;
+  background-color: #2d4a8a;
+  cursor: not-allowed;
+}
+
+.widget.widget-nav-menu ul li a.active:hover {
+  cursor: pointer;
+  background-color: #2d4a8a;
   color: #fff;
 }
 
@@ -3026,10 +3037,17 @@ ul.ttm-recent-post-list li .post-date i, ul.ttm-recent-post-list li .post-date s
   background-color: #2d4a8a;
 }
 
-.widget.widget-nav-menu ul li a:hover::before, .widget.widget-nav-menu ul li a.active::before {
+.widget.widget-nav-menu ul li a.active::before {
+  background-color: #fff;
+  color: #263045;
+}
+
+.widget.widget-nav-menu ul li a:hover::before, .widget.widget-nav-menu ul li a.highlight::before {
   background-color: #263045;
   color: #fff;
 }
+
+
 
 /* categories-widget */
 .sidebar .widget-categories ul li {
@@ -3155,7 +3173,7 @@ ul.ttm-recent-post-list li .post-date i, ul.ttm-recent-post-list li .post-date s
 }
 
 .banner-img-box {
-  background-image: url(../images/widget-banner.png);
+  background-image: url("../images/illustrations/question-mark-03.jpg");
   padding: 15px;
   color: #fff;
   text-align: center;
