@@ -4,25 +4,24 @@ import CountUp from 'react-countup';
 import Sidebar from './Sidebar';
 import Header from '../layout/Header';
 
-export class It_consultancy extends Component {
+export class Progiciels extends Component {
     render() {
         return (
             <div className="site-main">
                 <Header/>
                 
-                <div className="sidebar ttm-sidebar ttm-bgcolor-white clearfix">
+                <div className="sidebar ttm-sidebar ttm-bgcolor-white clearfix" style={{marginTop: "2em"}}>
                     <div className="container-xl">
                         {/* row */}
                         <div className="row">
                             <div className="col-lg-9 content-area order-lg-2">
-                                {/* ttm-service-single-content-are */}
-                                {/* ttm-service-single-content-are */}
+
                                 <div className="ttm-service-single-content-area">
                                     <div className="ttm_single_image-wrapper mb-35">
                                     <img className="img-fluid" src="https://via.placeholder.com/1200X800/444444.jpg" alt="single-img-twelve" />
                                     </div>
                                     <div className="ttm-service-description">
-                                    <h3>Desktop Computing</h3>
+                                    <h3>Progiciels</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillur incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcm dolore eu fugiat nulla pariatur.</p>
                                     <div className="row no-gutters box-shadow mb-35">
@@ -144,7 +143,7 @@ export class It_consultancy extends Component {
                                 {/* ttm-service-single-content-are end */}
                             </div>
                             <div className="col-lg-3 widget-area">
-                                <Sidebar/>
+                                <Sidebar toHighlight={3} />
                             </div>
                         </div>{/* row end */}
                     </div>
@@ -155,4 +154,4 @@ export class It_consultancy extends Component {
 }
 
 
-export default It_consultancy;
+export default Progiciels;

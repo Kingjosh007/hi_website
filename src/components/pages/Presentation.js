@@ -114,7 +114,7 @@ export class Presentation extends Component {
                                         <div className="row">
                                             <div className="col-lg-6">
                                                 <div className="ttm_single_image-wrapper">
-                                                    <img className="img-fluid" src="/images/about-hi/about-coder.jpg" title="single-img-eight" alt="single-img-eight" />
+                                                    <img className="img-fluid" src="/images/about-hi/about-coder-no-social-info.png" title="single-img-eight" alt="single-img-eight" />
                                                 </div>
                                                 <div className="about-overlay-02">
                                                     <h3>5 années d'expérience</h3>
