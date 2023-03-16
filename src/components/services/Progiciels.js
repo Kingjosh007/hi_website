@@ -18,7 +18,7 @@ export class Progiciels extends Component {
 
                                 <div className="ttm-service-single-content-area">
                                     <div className="ttm_single_image-wrapper mb-35">
-                                    <img className="img-fluid" src="https://via.placeholder.com/1200X800/444444.jpg" alt="single-img-twelve" />
+                                    <img className="img-fluid" src="/images/services/ERP.jpg" alt="single-img-twelve" style={{height: "30em"}}/>
                                     </div>
                                     <div className="ttm-service-description">
                                     <h3>Progiciels</h3>
@@ -76,65 +76,67 @@ export class Progiciels extends Component {
                                         </div>
                                     </div> */}
 
-                                    <h3>Why Choose Us?</h3>
+                                    <h3>Avantages</h3>
                                     <div className="row mt-35">
                                         <div className="col-lg-12">
                                             <div className="row m-0 box-shadow spacing-11">
-                                                <div className="col-md-6 col-lg-12 col-xl-6">
+                                                <div className="col-md-12 col-lg-12 col-xl-12" style={{marginBottom: "2em"}}>
                                                     <div className="ttm_single_image-wrapper">
-                                                        <img className="img-fluid" src="https://via.placeholder.com/385X353/444444.jpg" alt="single-img-thirteen" />
+                                                        <img className="img-fluid" src="/images/services/ERP-1.jpg" alt="single-img-thirteen" style={{width: "80%"}} />
                                                     </div>
                                                 </div>
-                                                <div className="col-md-6 col-lg-12 col-xl-6">
-                                                    <p className="mb-30 res-1199-mt-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s standard dummy text ever since the 1500s.</p>
+                                                <div className="col-md-12 col-lg-12 col-xl-12">
+                                                    <p className="mb-30 res-1199-mt-20">Un progiciel, également connu sous le nom de logiciel de gestion intégré (ERP), offre de nombreux avantages à une entreprise. En voici quelques-uns:</p>
                                                     <ul className="ttm-list ttm-list-style-icon">
-                                                        <li><i className="fa fa-check-circle ttm-textcolor-skincolor" /><span className="ttm-list-li-content">Which material types can you work with? </span></li>
-                                                        <li><i className="fa fa-check-circle ttm-textcolor-skincolor" /><span className="ttm-list-li-content">Can I have multiple in a single feature?</span></li>
-                                                        <li><i className="fa fa-check-circle ttm-textcolor-skincolor" /><span className="ttm-list-li-content">Is Smart Lock required for instant apps?</span></li>
-                                                        <li><i className="fa fa-check-circle ttm-textcolor-skincolor" /><span className="ttm-list-li-content">Which material types can you work with? </span></li>
-                                                        <li><i className="fa fa-check-circle ttm-textcolor-skincolor" /><span className="ttm-list-li-content">Is Smart Lock required for instant apps?</span></li>
+                                                        <li><i className="fa fa-check-circle ttm-textcolor-skincolor" /><span className="ttm-list-li-content"><b>Amélioration de l'efficacité opérationnelle:</b> un progiciel peut aider à automatiser de nombreuses tâches répétitives telles que la saisie des commandes, la gestion des stocks et la facturation. Cela permet aux employés de se concentrer sur des tâches plus importantes et de prendre des décisions plus éclairées.  </span></li>
+                                                        <li><i className="fa fa-check-circle ttm-textcolor-skincolor" /><span className="ttm-list-li-content"><b>Meilleure visibilité sur les processus d'affaires:</b> un progiciel peut fournir une vue d'ensemble des processus d'affaires de l'entreprise, ce qui permet aux dirigeants de mieux comprendre la performance de leur entreprise et de prendre des décisions plus éclairées. </span></li>
+                                                        <li><i className="fa fa-check-circle ttm-textcolor-skincolor" /><span className="ttm-list-li-content"><b>Réduction des coûts:</b> en automatisant les processus, un progiciel peut aider à réduire les coûts liés à la main-d'œuvre et à l'erreur humaine. De plus, en fournissant une vue d'ensemble de l'entreprise, un progiciel peut aider à identifier les domaines où les coûts peuvent être réduits.</span></li>
+                                                        <li><i className="fa fa-check-circle ttm-textcolor-skincolor" /><span className="ttm-list-li-content"><b>Centralisation des données de l'entreprise</b></span></li>
+                                                        <li><i className="fa fa-check-circle ttm-textcolor-skincolor" /><span className="ttm-list-li-content"><b>Amélioration de la communication entre les départements:</b> la centralisation des données facilite la communication entre les différents services. Cela peut significativement améliorer la collaboration et réduire les erreurs liées à la transmission des données.</span></li>
+                                                        <li><i className="fa fa-check-circle ttm-textcolor-skincolor" /><span className="ttm-list-li-content"><b>Adhérence aux normes et réglementations:</b> un progiciel peut aider à s'assurer que l'entreprise est conforme aux normes et réglementations en vigueur. Cela peut aider à éviter les pénalités et les amendes liées à la non-conformité.</span></li>   
+
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 className="mt-35">Analyzing IT services</h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                                    <h3 className="mt-35">Questions fréquemment posées</h3>
+                                    <p></p>
                                         {/* acadion */}
                                         <Accordion className="accordion style2">
                                             <AccordionItem>
                                                 <AccordionItemHeading>
                                                     <AccordionItemButton>
-                                                        When do I need an Interior Designer?
+                                                    Les ERP sont-ils adaptés à toutes les tailles d'entreprise?
                                                     </AccordionItemButton>
                                                 </AccordionItemHeading>
                                                 <AccordionItemPanel>
                                                     <p className="mb-0">
-                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+                                                    Oui, les ERP sont conçus pour être adaptés à toutes les tailles d'entreprise. Des solutions d'ERP sont disponibles pour les petites, moyennes et grandes entreprises, et les fonctionnalités peuvent être adaptées en fonction des besoins spécifiques de chaque entreprise.
                                                     </p>
                                                 </AccordionItemPanel>
                                             </AccordionItem>
                                             <AccordionItem>
                                                 <AccordionItemHeading>
                                                     <AccordionItemButton>
-                                                        Why do you have a design fee and purchasing fee on the product?
+                                                    Comment choisir le bon ERP pour mon entreprise?
                                                     </AccordionItemButton>
                                                 </AccordionItemHeading>
                                                 <AccordionItemPanel>
                                                     <p className="mb-0">
-                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+                                                    Pour choisir le bon ERP pour votre entreprise, vous devez évaluer vos besoins et vos objectifs en matière de gestion d'entreprise. Vous devez également prendre en compte les coûts, la facilité d'utilisation et de mise en œuvre, ainsi que la compatibilité avec les autres logiciels que vous utilisez. Il est recommandé de consulter des professionnels de l'informatique, comme House Innovation, pour vous aider à prendre une décision éclairée. N'hésitez pas à nous contacter pour discuter de vos besoins en progiciel. 
                                                     </p>
                                                 </AccordionItemPanel>
                                             </AccordionItem>
                                             <AccordionItem>
                                                 <AccordionItemHeading>
                                                     <AccordionItemButton>
-                                                        What types of systems do you support?
+                                                    Comment mettre en place un ERP dans mon entreprise?
                                                     </AccordionItemButton>
                                                 </AccordionItemHeading>
                                                 <AccordionItemPanel>
                                                     <p className="mb-0">
-                                                        Praesentium voluptatum deleniti atque corrupti quos as excepturi sint occaecati cupiditate non provident, similique sunt in
+                                                    La mise en place d'un ERP dans votre entreprise peut prendre du temps et nécessiter des ressources. Il est recommandé de travailler avec un consultant ou un fournisseur d'ERP pour élaborer un plan de mise en œuvre qui convient à votre entreprise. Ce plan doit inclure la formation des employés, la migration des données et la mise en place de processus de contrôle de qualité pour assurer une transition en douceur.
                                                     </p>
                                                 </AccordionItemPanel>
                                             </AccordionItem>
