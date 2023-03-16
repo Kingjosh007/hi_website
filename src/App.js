@@ -28,7 +28,7 @@ import Progiciels from './components/services/Progiciels';
 import AppsMobiles from './components/services/AppsMobiles';
 import AppsWeb from './components/services/AppsWeb';
 import Data_structuring from './components/services/Data_structuring';
-import Experience_design from './components/services/Experience_design';
+import Digitalisation from './components/services/Digitalisation';
 import SitesVitrines from './components/services/SitesVitrines';
 import Project_style1 from './components/project/Project_style1';
 import Project_style2 from './components/project/Project_style2';
@@ -75,26 +75,27 @@ function App() {
             <Route path="/error" component={Error} />
             <Route path="/element" component={Element} />
 
-            {/* <Route path="/service_digitalisation" component={Progiciels} /> */}
-            <Route path="/service_digitalisation" component={ComingSoon} />
 
-            <Route path="/service_design_graphique" component={ComingSoon} />
+            <Route path="/service_apps_web" component={AppsWeb} />
 
             <Route path="/service_apps_mobiles" component={AppsMobiles} />
 
-            <Route path="/service_apps_web" component={AppsWeb} />
+            <Route path="/service_sites_vitrines" component={SitesVitrines} />
+
+            <Route path="/service_progiciels" component={Progiciels} />
+
+            <Route path="/service_digitalisation" component={Digitalisation} />
+
+            <Route path="/service_design_graphique" component={ComingSoon} />
+
+            {/* <Route path="/service_robotique_ia" component={Digitalisation} /> */}
+            <Route path="/service_robotique_ia" component={ComingSoon} />
 
             {/* <Route path="/service_conseil" component={Data_structuring} /> */}
             <Route path="/service_conseil" component={ComingSoon} />
 
-            <Route path="/service_progiciels" component={Progiciels} />
-            {/* <Route path="/service_progiciels" component={ComingSoon} /> */}
+            
 
-            {/* <Route path="/service_robotique_ia" component={Experience_design} /> */}
-            <Route path="/service_robotique_ia" component={ComingSoon} />
-
-            <Route path="/service_sites_vitrines" component={SitesVitrines} />
-            {/* <Route path="/service_sites_vitrines" component={ComingSoon} /> */}
 
 
             <Route path="/projects" component={Project_style1} />

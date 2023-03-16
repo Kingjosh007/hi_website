@@ -505,8 +505,8 @@ export class Home extends Component {
                   return (
                     <div className="ttm-box-col-wrapper">
                       <div className="featured-imagebox featured-imagebox-team style1">
-                        <div className="featured-thumbnail">{/* featured-thumbnail */}
-                          <img className="img-fluid" src={staffMember.photo} alt={`${staffMember.surname} ${staffMember.name.toUpperCase()}`} />
+                        <div className="featured-thumbnail" style={{height: "480px"}}>{/* featured-thumbnail */}
+                          <img className="img-fluid" src={staffMember.photo} alt={`${staffMember.surname} ${staffMember.name.toUpperCase()}`} style={{height: "100%", width: "auto"}} />
                           <div className="ttm-social-links-wrapper">
                             <ul className="social-icons list-inline">{/* social-icons */}
                               {

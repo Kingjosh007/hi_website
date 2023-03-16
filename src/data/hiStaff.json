@@ -3,7 +3,7 @@
         "id": "hi-1",
         "name": "Ekani",
         "surname": "Louis",
-        "role": "Robotic Engineer/CEO",
+        "role": "Robotic Engineer / CEO & Co-Founder",
         "photo": "/images/staff-hi/ekani-louis.jpg",
         "linkedin": {
             "link": "https://www.linkedin.com/in/louisekani/",
@@ -33,8 +33,8 @@
         "id": "hi-3",
         "name": "Kamssu",
         "surname": "Patrick",
-        "role": "CFO/Mobile Developer",
-        "photo": "https://via.placeholder.com/480X520/444444.jpg",
+        "role": "Robotic Engineer / Co-Founder",
+        "photo": "/images/staff-hi/kamssu-patrick.jpg",
         "linkedin": {
             "link": "https://www.linkedin.com/in/patrick-kamssu-894025138",
             "display": true
