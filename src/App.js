@@ -46,6 +46,7 @@ import Cart from './components/shop/Cart';
 import Checkout from './components/shop/Checkout';
 import ScrollToTop from './components/layout/Gotop';
 import ComingSoon from './components/pages/ComingSoon';
+import RobotiqueIA from './components/services/RobotiqueIA';
 
 const appHistory = {
   basename: process.env.PUBLIC_URL
@@ -86,10 +87,11 @@ function App() {
 
             <Route path="/service_digitalisation" component={Digitalisation} />
 
+            <Route path="/service_robotique_ia" component={RobotiqueIA} />
+
+
             <Route path="/service_design_graphique" component={ComingSoon} />
 
-            {/* <Route path="/service_robotique_ia" component={Digitalisation} /> */}
-            <Route path="/service_robotique_ia" component={ComingSoon} />
 
             {/* <Route path="/service_conseil" component={Data_structuring} /> */}
             <Route path="/service_conseil" component={ComingSoon} />

@@ -43,6 +43,8 @@ export class Digitalisation extends Component {
 
 
 
+                                        <div className="ttm-btn-size-md ttm-btn-style-border ttm-bgcolor-darkgrey" style={{ padding: "15px", textAlign: "center", fontSize: "1.5em", fontStyle: "italic", color: "#eee"}}>« Nous vous accompagnons de bout en bout dans votre transformation digitale. »</div>
+
 
                                         <div className="row no-gutters box-shadow mb-35">
                                             <div className="col-md-4 col-sm-4">
