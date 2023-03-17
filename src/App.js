@@ -47,6 +47,7 @@ import Checkout from './components/shop/Checkout';
 import ScrollToTop from './components/layout/Gotop';
 import ComingSoon from './components/pages/ComingSoon';
 import RobotiqueIA from './components/services/RobotiqueIA';
+import Conseil from './components/services/Conseil';
 
 const appHistory = {
   basename: process.env.PUBLIC_URL
@@ -91,9 +92,7 @@ function App() {
 
             <Route path="/service_design_graphique" component={DesignGraphique} />
 
-
-            {/* <Route path="/service_conseil" component={DesignGraphique} /> */}
-            <Route path="/service_conseil" component={ComingSoon} />
+            <Route path="/service_conseil" component={Conseil} />
 
             
 
