@@ -40,7 +40,7 @@ export class DesignGraphique extends Component {
                                         </div>
                                         <div className="col-md-6">
                                         <div className="ttm_single_image-wrapper res-767-mt-20">
-                                            <img className="img-fluid" src="/images/services/design_roll_up.jpg" alt="Roll-ups" />
+                                            <img className="img-fluid" src="/images/services/design_roll_up_no_bg.png" alt="Roll-ups" />
                                         </div>
                                         </div>
                                     </div>
