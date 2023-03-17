@@ -17,7 +17,7 @@ export class CarouselPage extends Component {
             <MDBCarouselInner>
                 <MDBCarouselItem itemId="1">
                 <MDBView>
-                    <div class="image-container" style={{display: "flex", backgroundColor: "#99b"}}>
+                    <div className="image-container" style={{display: "flex", backgroundColor: "#99b"}}>
                         <img className="d-block w-100" src="images/illustrations/nice-double-screen-setup.webp" alt="First slide" style={{opacity: 0.25}}/>
                     </div>
                 </MDBView>
@@ -45,7 +45,7 @@ export class CarouselPage extends Component {
                 </MDBCarouselItem>
                 <MDBCarouselItem itemId="2">
                 <MDBView>
-                    <div class="image-container" style={{display: "flex", backgroundColor: "#99b"}}>
+                    <div className="image-container" style={{display: "flex", backgroundColor: "#99b"}}>
                         <img className="d-block w-100" src="images/illustrations/businesspeople-using-computer-together-during-late-night-work.avif" alt="First slide" style={{opacity: 0.25}}/>
                     </div>
                 </MDBView>

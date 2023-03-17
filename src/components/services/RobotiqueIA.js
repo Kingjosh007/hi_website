@@ -74,34 +74,34 @@ export class RobotiqueIA extends Component {
 
                                                         <li><b> ➤ Nous concevons et programmons des drones:</b> Avez-vous besoin d'un drone, en particulier dans le domaine agricole ? Entrez en contact, nous avons la ressource et la compétence qu'il vous faut!</li>
 
-                                                        <div class="row" style={{marginTop: "1em"}}>
-                                                            <div class="col-md-4">
+                                                        <div className="row" style={{marginTop: "1em"}}>
+                                                            <div className="col-md-4">
                                                                 <div className="ttm_single_image-wrapper mb-35">
                                                                     <img className="img-fluid" src="/images/services/robotique_ai_drone_outdoors_3.jpg" alt="Robotique et Intelligence Artificielle" />
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-md-8">
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
+                                                            <div className="col-md-8">
+                                                                <div className="row">
+                                                                    <div className="col-md-6">
                                                                         <div className="ttm_single_image-wrapper mb-35">
                                                                             <img className="img-fluid" src="/images/services/robotique_ai_girls.jpg" alt="Robotique et Intelligence Artificielle" />
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-6">
+                                                                    <div className="col-md-6">
                                                                         <div className="ttm_single_image-wrapper mb-35">
                                                                             <img className="img-fluid" src="/images/services/robotique_ai_drone_table.jpg" alt="Robotique et Intelligence Artificielle" />
                                                                         </div>
                                                                     </div>
 
                                                                 </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
+                                                                <div className="row">
+                                                                    <div className="col-md-6">
                                                                         <div className="ttm_single_image-wrapper mb-35">
                                                                             <img className="img-fluid" src="/images/services/robotique_ai_drone_outdoors_2.jpg" alt="Robotique et Intelligence Artificielle" />
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-6">
+                                                                    <div className="col-md-6">
                                                                         <div className="ttm_single_image-wrapper mb-35">
                                                                             <img className="img-fluid" src="/images/services/robotique_ai_drone_outdoors.jpg" alt="Robotique et Intelligence Artificielle" />
                                                                         </div>

@@ -835,20 +835,21 @@ li.menu-hasdropdown {
         top: 17px;
     }
 }
-.mailchimp-inputbox:after {
-    position: absolute;
-    content: "\f1d8";
-    top: 10px;
-    right: 18px;
-    font-family: "Font Awesome 5 Free";
-    font-style: normal;
-    font-weight: 500;
-    display: inline-block;
-    text-decoration: inherit;
-    font-size: 16px;
-    color: $white-color;
-    z-index: 1;
-}
+// .mailchimp-inputbox:after {
+//     position: absolute;
+//     content: "\f1d8";
+//     top: 10px;
+//     right: 18px;
+//     font-family: "Font Awesome 5 Free";
+//     font-style: normal;
+//     font-weight: 500;
+//     display: inline-block;
+//     text-decoration: inherit;
+//     font-size: 16px;
+//     color: $white-color;
+//     z-index: 1;
+// }
+
 /** SecondFooter **/
 .widget {
     ul{ 

@@ -1,10 +1,61 @@
 import { findByLabelText } from '@testing-library/react'
 import React, { Component } from 'react'
+import axios from 'axios';
+import { FaPaperPlane } from 'react-icons/fa';
+import { toast } from 'react-hot-toast';
+
+
 import articles from '../../data/articles.json'
 import { convertDateToReadableString, dateComesBefore } from '../../utils/dateUtils'
 
+const apiLink = "https://hi-backend-production.up.railway.app/api";
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
 export class Footer extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: ""
+        }
+    }
+
+    handleEmailChange = (event) => {
+        this.setState({ email: event.target.value });
+    };
+
+
+    handleNewsletterFormSubmit = async (event) => {
+        event.preventDefault();
+        const { email } = this.state;
+    
+        if (email && isValidEmail(email)) {
+          try {
+            const response = await axios.post(`${apiLink}/newsletter/subscribe`, { email });
+            console.log(response);
+            if (response.status === 200) {
+              toast.success("Merci d'avoir souscrit à notre newsletter!", {
+                duration: 5000,
+                position: 'bottom-right',
+              });
+            } else {
+              toast.error("L'opération n'a pas fonctionné. Veuillez réessayer");
+            }
+          } catch (error) {
+            toast.error('Une erreur est survenue.');
+          }
+        }
+      };
+
+
+
+
     render() {
+        const { email } = this.state;
         return (
             <footer className="footer widget-footer clearfix">
                 {this.props.children}
@@ -95,7 +146,7 @@ export class Footer extends Component {
                                                 .map((article, index) => {
 
                                                     return (
-                                                        <ul className="widget-post ttm-recent-post-list">
+                                                        <ul className="widget-post ttm-recent-post-list" key={index}>
                                                             <li>
                                                                 <a href={process.env.PUBLIC_URL + '/Single_blog'}><img className="img-fluid" alt={article.title} src={article.image} /></a>
                                                                 <a href={process.env.PUBLIC_URL + '/Single_blog'}>{article.title.slice(0, 60) + "..."}</a>
@@ -113,13 +164,21 @@ export class Footer extends Component {
                                     <h3 className="widget-title">Newsletter</h3>
                                     <div className="textwidget widget-text">
                                         Abonnez-vous pour ne rien rater de nos actualités et annonces.
-                                        <form id="subscribe-form" className="newsletter-form" method="post" action="#" data-mailchimp="true">
+                                        <form id="subscribe-form" className="newsletter-form" onSubmit={this.handleNewsletterFormSubmit} data-mailchimp="true">
                                             <div className="mailchimp-inputbox clearfix" id="subscribe-content">
                                                 <i className="fa fa-envelope" />
-                                                <input type="email" name="email" placeholder="Votre email" required />
-                                                <input type="submit" value="" />
+                                                <div className="row">
+                                                    <div className="col-md-10 mr-0">
+                                                      <input type="email" name="email" placeholder="Votre email" value={email} onChange={this.handleEmailChange} required />
+                                                    </div>
+                                                    <button type="submit" className="col-md-2" 
+                                                         style={{color: "#fff", backgroundColor: "#344f89", padding: "1em", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                                        <div type="submit" className="newsletter-submit-btn" style={{zIndex: 10, cursor: "pointer"}} >
+                                                            <FaPaperPlane />
+                                                        </div>
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <div id="subscribe-msg" />
                                         </form>
                                         <h5>Suivez-nous !</h5>
                                         <div className="social-icons circle social-hover">
@@ -144,7 +203,7 @@ export class Footer extends Component {
                             <div className="col-md-6">
                                 <div>
                                     <span>Copyright © 2023&nbsp;<a href="/">House Innovation</a>.</span>&nbsp;&nbsp;
-                                    <span class="hide-on-mobile">Tous droits réservés.</span>
+                                    <span className="hide-on-mobile">Tous droits réservés.</span>
                                 </div>
                             </div>
                         </div>

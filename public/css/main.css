@@ -1108,7 +1108,7 @@ li.menu-hasdropdown ul li a {
   top: 17px;
 }
 
-.mailchimp-inputbox:after {
+/* .mailchimp-inputbox:after {
   position: absolute;
   content: "\f1d8";
   top: 10px;
@@ -1120,8 +1120,9 @@ li.menu-hasdropdown ul li a {
   text-decoration: inherit;
   font-size: 16px;
   color: #fff;
+  cursor: pointer;
   z-index: 1;
-}
+} */
 
 /** SecondFooter **/
 .widget ul {
