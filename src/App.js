@@ -27,7 +27,7 @@ import Element from './components/pages/Element';
 import Progiciels from './components/services/Progiciels';
 import AppsMobiles from './components/services/AppsMobiles';
 import AppsWeb from './components/services/AppsWeb';
-import Data_structuring from './components/services/Data_structuring';
+import DesignGraphique from './components/services/DesignGraphique';
 import Digitalisation from './components/services/Digitalisation';
 import SitesVitrines from './components/services/SitesVitrines';
 import Project_style1 from './components/project/Project_style1';
@@ -89,11 +89,10 @@ function App() {
 
             <Route path="/service_robotique_ia" component={RobotiqueIA} />
 
+            <Route path="/service_design_graphique" component={DesignGraphique} />
 
-            <Route path="/service_design_graphique" component={ComingSoon} />
 
-
-            {/* <Route path="/service_conseil" component={Data_structuring} /> */}
+            {/* <Route path="/service_conseil" component={DesignGraphique} /> */}
             <Route path="/service_conseil" component={ComingSoon} />
 
             

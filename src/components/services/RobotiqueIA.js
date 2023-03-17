@@ -129,8 +129,6 @@ export class RobotiqueIA extends Component {
                                             </div>
                                         </div>
 
-
-
                                     </div>
                                 </div>
                                 {/* ttm-service-single-content-are end */}
