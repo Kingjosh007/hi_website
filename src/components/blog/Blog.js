@@ -16,7 +16,6 @@ export class Blog extends Component {
 
   changeCurrentPage = numPage => {
     this.setState({ currentPage: numPage });
-    
   };
 
   constructor(props){
@@ -32,7 +31,7 @@ export class Blog extends Component {
                         {/* row */}
                         <div className="row">
                             <div className="col-lg-9 content-area">
-                                {/* ttm-service-single-content-are */}
+                               
 
                                 {
 
@@ -40,13 +39,13 @@ export class Blog extends Component {
                                     .map((article, index) => {
                                         return (
                                             <article className="post ttm-blog-classic clearfix">
-                                    {/* post-featured-wrapper */}
+                                    
                                     <div className="ttm-post-featured-wrapper ttm-featured-wrapper">
                                         <div className="ttm-post-featured">
                                         <img className="img-fluid" src={article.image} alt={`Image illustrant l'article ${article.title}`} />
                                         </div>
-                                    </div>{/* post-featured-wrapper end */}
-                                    {/* ttm-blog-classic-content */}
+                                    </div>
+                                    
                                     <div className="ttm-blog-classic-content">
                                         <div className="ttm-post-entry-header">
                                         <div className="post-meta">
@@ -62,11 +61,11 @@ export class Blog extends Component {
                                         <div className="ttm-box-desc-text">
                                             <p>{article.description}</p>
                                         </div>
-                                        {/* separator */}
+                                        
                                         <div className="separator">
                                             <div className="sep-line mt-25 mb-25" />
                                         </div>
-                                        {/* separator */}
+                                        
                                         <div className="ttm-blogbox-desc-footer">
                                             <div className="ttm-blogbox-footer-readmore d-inline-block">
                                             <a className="ttm-btn ttm-btn-size-sm ttm-textcolor-skincolor btn-inline ttm-icon-btn-right">Lire l'article <i className="ti ti-angle-double-right" /></a>
@@ -75,8 +74,9 @@ export class Blog extends Component {
                                             <span><i className="fa fa-comments" />{article.nb_commentaires}</span>
                                             </div>
                                         </div>
+                                        
                                         </div>
-                                    </div>{/* ttm-blog-classic-content end */}
+                                    </div>
                                          </article>
                                         )
                                     })
