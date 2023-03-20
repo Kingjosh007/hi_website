@@ -143,12 +143,14 @@ export class Contact_01 extends Component {
                     {/* row end */}
                     </div>
                 </section>
+
                 <section className="ttm-row map-section res-991-p-0 clearfix">
                     <div className="map-wrapper">
                         {/* <iframe height="100%" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12609.73108660754!2d-122.47279800000001!3d37.803331!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808586e6302615a1%3A0x86bd130251757c00!2sStorey%20Ave%2C%20San%20Francisco%2C%20CA%2094129!5e0!3m2!1sen!2sus!4v1591859311334!5m2!1sen!2sus" /> */}
                         <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Carrefour%20Lyc%C3%A9e%20Makepe+(My%20Business%20Name)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">Evaluer la distance</a></iframe>
                     </div>
                 </section>
+                
             </div>
             )
     }

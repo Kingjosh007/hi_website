@@ -68,3 +68,7 @@
 .capitalize {
   text-transform: capitalize;
 }
+
+.carousel {
+    width: 100vw;
+}

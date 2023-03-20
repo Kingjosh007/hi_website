@@ -23,7 +23,7 @@ export class CarouselPage extends Component {
                 </MDBView>
                 <MDBCarouselCaption>
                      <div className="container-xl">
-                        <div className="carousel-caption-inner banner1">
+                        <div className="carousel-caption-inner banner1 w-100">
                             <MDBAnimation className="slideInUp" count={1} delay="2s" >
                                 <h2 className="ttm-textcolor-darkgrey flipInY">Innovation technologique <strong className="ttm-textcolor-skincolor">sur mesure</strong></h2>
                             </MDBAnimation>
@@ -43,15 +43,16 @@ export class CarouselPage extends Component {
                       </div>
                 </MDBCarouselCaption>
                 </MDBCarouselItem>
+
                 <MDBCarouselItem itemId="2">
-                <MDBView>
+                <MDBView style={{width: "100vw"}}>
                     <div className="image-container" style={{display: "flex", backgroundColor: "#99b"}}>
                         <img className="d-block w-100" src="images/illustrations/businesspeople-using-computer-together-during-late-night-work.avif" alt="First slide" style={{opacity: 0.25}}/>
                     </div>
                 </MDBView>
                 <MDBCarouselCaption>
-                <div className="container-xl">
-                        <div className="carousel-caption-inner banner1" >
+                <div className="container-xl w-100">
+                        <div className="carousel-caption-inner banner1">
                             <MDBAnimation className="slideInUp" count={1} delay="3s" >
                                 <h2 className="ttm-textcolor-darkgrey flipInY">Une équipe <strong className="ttm-textcolor-skincolor">hautement qualifiée</strong></h2>
                             </MDBAnimation>
