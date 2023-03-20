@@ -705,7 +705,7 @@ export class Home extends Component {
                         .map((article, index) => {
                     const dateArr = convertDateToDayMonthYearArray(article.published_at);
                   return (
-                    <div className="ttm-box-col-wrapper">
+                    <div className="ttm-box-col-wrapper" key={index}>
                       <div className="featured-imagebox featured-imagebox-blog">
                         <div className="featured-thumbnail">
                           <img className="img-fluid" alt={article.title} src={article.image} />

@@ -104,8 +104,8 @@ function App() {
             <Route path="/single_style2" component={Single_style2} />
             <Route path="/single_style3" component={Single_style3} />
 
-            {/* <Route path="/blog" component={Blog} /> */}
-            <Route path="/blog" component={ComingSoon} />
+            <Route path="/blog" component={Blog} />
+            {/* <Route path="/blog" component={ComingSoon} /> */}
 
             <Route path="/carrieres" component={ComingSoon} />
 
