@@ -68,10 +68,19 @@ export class Blogsidebar extends Component {
                         const acceptedCategories = [...this.state.categories].filter(c => c.selected === true).map(c => c.category.toLowerCase());
                         const monthsToLower = [...this.state.months].filter(m => m.selected).map(el => el.month.toLowerCase());
                         const tagsToLower = [...this.state.tags].filter(t => t.selected).map(el => el.tag.toLowerCase());
+
+                        
                         const filteredArticles = [...blogInfos.articles].filter(article => {
-                            return acceptedCategories.includes(article.category.toLowerCase()) &&
-                                monthsToLower.includes(transformDateToMonthInLetters(article.published_at).toLowerCase()) &&
-                                (tagsToLower.length === 0 || article.tags.map(t => t.toLowerCase()).some(t => tagsToLower.includes(t)))
+                            const categoryCondition = (acceptedCategories.length === 0 
+                                || acceptedCategories.includes(article.category.toLowerCase()))
+
+                            const monthsCondition = (monthsToLower.length === 0 
+                                || monthsToLower.includes(transformDateToMonthInLetters(article.published_at).toLowerCase()))
+                            
+                            const tagsCondition = (tagsToLower.length === 0 || article.tags.map(t => t.toLowerCase()).some(t => tagsToLower.includes(t)));
+                            
+                            return categoryCondition && monthsCondition && tagsCondition;
+                                
                         })
 
                         setBlogInfos({
@@ -89,7 +98,7 @@ export class Blogsidebar extends Component {
                             return c;
                         })
                         this.setState({ categories });
-                        filterArticles(categories, this.state.tags, this.state.months);
+                        filterArticles();
                     }
 
                     const handleMarkUnmarkTag = (tag) => {
@@ -100,6 +109,17 @@ export class Blogsidebar extends Component {
                             return t;
                         })
                         this.setState({ tags });
+                        filterArticles();
+                    }
+
+                    const handleCheckUncheckMonth = (month) => {
+                        const months = [...this.state.months].map(m => {
+                            if (m.month === month) {
+                                m.selected = !m.selected;
+                            }
+                            return m;
+                        })
+                        this.setState({ months });
                         filterArticles();
                     }
 
@@ -232,10 +252,7 @@ export class Blogsidebar extends Component {
                                                     name="my-input"
                                                     checked={true}
                                                     onChange={(value, event) => {
-                                                        let p = {
-                                                            isTrue: value,
-                                                        };
-                                                        return alert(value);
+                                                        handleCheckUncheckMonth(monthInLetter);
                                                     }}
                                                     borderColor="#2D4A8A"
                                                     style={{ cursor: "pointer" }}
