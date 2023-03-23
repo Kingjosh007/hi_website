@@ -31,7 +31,7 @@ export class Blog extends Component {
                         <div className="site-main">
                             <Header />
                             {/* page-title */}
-                            <div className="sidebar ttm-bgcolor-white clearfix" style={{ marginTop: "2em" }}>
+                            <div className="sidebar ttm-bgcolor-white clearfix" style={{ marginTop: "3em" }}>
                                 <div className="container-xl">
                                     {/* row */}
                                     <div className="row">

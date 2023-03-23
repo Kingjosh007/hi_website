@@ -50,6 +50,7 @@ const transformDateToMonthInLetters = (date) => {
 export class Blogsidebar extends Component {
 
     state = {
+        filterText: "",
         categories: allCategories.map(category => ({ category, selected: true })),
         tags: allTags.map(tag => ({ tag, selected: false })),
         months: monthsInLetters.map(month => ({ month, selected: true })),
@@ -57,13 +58,38 @@ export class Blogsidebar extends Component {
 
     constructor(props) {
         super();
-
     }
     render() {
         return (
             <BlogContext.Consumer>
                 {([blogInfos, setBlogInfos]) => {
 
+                    const resetState = () => {
+                        this.setState({
+                            filterText: "",
+                            categories: allCategories.map(category => ({ category, selected: true })),
+                            tags: allTags.map(tag => ({ tag, selected: false })),
+                            months: monthsInLetters.map(month => ({ month, selected: true }))
+                        })
+                    }
+
+                    const filterArticlesFromText = () => {
+                        const text = this.state.filterText;
+                        const filteredArticles = [...blogInfos.articles].filter(article => {
+                            if(text.length >= 3) {
+                              const titleCondition = article.title.toLowerCase().includes(text.toLowerCase());
+                              const descriptionCondition = article.description.toLowerCase().includes(text.toLowerCase());
+                              const contentCondition = article.content.toLowerCase().includes(text.toLowerCase());
+                              return titleCondition || descriptionCondition || contentCondition;
+                            }
+                            return true;   
+                        })
+
+                        setBlogInfos({
+                            ...blogInfos,
+                            articlesToDisplay: filteredArticles
+                        });
+                    }
                     const filterArticles = () => {
                         const acceptedCategories = [...this.state.categories].filter(c => c.selected === true).map(c => c.category.toLowerCase());
                         const monthsToLower = [...this.state.months].filter(m => m.selected).map(el => el.month.toLowerCase());
@@ -130,8 +156,20 @@ export class Blogsidebar extends Component {
                             <aside className="widget widget-search">
                                 <form role="search" method="get" className="search-form  box-shadow" action="#">
                                     <div className="form-group">
-                                        <input name="search" type="text" className="form-control bg-white" placeholder="Filtrer les articles...." />
-                                        <i className="ti-search" />
+                                        <input name="search" 
+                                               type="text"
+                                               className="form-control bg-white"
+                                               placeholder="Filtrer les articles...."
+                                               onChange={(e) => {
+                                                this.setState({ filterText: e.target.value });
+                                               }}
+                                               
+                                        />
+                                        <i className="ti-search" 
+                                            onClick={() => {
+                                                filterArticlesFromText()
+                                            }}
+                                        />
                                     </div>
                                 </form>
                             </aside>
