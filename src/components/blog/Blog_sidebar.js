@@ -50,6 +50,7 @@ const transformDateToMonthInLetters = (date) => {
 export class Blogsidebar extends Component {
 
     state = {
+        isSearchButtonClicked: false,
         filterText: "",
         categories: allCategories.map(category => ({ category, selected: true })),
         tags: allTags.map(tag => ({ tag, selected: false })),
@@ -149,7 +150,7 @@ export class Blogsidebar extends Component {
                         filterArticles();
                     }
 
-
+                    const rippleClassName = this.state.isSearchButtonClicked ? "ripple" : "";
 
                     return (
                         <div>
@@ -165,8 +166,14 @@ export class Blogsidebar extends Component {
                                                }}
                                                
                                         />
-                                        <i className="ti-search" 
+                                        <i className={`ti-search ${rippleClassName}`} 
                                             onClick={() => {
+                                                this.setState({ isSearchButtonClicked: true });
+
+                                                setTimeout(() => this.setState({
+                                                    isSearchButtonClicked: false
+                                                }), 1000);
+                                                
                                                 filterArticlesFromText()
                                             }}
                                         />
