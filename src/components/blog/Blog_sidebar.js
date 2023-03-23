@@ -51,7 +51,7 @@ export class Blogsidebar extends Component {
 
     state = {
         categories: allCategories.map(category => ({ category, selected: true })),
-        tags: allTags.map(tag => ({ tag, selected: true })),
+        tags: allTags.map(tag => ({ tag, selected: false })),
         months: monthsInLetters.map(month => ({ month, selected: true })),
     }
 
@@ -66,13 +66,12 @@ export class Blogsidebar extends Component {
 
                     const filterArticles = () => {
                         const acceptedCategories = [...this.state.categories].filter(c => c.selected === true).map(c => c.category.toLowerCase());
-                        console.log(acceptedCategories);
                         const monthsToLower = [...this.state.months].filter(m => m.selected).map(el => el.month.toLowerCase());
                         const tagsToLower = [...this.state.tags].filter(t => t.selected).map(el => el.tag.toLowerCase());
                         const filteredArticles = [...blogInfos.articles].filter(article => {
                             return acceptedCategories.includes(article.category.toLowerCase()) &&
                                 monthsToLower.includes(transformDateToMonthInLetters(article.published_at).toLowerCase()) &&
-                                article.tags.map(t => t.toLowerCase()).some(t => tagsToLower.includes(t));
+                                (tagsToLower.length === 0 || article.tags.map(t => t.toLowerCase()).some(t => tagsToLower.includes(t)))
                         })
 
                         setBlogInfos({
@@ -89,9 +88,19 @@ export class Blogsidebar extends Component {
                             }
                             return c;
                         })
-                        console.log(categories)
                         this.setState({ categories });
                         filterArticles(categories, this.state.tags, this.state.months);
+                    }
+
+                    const handleMarkUnmarkTag = (tag) => {
+                        const tags = [...this.state.tags].map(t => {
+                            if (t.tag === tag) {
+                                t.selected = !t.selected;
+                            }
+                            return t;
+                        })
+                        this.setState({ tags });
+                        filterArticles();
                     }
 
 
@@ -134,7 +143,7 @@ export class Blogsidebar extends Component {
                                 <h3 className="widget-title">Articles récents</h3>
                                 <ul className="widget-post ttm-recent-post-list">
                                     {
-                                        articles.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
+                                        blogInfos.articles.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
                                             .slice(0, 3)
                                             .map((article, index) => {
 
@@ -190,8 +199,20 @@ export class Blogsidebar extends Component {
                                 <div className="tagcloud">
                                     {
                                         allTags.map((tag, index) => {
-                                            return (
-                                                <a className="tag-cloud-link">{tag}</a>
+                                            const isSelected = this.state.tags.find(t => t.tag === tag).selected;
+
+                                            return isSelected ? (
+                                                <a className="tag-cloud-link marked" 
+                                                    onClick={() => {
+                                                        handleMarkUnmarkTag(tag);
+                                                    }}
+                                                >{tag}</a>
+                                            ) : (
+                                                <a className="tag-cloud-link" 
+                                                    onClick={() => {
+                                                        handleMarkUnmarkTag(tag);
+                                                    }}
+                                                >{tag}</a>
                                             )
                                         })
                                     }

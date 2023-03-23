@@ -2961,7 +2961,7 @@ ul.ttm-recent-post-list li .post-date i, ul.ttm-recent-post-list li .post-date s
   background-color: transparent;
 }
 
-.sidebar .widget .tagcloud a:hover {
+.sidebar .widget .tagcloud a.marked, .sidebar .widget .tagcloud a:hover {
   background-color: #2d4a8a;
   color: #fff;
 }
