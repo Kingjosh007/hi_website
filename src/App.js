@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {createBrowserHistory} from 'history';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import articles from "./data/articles.json";
+import BlogContext from './BlogContext';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -54,8 +56,11 @@ const appHistory = {
 };
 const history = createBrowserHistory(appHistory);
 function App() {
- 
+
+  const [blogInfos, setBlogInfos] = React.useState({articles, articlesToDisplay: articles});
+  
   return (
+    <BlogContext.Provider value={[blogInfos, setBlogInfos]}>
     <div className="page">
       <Router basename={process.env.PUBLIC_URL} history={history}>  
         <div id="preloader">
@@ -79,11 +84,8 @@ function App() {
 
 
             <Route path="/service_apps_web" component={AppsWeb} />
-
             <Route path="/service_apps_mobiles" component={AppsMobiles} />
-
             <Route path="/service_sites_vitrines" component={SitesVitrines} />
-
             <Route path="/service_progiciels" component={Progiciels} />
 
             <Route path="/service_digitalisation" component={Digitalisation} />
@@ -122,6 +124,7 @@ function App() {
         <Footer />
     </Router>  
     </div> 
+    </BlogContext.Provider>
   );
  }
 

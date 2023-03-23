@@ -3,6 +3,7 @@ import * as Icon from "react-icons/fi";
 import Checkbox from "react-custom-checkbox";
 import articles from '../../data/articles.json'
 import { convertDateToDayMonthYearArray, convertDateToReadableString, dateComesBefore } from '../../utils/dateUtils';
+import BlogContext from '../../BlogContext';
 
 const allCategories = [...new Set(articles.map(article => article.category))]
     .map(el => el[0].toUpperCase() + el.slice(1))
@@ -13,7 +14,7 @@ const allTags = [...new Set(articles.map(el => el.tags).flat())]
     .sort((a, b) => a < b ? -1 : 1);
 
 const allDates = [...new Set(articles.map(el => el.published_at))]
-                .sort((a, b) => dateComesBefore(a, b) ? 1 : -1);
+    .sort((a, b) => dateComesBefore(a, b) ? 1 : -1);
 
 const allMonths = [...new Set(allDates.map(dt => {
     const parts = dt.split("-")
@@ -26,80 +27,133 @@ const monthsInLetters = allMonths.map(el => {
     return monthAndYear[0].toUpperCase() + monthAndYear.slice(1);
 })
 
+
 const monthsObj = {};
 
-for(let i = 0; i < monthsInLetters.length; i++) {
+for (let i = 0; i < monthsInLetters.length; i++) {
     monthsObj[monthsInLetters[i]] = allMonths[i];
 }
 
+const transformDateToMonthInLetters = (date) => {
+    const parts = date.split("-")
+    const month = `${parts[1]}-${parts[2]}`;
+    let monthInLetters = "";
+    for (let key in monthsObj) {
+        if (monthsObj[key] === month) {
+            monthInLetters = key;
+            break;
+        }
+    }
+    return monthInLetters;
+}
+
 export class Blogsidebar extends Component {
+
+    state = {
+        categories: allCategories.map(category => ({ category, selected: true })),
+        tags: allTags.map(tag => ({ tag, selected: true })),
+        months: monthsInLetters.map(month => ({ month, selected: true })),
+    }
+
     constructor(props) {
         super();
+
     }
     render() {
         return (
-            <div>
-                <aside className="widget widget-search">
-                    <form role="search" method="get" className="search-form  box-shadow" action="#">
-                        <div className="form-group">
-                            <input name="search" type="text" className="form-control bg-white" placeholder="Filtrer les articles...." />
-                            <i className="ti-search" />
-                        </div>
-                    </form>
-                </aside>
-                <aside className="widget widget-categories">
-                    <h3 className="widget-title">Catégories</h3>
-                    <ul>
-                        {
-                            allCategories.map(category => {
-                                // return <li><a>{category}</a></li>
-                                return (
-                                    <Checkbox
-                                        icon={<Icon.FiCheck color="#174A41" size={14} />}
-                                        name="my-input"
-                                        checked={true}
-                                        onChange={(value, event) => {
-                                            let p = {
-                                                isTrue: value,
-                                            };
-                                            console.log(event);
-                                            return alert(value);
-                                        }}
-                                        borderColor="#2D4A8A"
-                                        style={{ cursor: "pointer" }}
-                                        labelStyle={{ marginLeft: 5, userSelect: "none" }}
-                                        label={category}
-                                    />
+            <BlogContext.Consumer>
+                {([blogInfos, setBlogInfos]) => {
 
-                                )
-                            })
-                        }
-                    </ul>
-                </aside>
-                <aside className="widget post-widget">
-                    <h3 className="widget-title">Articles récents</h3>
-                    <ul className="widget-post ttm-recent-post-list">
-                        {
-                            articles.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
-                                .slice(0, 3)
-                                .map((article, index) => {
+                    const filterArticles = () => {
+                        const acceptedCategories = [...this.state.categories].filter(c => c.selected === true).map(c => c.category.toLowerCase());
+                        console.log(acceptedCategories);
+                        const monthsToLower = [...this.state.months].filter(m => m.selected).map(el => el.month.toLowerCase());
+                        const tagsToLower = [...this.state.tags].filter(t => t.selected).map(el => el.tag.toLowerCase());
+                        const filteredArticles = [...blogInfos.articles].filter(article => {
+                            return acceptedCategories.includes(article.category.toLowerCase()) &&
+                                monthsToLower.includes(transformDateToMonthInLetters(article.published_at).toLowerCase()) &&
+                                article.tags.map(t => t.toLowerCase()).some(t => tagsToLower.includes(t));
+                        })
 
-                                    const dtElts = convertDateToDayMonthYearArray(article.published_at);
-                                    const month = dtElts[1].length > 4 ? dtElts[1].slice(0, 4) + "." : dtElts[1];
-                                    const shortDate = `${dtElts[0]} ${month} ${dtElts[2]}`
-                                    return (
-                                        <li>
-                                            <a href={process.env.PUBLIC_URL + '/article'}><img src={article.image} alt="post-img" /></a>
-                                            <a href={process.env.PUBLIC_URL + '/article'}>{article.title}</a>
-                                            <span className="post-date"><i className="fa fa-calendar" />{shortDate}</span>
-                                        </li>
-                                    )
-                                })
-                        }
+                        setBlogInfos({
+                            ...blogInfos,
+                            articlesToDisplay: filteredArticles
+                        })
 
-                    </ul>
-                </aside>
-                {/* <aside className="widget widget widget_media_gallery">
+                    }
+
+                    const handleCheckUncheckCategory = (category) => {
+                        const categories = [...this.state.categories].map(c => {
+                            if (c.category === category) {
+                                c.selected = !c.selected;
+                            }
+                            return c;
+                        })
+                        console.log(categories)
+                        this.setState({ categories });
+                        filterArticles(categories, this.state.tags, this.state.months);
+                    }
+
+
+
+                    return (
+                        <div>
+                            <aside className="widget widget-search">
+                                <form role="search" method="get" className="search-form  box-shadow" action="#">
+                                    <div className="form-group">
+                                        <input name="search" type="text" className="form-control bg-white" placeholder="Filtrer les articles...." />
+                                        <i className="ti-search" />
+                                    </div>
+                                </form>
+                            </aside>
+                            <aside className="widget widget-categories">
+                                <h3 className="widget-title">Catégories</h3>
+                                <ul>
+                                    {
+                                        allCategories.map(category => {
+                                            return (
+                                                <Checkbox
+                                                    icon={<Icon.FiCheck color="#174A41" size={14} />}
+                                                    name="my-input"
+                                                    checked={this.state.categories.find(c => c.category === category).selected}
+                                                    onChange={(value, event) => {
+                                                        handleCheckUncheckCategory(category);
+                                                    }}
+                                                    borderColor="#2D4A8A"
+                                                    style={{ cursor: "pointer" }}
+                                                    labelStyle={{ marginLeft: 5, userSelect: "none" }}
+                                                    label={category}
+                                                />
+
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            </aside>
+                            <aside className="widget post-widget">
+                                <h3 className="widget-title">Articles récents</h3>
+                                <ul className="widget-post ttm-recent-post-list">
+                                    {
+                                        articles.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
+                                            .slice(0, 3)
+                                            .map((article, index) => {
+
+                                                const dtElts = convertDateToDayMonthYearArray(article.published_at);
+                                                const month = dtElts[1].length > 4 ? dtElts[1].slice(0, 4) + "." : dtElts[1];
+                                                const shortDate = `${dtElts[0]} ${month} ${dtElts[2]}`
+                                                return (
+                                                    <li>
+                                                        <a href={process.env.PUBLIC_URL + '/article'}><img src={article.image} alt="post-img" /></a>
+                                                        <a href={process.env.PUBLIC_URL + '/article'}>{article.title}</a>
+                                                        <span className="post-date"><i className="fa fa-calendar" />{shortDate}</span>
+                                                    </li>
+                                                )
+                                            })
+                                    }
+
+                                </ul>
+                            </aside>
+                            {/* <aside className="widget widget widget_media_gallery">
                     <h3 className="widget-title">Gallery</h3>
                     <div>
                         <div className="gallery-item">
@@ -131,49 +185,51 @@ export class Blogsidebar extends Component {
                         </div>
                     </div>
                 </aside> */}
-                <aside className="widget tagcloud-widget">
-                    <h3 className="widget-title">Tags</h3>
-                    <div className="tagcloud">
-                        {
-                            allTags.map((tag, index) => {
-                                return (
-                                <a className="tag-cloud-link">{tag}</a>
-                                )
-                            })
-                        }
-                        
-                    </div>
-                </aside>
-                <aside className="widget widget-categories">
-                    <h3 className="widget-title">Archives</h3>
-                    <ul>
-                    {
-                            monthsInLetters.map(monthInLetter => {
-                                
-                                return (
-                                    <Checkbox
-                                        key={monthsObj[monthInLetter]}
-                                        icon={<Icon.FiCheck color="#174A41" size={14} />}
-                                        name="my-input"
-                                        checked={true}
-                                        onChange={(value, event) => {
-                                            let p = {
-                                                isTrue: value,
-                                            };
-                                            return alert(value);
-                                        }}
-                                        borderColor="#2D4A8A"
-                                        style={{ cursor: "pointer" }}
-                                        labelStyle={{ marginLeft: 5, userSelect: "none" }}
-                                        label={monthInLetter}
-                                    />
+                            <aside className="widget tagcloud-widget">
+                                <h3 className="widget-title">Tags</h3>
+                                <div className="tagcloud">
+                                    {
+                                        allTags.map((tag, index) => {
+                                            return (
+                                                <a className="tag-cloud-link">{tag}</a>
+                                            )
+                                        })
+                                    }
 
-                                )
-                            })
-                        }
-                    </ul>
-                </aside>
-            </div>
+                                </div>
+                            </aside>
+                            <aside className="widget widget-categories">
+                                <h3 className="widget-title">Archives</h3>
+                                <ul>
+                                    {
+                                        monthsInLetters.map(monthInLetter => {
+
+                                            return (
+                                                <Checkbox
+                                                    key={monthsObj[monthInLetter]}
+                                                    icon={<Icon.FiCheck color="#174A41" size={14} />}
+                                                    name="my-input"
+                                                    checked={true}
+                                                    onChange={(value, event) => {
+                                                        let p = {
+                                                            isTrue: value,
+                                                        };
+                                                        return alert(value);
+                                                    }}
+                                                    borderColor="#2D4A8A"
+                                                    style={{ cursor: "pointer" }}
+                                                    labelStyle={{ marginLeft: 5, userSelect: "none" }}
+                                                    label={monthInLetter}
+                                                />
+
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            </aside>
+                        </div>)
+                }}
+            </BlogContext.Consumer>
         )
     }
 }
