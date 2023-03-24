@@ -710,7 +710,7 @@ export class Home extends Component {
                         <div className="featured-thumbnail">
                           <img className="img-fluid" alt={article.title} src={article.image} />
                           <div className="ttm-blog-overlay-iconbox">
-                            <a href={process.env.PUBLIC_URL + '/Single_blog'}><i className="ti ti-plus" /></a>
+                            <a href={process.env.PUBLIC_URL + '/article'}><i className="ti ti-plus" /></a>
                           </div>
                           <div className="ttm-box-view-overlay" />
                         </div>
@@ -721,7 +721,7 @@ export class Home extends Component {
                             </span>
                           </div>
                           <div className="featured-title">
-                            <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>{article.title}</a></h5>
+                            <h5><a href={process.env.PUBLIC_URL + '/article'}>{article.title}</a></h5>
                           </div>
                           <div className="post-meta">
                             <span className="ttm-meta-line"><i className="fa fa-comments" />{article.nb_commentaires} commentaires</span>
@@ -730,7 +730,7 @@ export class Home extends Component {
                           <div className="featured-desc">
                             <p>{article.description.slice(0, 150) + "..."}</p>
                           </div>
-                          <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/Single_blog'}>Lire plus <i className="ti ti-angle-double-right" /></a>
+                          <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/article'}>Lire plus <i className="ti ti-angle-double-right" /></a>
                         </div>
                       </div>
                     </div>

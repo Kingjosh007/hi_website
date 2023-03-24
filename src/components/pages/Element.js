@@ -1745,7 +1745,7 @@ export class Element extends Component {
                                 <div className="featured-thumbnail">{/* featured-thumbnail */}
                                 <img className="img-fluid" src="https://via.placeholder.com/654X490/444444.jpg" alt="" />
                                 <div className="ttm-blog-overlay-iconbox">
-                                    <a href={process.env.PUBLIC_URL + '/Single_blog'}><i className="ti ti-plus" /></a>
+                                    <a href={process.env.PUBLIC_URL + '/article'}><i className="ti ti-plus" /></a>
                                 </div>
                                 <div className="ttm-box-view-overlay" />
                                 </div>
@@ -1756,7 +1756,7 @@ export class Element extends Component {
                                     </span>
                                 </div>
                                 <div className="featured-title">{/* featured-title */}
-                                    <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>You Must Try 20 Secret Of Digital Transform</a></h5>
+                                    <h5><a href={process.env.PUBLIC_URL + '/article'}>You Must Try 20 Secret Of Digital Transform</a></h5>
                                 </div>
                                 <div className="post-meta">{/* post-meta */}
                                     <span className="ttm-meta-line"><i className="fa fa-comments" />2,comments</span>
@@ -1771,7 +1771,7 @@ export class Element extends Component {
                                     <div className="featured-thumbnail">{/* featured-thumbnail */}
                                     <img className="img-fluid" src="https://via.placeholder.com/654X490/444444.jpg" alt="" />
                                     <div className="ttm-blog-overlay-iconbox">
-                                        <a href={process.env.PUBLIC_URL + '/Single_blog'}><i className="ti ti-plus" /></a>
+                                        <a href={process.env.PUBLIC_URL + '/article'}><i className="ti ti-plus" /></a>
                                     </div>
                                     <div className="ttm-box-view-overlay" />
                                     </div>
@@ -1782,7 +1782,7 @@ export class Element extends Component {
                                         </span>
                                     </div>
                                     <div className="featured-title">{/* featured-title */}
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>Define World Best IT Solution Technology</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/article'}>Define World Best IT Solution Technology</a></h5>
                                     </div>
                                     <div className="post-meta">{/* post-meta */}
                                         <span className="ttm-meta-line"><i className="fa fa-comments" />3,comments</span>
@@ -1797,7 +1797,7 @@ export class Element extends Component {
                                     <div className="featured-thumbnail">{/* featured-thumbnail */}
                                     <img className="img-fluid" src="https://via.placeholder.com/654X490/444444.jpg" alt="" />
                                     <div className="ttm-blog-overlay-iconbox">
-                                        <a href={process.env.PUBLIC_URL + '/Single_blog'}><i className="ti ti-plus" /></a>
+                                        <a href={process.env.PUBLIC_URL + '/article'}><i className="ti ti-plus" /></a>
                                     </div>
                                     <div className="ttm-box-view-overlay" />
                                     </div>
@@ -1808,7 +1808,7 @@ export class Element extends Component {
                                         </span>
                                     </div>
                                     <div className="featured-title">{/* featured-title */}
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>10 PHP Frameworks You Need To Use Anywhere</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/article'}>10 PHP Frameworks You Need To Use Anywhere</a></h5>
                                     </div>
                                     <div className="post-meta">{/* post-meta */}
                                         <span className="ttm-meta-line"><i className="fa fa-comments" />1,comments</span>
@@ -1825,7 +1825,7 @@ export class Element extends Component {
                                     <div className="featured-thumbnail">{/* featured-thumbnail */}
                                     <img className="img-fluid" src="https://via.placeholder.com/654X490/444444.jpg" alt="" />
                                     <div className="ttm-blog-overlay-iconbox">
-                                        <a href={process.env.PUBLIC_URL + '/Single_blog'}><i className="ti ti-plus" /></a>
+                                        <a href={process.env.PUBLIC_URL + '/article'}><i className="ti ti-plus" /></a>
                                     </div>
                                     <div className="ttm-box-view-overlay" />
                                     </div>
@@ -1836,7 +1836,7 @@ export class Element extends Component {
                                         </span>
                                     </div>
                                     <div className="featured-title">{/* featured-title */}
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>You Must Try 20 Secret Of Digital Transform</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/article'}>You Must Try 20 Secret Of Digital Transform</a></h5>
                                     </div>
                                     <div className="post-meta">{/* post-meta */}
                                         <span className="ttm-meta-line"><i className="fa fa-comments" />2,comments</span>
@@ -1845,7 +1845,7 @@ export class Element extends Component {
                                     <div className="featured-desc">{/* featured-description */}
                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the...</p>
                                     </div>
-                                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/Single_blog'}>Read More <i className="ti ti-angle-double-right" /></a>
+                                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/article'}>Read More <i className="ti ti-angle-double-right" /></a>
                                     </div>
                                 </div>{/* featured-imagebox-blog end */}
                                 </div>
@@ -1855,7 +1855,7 @@ export class Element extends Component {
                                     <div className="featured-thumbnail">{/* featured-thumbnail */}
                                     <img className="img-fluid" src="https://via.placeholder.com/654X490/444444.jpg" alt="" />
                                     <div className="ttm-blog-overlay-iconbox">
-                                        <a href={process.env.PUBLIC_URL + '/Single_blog'}><i className="ti ti-plus" /></a>
+                                        <a href={process.env.PUBLIC_URL + '/article'}><i className="ti ti-plus" /></a>
                                     </div>
                                     <div className="ttm-box-view-overlay" />
                                     </div>
@@ -1866,7 +1866,7 @@ export class Element extends Component {
                                         </span>
                                     </div>
                                     <div className="featured-title">{/* featured-title */}
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>Define World Best IT Solution Technology</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/article'}>Define World Best IT Solution Technology</a></h5>
                                     </div>
                                     <div className="post-meta">{/* post-meta */}
                                         <span className="ttm-meta-line"><i className="fa fa-comments" />3,comments</span>
@@ -1875,7 +1875,7 @@ export class Element extends Component {
                                     <div className="featured-desc">{/* featured-description */}
                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the...</p>
                                     </div>
-                                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/Single_blog'}>Read More <i className="ti ti-angle-double-right" /></a>
+                                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/article'}>Read More <i className="ti ti-angle-double-right" /></a>
                                     </div>
                                 </div>{/* featured-imagebox-blog end */}
                                 </div>
@@ -1885,7 +1885,7 @@ export class Element extends Component {
                                     <div className="featured-thumbnail">{/* featured-thumbnail */}
                                     <img className="img-fluid" src="https://via.placeholder.com/654X490/444444.jpg" alt="" />
                                     <div className="ttm-blog-overlay-iconbox">
-                                        <a href={process.env.PUBLIC_URL + '/Single_blog'}><i className="ti ti-plus" /></a>
+                                        <a href={process.env.PUBLIC_URL + '/article'}><i className="ti ti-plus" /></a>
                                     </div>
                                     <div className="ttm-box-view-overlay" />
                                     </div>
@@ -1896,7 +1896,7 @@ export class Element extends Component {
                                         </span>
                                     </div>
                                     <div className="featured-title">{/* featured-title */}
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>10 PHP Frameworks You Need To Use Anywhere</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/article'}>10 PHP Frameworks You Need To Use Anywhere</a></h5>
                                     </div>
                                     <div className="post-meta">{/* post-meta */}
                                         <span className="ttm-meta-line"><i className="fa fa-comments" />1,comments</span>
@@ -1905,7 +1905,7 @@ export class Element extends Component {
                                     <div className="featured-desc">{/* featured-description */}
                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the...</p>
                                     </div>
-                                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/Single_blog'}>Read More <i className="ti ti-angle-double-right" /></a>
+                                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/article'}>Read More <i className="ti ti-angle-double-right" /></a>
                                     </div>
                                 </div>{/* featured-imagebox-blog end */}
                                 </div>

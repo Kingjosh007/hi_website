@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import {createBrowserHistory} from 'history';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -11,8 +11,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { Footer } from './components/layout/Footer';
 // pages
 import Home from './components/Home';
-import Home2 from './components/Home2';
-import Home3 from './components/Home3';
 import Home2_Header2 from './components/Header_style_02';
 import Home3_Header3 from './components/Header_style_03';
 import Presentation from './components/pages/Presentation';
@@ -41,7 +39,7 @@ import Blog from './components/blog/Blog';
 import Blog_grid from './components/blog/Blog_grid';
 import Blog_left_image from './components/blog/Blog_left_image';
 import Blog_top_image from './components/blog/Blog_top_image';
-import Single_blog from './components/blog/Single_blog';
+import Article from './components/blog/Article';
 import Shop from './components/shop/Shop';
 import Product_details from './components/shop/Product_details';
 import Cart from './components/shop/Cart';
@@ -55,10 +53,10 @@ const appHistory = {
   basename: process.env.PUBLIC_URL
 };
 const history = createBrowserHistory(appHistory);
-function App() {
+const App = () => {
 
-  const [blogInfos, setBlogInfos] = React.useState({articles, articlesToDisplay: articles});
-  
+  const [blogInfos, setBlogInfos] = useState({articles, articlesToDisplay: articles});
+
   return (
     <BlogContext.Provider value={[blogInfos, setBlogInfos]}>
     <div className="page">
@@ -87,18 +85,10 @@ function App() {
             <Route path="/service_apps_mobiles" component={AppsMobiles} />
             <Route path="/service_sites_vitrines" component={SitesVitrines} />
             <Route path="/service_progiciels" component={Progiciels} />
-
             <Route path="/service_digitalisation" component={Digitalisation} />
-
             <Route path="/service_robotique_ia" component={RobotiqueIA} />
-
             <Route path="/service_design_graphique" component={DesignGraphique} />
-
             <Route path="/service_conseil" component={Conseil} />
-
-            
-
-
 
             <Route path="/projects" component={Project_style1} />
             <Route path="/project_style2" component={Project_style2} />
@@ -107,16 +97,14 @@ function App() {
             <Route path="/single_style3" component={Single_style3} />
 
             <Route path="/blog" component={Blog} />
-            {/* <Route path="/blog" component={ComingSoon} /> */}
+            <Route path="/article/:articleSlug" component={Article} />
 
             <Route path="/carrieres" component={ComingSoon} />
 
+            {/* <Route path="/blog_grid" component={Blog_grid} /> */}
+            {/* <Route path="/blog_left_image" component={Blog_left_image} />
+            <Route path="/blog_top_image" component={Blog_top_image} /> */}
 
-
-            <Route path="/blog_grid" component={Blog_grid} />
-            <Route path="/blog_left_image" component={Blog_left_image} />
-            <Route path="/blog_top_image" component={Blog_top_image} />
-            <Route path="/single_blog" component={Single_blog} />
             <Route path="/shop" component={Shop} />
             <Route path="/product_details" component={Product_details} />
             <Route path="/cart" component={Cart} />

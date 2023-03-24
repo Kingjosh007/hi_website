@@ -1,37 +1,16 @@
-import React, { Component } from 'react';
+import React, { useState, Component } from 'react';
+import { useParams } from "react-router-dom";
 import Blogsidebar from './Blog_sidebar';
 import Header from '../layout/Header';
 
-export class Single_blog extends Component {
-    constructor(props){
-      super();
-    }
-    render() {
+const Article = () => {
+
+        const { articleSlug } = useParams();
+        const [articleToDisplay, setArticleToDisplay] = useState("");
         return (
             <div className="site-main">
                 <Header />
-                {/* page-title */}
-                <div className="ttm-page-title-row">
-                    <div className="container-xl">
-                        <div className="row">
-                            <div className="col-md-12"> 
-                                <div className="title-box text-center">
-                                    <div className="page-title-heading">
-                                        <h1 className="title">Blog Single View</h1>
-                                    </div>{/* /.page-title-captions */}
-                                    <div className="breadcrumb-wrapper">
-                                        <span>
-                                            <a title="Homepage" href={process.env.PUBLIC_URL + '/'}><i className="ti ti-home" />&nbsp;&nbsp;Home</a>
-                                        </span>
-                                        <span className="ttm-bread-sep">&nbsp; : : &nbsp;</span>
-                                        <span>Single Blog</span>
-                                    </div>  
-                                </div>
-                            </div>{/* /.col-md-12 */}  
-                        </div>{/* /.row */}  
-                    </div>{/* /.container */}                      
-                </div>
-                <div className="sidebar ttm-bgcolor-white clearfix">
+                <div className="sidebar ttm-bgcolor-white clearfix" style={{marginTop: "3em"}}>
                     <div className="container-xl">
                         {/* row */}
                         <div className="row">
@@ -203,7 +182,6 @@ export class Single_blog extends Component {
                 </div>
             </div>            
         )
-    }
 }
 
-export default Single_blog;
+export default Article;

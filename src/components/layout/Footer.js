@@ -148,8 +148,8 @@ export class Footer extends Component {
                                                     return (
                                                         <ul className="widget-post ttm-recent-post-list" key={index}>
                                                             <li>
-                                                                <a href={process.env.PUBLIC_URL + '/Single_blog'}><img className="img-fluid" alt={article.title} src={article.image} /></a>
-                                                                <a href={process.env.PUBLIC_URL + '/Single_blog'}>{article.title.slice(0, 60) + "..."}</a>
+                                                                <a href={process.env.PUBLIC_URL + '/article'}><img className="img-fluid" alt={article.title} src={article.image} /></a>
+                                                                <a href={process.env.PUBLIC_URL + '/article'}>{article.title.slice(0, 60) + "..."}</a>
                                                                 <span className="post-date"><i className="fa fa-calendar" />{convertDateToReadableString(article.published_at)}</span>
                                                             </li>
                                                         </ul>

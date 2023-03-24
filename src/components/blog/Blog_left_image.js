@@ -48,13 +48,13 @@ export class Blog_left_image extends Component {
                                             <a>Consulting</a>
                                         </span>
                                         <div className="post-title featured-title">
-                                            <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>Successful Growth In Business 2018</a></h5>
+                                            <h5><a href={process.env.PUBLIC_URL + '/article'}>Successful Growth In Business 2018</a></h5>
                                         </div>
                                         <div className="featured-desc ttm-box-desc">
                                             <p>Mauris id enim id purus ornare tincidunt. Aenean vel consequat risus.Proin viverra nisi at nisl impe...</p>
                                         </div>
                                         <div className="post-meta">
-                                            <span className="ttm-meta-line"><a href={process.env.PUBLIC_URL + '/Single_blog'}>January 16, 2019</a></span>
+                                            <span className="ttm-meta-line"><a href={process.env.PUBLIC_URL + '/article'}>January 16, 2019</a></span>
                                         </div>
                                     </div>
                                 </div>{/* featured-imagebox-post end*/}
@@ -73,13 +73,13 @@ export class Blog_left_image extends Component {
                                             <a>UI/UX Design</a>
                                         </span>
                                         <div className="post-title featured-title">
-                                            <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>You Must Try 20 Secret Of Digital Transform</a></h5>
+                                            <h5><a href={process.env.PUBLIC_URL + '/article'}>You Must Try 20 Secret Of Digital Transform</a></h5>
                                         </div>
                                         <div className="featured-desc ttm-box-desc">
                                             <p>Mauris id enim id purus ornare tincidunt. Aenean vel consequat risus.Proin viverra nisi at nisl impe...</p>
                                         </div>
                                         <div className="post-meta">
-                                            <span className="ttm-meta-line"><a href={process.env.PUBLIC_URL + '/Single_blog'}>January 12, 2019</a></span>
+                                            <span className="ttm-meta-line"><a href={process.env.PUBLIC_URL + '/article'}>January 12, 2019</a></span>
                                         </div>
                                     </div>
                                 </div>{/* featured-imagebox-post end*/}
@@ -98,13 +98,13 @@ export class Blog_left_image extends Component {
                                             <a>Marketing</a>
                                         </span>
                                         <div className="post-title featured-title">
-                                            <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>10 PHP Frameworks You Need To Use Anywhere</a></h5>
+                                            <h5><a href={process.env.PUBLIC_URL + '/article'}>10 PHP Frameworks You Need To Use Anywhere</a></h5>
                                         </div>
                                         <div className="featured-desc ttm-box-desc">
                                             <p>Mauris id enim id purus ornare tincidunt. Aenean vel consequat risus.Proin viverra nisi at nisl impe...</p>
                                         </div>
                                         <div className="post-meta">
-                                            <span className="ttm-meta-line"><a href={process.env.PUBLIC_URL + '/Single_blog'}>March 10, 2019</a></span>
+                                            <span className="ttm-meta-line"><a href={process.env.PUBLIC_URL + '/article'}>March 10, 2019</a></span>
                                         </div>
                                     </div>
                                 </div>{/* featured-imagebox-post end*/}
@@ -123,13 +123,13 @@ export class Blog_left_image extends Component {
                                             <a>Digital</a>
                                         </span>
                                         <div className="post-title featured-title">
-                                            <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>Digital Conference Of IT Tech Events in 2019</a></h5>
+                                            <h5><a href={process.env.PUBLIC_URL + '/article'}>Digital Conference Of IT Tech Events in 2019</a></h5>
                                         </div>
                                         <div className="featured-desc ttm-box-desc">
                                             <p>Mauris id enim id purus ornare tincidunt. Aenean vel consequat risus.Proin viverra nisi at nisl impe...</p>
                                         </div>
                                         <div className="post-meta">
-                                            <span className="ttm-meta-line"><a href={process.env.PUBLIC_URL + '/Single_blog'}>May 22, 2019</a></span>
+                                            <span className="ttm-meta-line"><a href={process.env.PUBLIC_URL + '/article'}>May 22, 2019</a></span>
                                         </div>
                                     </div>
                                 </div>{/* featured-imagebox-post end*/}
@@ -148,13 +148,13 @@ export class Blog_left_image extends Component {
                                             <a>Design</a>
                                         </span>
                                         <div className="post-title featured-title">
-                                            <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>Where And How To Watch Live Stream Today</a></h5>
+                                            <h5><a href={process.env.PUBLIC_URL + '/article'}>Where And How To Watch Live Stream Today</a></h5>
                                         </div>
                                         <div className="featured-desc ttm-box-desc">
                                             <p>Mauris id enim id purus ornare tincidunt. Aenean vel consequat risus.Proin viverra nisi at nisl impe...</p>
                                         </div>
                                         <div className="post-meta">
-                                            <span className="ttm-meta-line"><a href={process.env.PUBLIC_URL + '/Single_blog'}>April 20, 2019</a></span>
+                                            <span className="ttm-meta-line"><a href={process.env.PUBLIC_URL + '/article'}>April 20, 2019</a></span>
                                         </div>
                                     </div>
                                 </div>{/* featured-imagebox-post end*/}
@@ -173,13 +173,13 @@ export class Blog_left_image extends Component {
                                             <a>Consulting</a>
                                         </span>
                                         <div className="post-title featured-title">
-                                            <h5><a href={process.env.PUBLIC_URL + '/Single_blog'}>5 Easy Ways to Improve Your Web Security</a></h5>
+                                            <h5><a href={process.env.PUBLIC_URL + '/article'}>5 Easy Ways to Improve Your Web Security</a></h5>
                                         </div>
                                         <div className="featured-desc ttm-box-desc">
                                             <p>Mauris id enim id purus ornare tincidunt. Aenean vel consequat risus.Proin viverra nisi at nisl impe...</p>
                                         </div>
                                         <div className="post-meta">
-                                            <span className="ttm-meta-line"><a href={process.env.PUBLIC_URL + '/Single_blog'}>May 14, 2019</a></span>
+                                            <span className="ttm-meta-line"><a href={process.env.PUBLIC_URL + '/article'}>May 14, 2019</a></span>
                                         </div>
                                     </div>
                                 </div>{/* featured-imagebox-post end*/}

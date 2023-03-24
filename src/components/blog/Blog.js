@@ -3,7 +3,7 @@ import Blogsidebar from './Blog_sidebar';
 import Header from '../layout/Header';
 import Pagination from "react-pagination-js";
 import "react-pagination-js/dist/styles.css";
-import { resetIdCounter } from 'react-tabs';
+import { withRouter } from 'react-router-dom';
 import { convertDateToReadableString, dateComesBefore } from '../../utils/dateUtils';
 import BlogContext from '../../BlogContext';
 
@@ -20,9 +20,15 @@ export class Blog extends Component {
         this.setState({ currentPage: numPage });
     };
 
+    navigateTo = (url) => {
+        const { history } = this.props;
+        history.push(url);
+    }
+
     constructor(props) {
         super();
     }
+    
     render() {
         return (
             <BlogContext.Consumer>
@@ -41,7 +47,11 @@ export class Blog extends Component {
                                                 blogInfos.articlesToDisplay.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
                                                     .map((article, index) => {
                                                         return (
-                                                            <article className="post ttm-blog-classic clearfix">
+                                                            <article className="post ttm-blog-classic clearfix"
+                                                                     style={{cursor: "pointer"}} 
+                                                                     onClick={() => {
+                                                                        this.navigateTo('/article/' + article.slug)
+                                                                     }}>$
 
                                                                 <div className="ttm-post-featured-wrapper ttm-featured-wrapper">
                                                                     <div className="ttm-post-featured">
@@ -59,7 +69,7 @@ export class Blog extends Component {
                                                                     </div>
                                                                     <div className="entry-content">
                                                                         <header className="entry-header">
-                                                                            <h2 className="entry-title"><a href={process.env.PUBLIC_URL + '/Single_blog'}>{article.title}</a></h2>
+                                                                            <h2 className="entry-title"><a href={process.env.PUBLIC_URL + '/article'}>{article.title}</a></h2>
                                                                         </header>
                                                                         <div className="ttm-box-desc-text">
                                                                             <p>{article.description}</p>
