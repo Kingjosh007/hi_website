@@ -24,6 +24,7 @@
     "react-icons": "^4.8.0",
     "react-image-lightbox": "^5.1.1",
     "react-image-video-lightbox": "^2.0.1",
+    "react-markdown": "^8.0.6",
     "react-medium-image-zoom": "^4.3.1",
     "react-medium-zoom": "^1.0.0",
     "react-modal-image": "^2.5.0",

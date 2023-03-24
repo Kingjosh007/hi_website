@@ -28,3 +28,7 @@ export const dateComesBefore = (date1, date2) => {
     }
     return false;
 };
+
+export const daysBetweenTwoDatesInDDMMYYYY = (date1, date2) => {
+    
+}

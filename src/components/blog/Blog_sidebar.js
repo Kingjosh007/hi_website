@@ -65,15 +65,6 @@ export class Blogsidebar extends Component {
             <BlogContext.Consumer>
                 {([blogInfos, setBlogInfos]) => {
 
-                    const resetState = () => {
-                        this.setState({
-                            filterText: "",
-                            categories: allCategories.map(category => ({ category, selected: true })),
-                            tags: allTags.map(tag => ({ tag, selected: false })),
-                            months: monthsInLetters.map(month => ({ month, selected: true }))
-                        })
-                    }
-
                     const filterArticlesFromText = () => {
                         const text = this.state.filterText;
                         const filteredArticles = [...blogInfos.articles].filter(article => {
@@ -217,8 +208,8 @@ export class Blogsidebar extends Component {
                                                 const shortDate = `${dtElts[0]} ${month} ${dtElts[2]}`
                                                 return (
                                                     <li>
-                                                        <a href={process.env.PUBLIC_URL + '/article'}><img src={article.image} alt="post-img" /></a>
-                                                        <a href={process.env.PUBLIC_URL + '/article'}>{article.title}</a>
+                                                        <a href={process.env.PUBLIC_URL + '/article/' + article.slug }><img src={article.image} alt="post-img" /></a>
+                                                        <a href={process.env.PUBLIC_URL + '/article/' + article.slug }> {article.title} </a>
                                                         <span className="post-date"><i className="fa fa-calendar" />{shortDate}</span>
                                                     </li>
                                                 )

@@ -51,7 +51,7 @@ export class Blog extends Component {
                                                                      style={{cursor: "pointer"}} 
                                                                      onClick={() => {
                                                                         this.navigateTo('/article/' + article.slug)
-                                                                     }}>$
+                                                                     }}>
 
                                                                 <div className="ttm-post-featured-wrapper ttm-featured-wrapper">
                                                                     <div className="ttm-post-featured">
@@ -69,7 +69,7 @@ export class Blog extends Component {
                                                                     </div>
                                                                     <div className="entry-content">
                                                                         <header className="entry-header">
-                                                                            <h2 className="entry-title"><a href={process.env.PUBLIC_URL + '/article'}>{article.title}</a></h2>
+                                                                            <h2 className="entry-title"><a href={process.env.PUBLIC_URL + '/article/'+ article.slug }>{article.title}</a></h2>
                                                                         </header>
                                                                         <div className="ttm-box-desc-text">
                                                                             <p>{article.description}</p>
@@ -81,7 +81,9 @@ export class Blog extends Component {
 
                                                                         <div className="ttm-blogbox-desc-footer">
                                                                             <div className="ttm-blogbox-footer-readmore d-inline-block">
-                                                                                <a className="ttm-btn ttm-btn-size-sm ttm-textcolor-skincolor btn-inline ttm-icon-btn-right">Lire l'article <i className="ti ti-angle-double-right" /></a>
+                                                                                <a className="ttm-btn ttm-btn-size-sm ttm-textcolor-skincolor btn-inline ttm-icon-btn-right"
+                                                                                
+                                                                                href={process.env.PUBLIC_URL + '/article/'+ article.slug }>Lire l'article <i className="ti ti-angle-double-right" /></a>
                                                                             </div>
                                                                             <div className="ttm-commentbox d-inline-block float-right">
                                                                                 <span><i className="fa fa-comments" />{article.nb_commentaires}</span>
