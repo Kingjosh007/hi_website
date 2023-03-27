@@ -1,6 +1,74 @@
 [
     {
-        "name": "Phoenix Lab",
-        "image": "/images/partenaires/phoenix-lab.jpg"
+        "name": "Diamant Communications",
+        "image": "/images/clients/diamant-communications.jpg"
+    },
+    {
+        "name": "Native Engineering",
+        "image": "/images/clients/native-engineering.png"
+    },
+    {
+        "name": "Sparte Robotics",
+        "image": "/images/clients/sparte-robotics.png"
+    },
+    {
+        "name": "Green House Ventures",
+        "image": "/images/clients/green-house-ventures.png"
+    },
+    {
+        "name": "Au pays de la fleur d'oranger",
+        "image": "/images/clients/au-pays-de-la-fleur-d-oranger.png"
+    },
+    {
+        "name": "Douala Consulting Group",
+        "image": "/images/clients/dcg.png"
+    },
+    {
+        "name": "NG Consulting",
+        "image": "/images/clients/ng-consulting.jpg"
+    },
+    {
+        "name": "Artémis Conseil",
+        "image": "/images/clients/artemis.png"
+    },
+    {
+        "name": "GeoSavers",
+        "image": "/images/clients/geosavers.png"
+    },
+    {
+        "name": "Indigo",
+        "image": "/images/clients/indigo.jpg"
+    },
+    {
+        "name": "Groupe ARNO",
+        "image": "/images/clients/groupe-arno.jpg"
+    },
+    {
+        "name": "Aquavita",
+        "image": "/images/clients/aquavita.jpg"
+    },
+    {
+        "name": "CBM",
+        "image": "/images/clients/cbm.png"
+    },
+    {
+        "name": "Invest & Partners",
+        "image": "/images/clients/invest-and-partners.png"
+    },
+    {
+        "name": "Algo Drone",
+        "image": "/images/clients/algo-drone.png"
+    },
+    {
+        "name": "TME Education",
+        "image": "/images/clients/tme-education.jpg"
+    },
+    {
+        "name": "NAT VibroAcoustic",
+        "image": "/images/clients/nat.jpg"
+    },
+    {
+        "name": "Spiador",
+        "image": "/images/clients/spiador.png"
     }
 ]

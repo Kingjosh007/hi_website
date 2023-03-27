@@ -745,26 +745,17 @@ export class Home extends Component {
 
         <section className="ttm-row first-row-title-section ttm-bgcolor-darkgrey ttm-textcolor-white ttm-bg ttm-bgimage-yes bg-img4">
           <div className="ttm-row-wrapper-bg-layer ttm-bg-layer" />
-          <div className="overlay" 
-                style={{ backgroundColor: "#2D4A8A", opacity: 0.95 }}
-          >
-            <div className="container-xl"
-                //  style={{ backgroundColor: "#263045", marginBottom: "2em", paddingBlock: "1em"}}
-            >
+          <div className="overlay" style={{ backgroundColor: "#2D4A8A", opacity: 0.95}}>
+            <div className="container-xl" style={{ backgroundColor: "#263045", marginBottom: "2em", paddingBlock: "1em"}}>
               <h3 className="title">Quelques références clients</h3>
               <div className="container clients-container" style={{display: "flex", justifyContent: "center"}}>
-                {/* {
+                {
                       <div className="client-item w-100" style={{ display: "flex", justifyContent: "center", maxWidth: "90vw"}} >
-                          <img src="/images/clients/tous.png" alt="Quelques clients de House Innovation" style={{width: "80%"}}/>
+                          <div>
+                            
+                          </div>
                       </div>
 
-                } */}
-                {
-                  <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={5}>
-                    {
-                      
-                    }
-                  </Slider>
                 }
               </div>
               {/* </div> */}
