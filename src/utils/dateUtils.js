@@ -30,5 +30,14 @@ export const dateComesBefore = (date1, date2) => {
 };
 
 export const daysBetweenTwoDatesInDDMMYYYY = (date1, date2) => {
-    
+    const date1Arr = date1.split("-").map((el) => Number(el));
+    const date2Arr = date2.split("-").map((el) => Number(el));
+
+    const date1Obj = new Date(date1Arr[2], date1Arr[1] - 1, date1Arr[0]);
+    const date2Obj = new Date(date2Arr[2], date2Arr[1] - 1, date2Arr[0]);
+
+    const diffTime = Math.abs(date2Obj - date1Obj);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    return diffDays;
 }

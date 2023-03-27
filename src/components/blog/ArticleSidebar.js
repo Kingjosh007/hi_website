@@ -73,37 +73,26 @@ export class ArticleSidebar extends Component {
             <BlogContext.Consumer>
                 {([blogInfos, setBlogInfos]) => {
 
-                    const recentArticles = blogInfos.articles.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
+                    const recentArticles = [...blogInfos.articles].sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
                         .filter((article) => article.slug !== blogInfos.articleToDisplay.slug)
                         .slice(0, 3);
 
-                    const sameCategoryArticles = findArticlesInSameCategory(blogInfos.articleToDisplay, blogInfos.articles)
+                    const sameCategoryArticles = findArticlesInSameCategory(blogInfos.articleToDisplay, [...blogInfos.articles])
                         .sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
                         .slice(0, 3);
 
-                    const samePeriodArticles = blogInfos.articles.filter((article) => (daysBetweenTwoDatesInDDMMYYYY(article.published_at, blogInfos.articleToDisplay.published_at) < 1000))
+                    const samePeriodArticles = [...blogInfos.articles].filter((article) => {
+                        console.log(article.published_at, blogInfos.articleToDisplay.published_at);
+                        const daysInterval = daysBetweenTwoDatesInDDMMYYYY(article.published_at, blogInfos.articleToDisplay.published_at)
+
+                        return daysInterval <= 30
+                    })
                         .filter((article) => article.slug !== blogInfos.articleToDisplay.slug)
                         .slice(0, 10)
                         .sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
 
+                    console.log(samePeriodArticles);
 
-                    const filterArticlesFromText = () => {
-                        const text = this.state.filterText;
-                        const filteredArticles = [...blogInfos.articles].filter(article => {
-                            if (text.length >= 3) {
-                                const titleCondition = article.title.toLowerCase().includes(text.toLowerCase());
-                                const descriptionCondition = article.description.toLowerCase().includes(text.toLowerCase());
-                                const contentCondition = article.content.toLowerCase().includes(text.toLowerCase());
-                                return titleCondition || descriptionCondition || contentCondition;
-                            }
-                            return true;
-                        })
-
-                        setBlogInfos({
-                            ...blogInfos,
-                            articlesToDisplay: filteredArticles
-                        });
-                    }
 
 
                     return (
@@ -134,29 +123,31 @@ export class ArticleSidebar extends Component {
                                 </ul>
                             </aside>
 
-                            <aside className="widget post-widget">
-                                <h3 className="widget-title">Dans la même catégorie</h3>
-                                <ul className="widget-post ttm-recent-post-list">
-                                    {
+                            {
+                                sameCategoryArticles.length > 0 && (
 
-                                        sameCategoryArticles.length > 0 && (
-                                            sameCategoryArticles.map((article, index) => {
+                                    <aside className="widget post-widget">
+                                        <h3 className="widget-title">Dans la même catégorie</h3>
+                                        <ul className="widget-post ttm-recent-post-list">
+                                            {
+                                                sameCategoryArticles.map((article, index) => {
 
-                                                const dtElts = convertDateToDayMonthYearArray(article.published_at);
-                                                const month = dtElts[1].length > 4 ? dtElts[1].slice(0, 4) + "." : dtElts[1];
-                                                const shortDate = `${dtElts[0]} ${month} ${dtElts[2]}`
-                                                return (
-                                                    <li>
-                                                        <a href={process.env.PUBLIC_URL + '/article/' + article.slug}><img src={article.image} alt="post-img" /></a>
-                                                        <a href={process.env.PUBLIC_URL + '/article/' + article.slug}>{article.title}</a>
-                                                        <span className="post-date"><i className="fa fa-calendar" />{shortDate}</span>
-                                                    </li>
-                                                )
-                                            })
-                                        )
-                                    }
-                                </ul>
-                            </aside>
+                                                    const dtElts = convertDateToDayMonthYearArray(article.published_at);
+                                                    const month = dtElts[1].length > 4 ? dtElts[1].slice(0, 4) + "." : dtElts[1];
+                                                    const shortDate = `${dtElts[0]} ${month} ${dtElts[2]}`
+                                                    return (
+                                                        <li>
+                                                            <a href={process.env.PUBLIC_URL + '/article/' + article.slug}><img src={article.image} alt="post-img" /></a>
+                                                            <a href={process.env.PUBLIC_URL + '/article/' + article.slug}>{article.title}</a>
+                                                            <span className="post-date"><i className="fa fa-calendar" />{shortDate}</span>
+                                                        </li>
+                                                    )
+                                                })
+                                            }
+                                        </ul>
+                                    </aside>
+                                )
+                            }
 
                             {
 
