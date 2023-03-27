@@ -7,10 +7,28 @@ import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import staff from '../data/hiStaff.json';
 import mediaCoverage from '../data/mediaArticles.json';
+import clients from '../data/clients.json';
 import latestProjects from '../data/projects.json';
 import articles from '../data/articles.json';
+import Marquee from "react-marquee-slider";
+import styled from "styled-components";
 import { convertDateToDayMonthYearArray, dateComesBefore } from '../utils/dateUtils';
 
+const ClientImage = styled.img`
+                  width: 200px;
+                  height: auto;
+                  border-radius: 4px;
+                  box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+                  object-fit: cover;
+                  object-position: top;`;
+
+const MediaLogo = styled.img`
+                  width: 200px;
+                  height: auto;
+                  border-radius: 4px;
+                  box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+                  object-fit: cover;
+                  object-position: top;`;
 
 const images = latestProjects.map(p => p.image_mini);
 
@@ -505,8 +523,8 @@ export class Home extends Component {
                   return (
                     <div className="ttm-box-col-wrapper">
                       <div className="featured-imagebox featured-imagebox-team style1">
-                        <div className="featured-thumbnail" style={{height: "480px"}}>{/* featured-thumbnail */}
-                          <img className="img-fluid" src={staffMember.photo} alt={`${staffMember.surname} ${staffMember.name.toUpperCase()}`} style={{height: "100%", width: "auto"}} />
+                        <div className="featured-thumbnail" style={{ height: "480px" }}>{/* featured-thumbnail */}
+                          <img className="img-fluid" src={staffMember.photo} alt={`${staffMember.surname} ${staffMember.name.toUpperCase()}`} style={{ height: "100%", width: "auto" }} />
                           <div className="ttm-social-links-wrapper">
                             <ul className="social-icons list-inline">{/* social-icons */}
                               {
@@ -686,7 +704,7 @@ export class Home extends Component {
         </section>
         {/* process-section end */}
 
-        <section className="ttm-row blog-section res-991-pt-0 clearfix" style={{backgroundColor: "#eee"}}>
+        <section className="ttm-row blog-section res-991-pt-0 clearfix" style={{ backgroundColor: "#eee" }}>
           <div className="container-xl">
             <div className="row">
               <div className="col-md-12">
@@ -701,42 +719,42 @@ export class Home extends Component {
             <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={3}>
               {
                 articles.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
-                        .slice(0, 3)
-                        .map((article, index) => {
+                  .slice(0, 3)
+                  .map((article, index) => {
                     const dateArr = convertDateToDayMonthYearArray(article.published_at);
-                  return (
-                    <div className="ttm-box-col-wrapper" key={index}>
-                      <div className="featured-imagebox featured-imagebox-blog">
-                        <div className="featured-thumbnail">
-                          <img className="img-fluid" alt={article.title} src={article.image} />
-                          <div className="ttm-blog-overlay-iconbox">
-                            <a href={process.env.PUBLIC_URL + '/article'}><i className="ti ti-plus" /></a>
+                    return (
+                      <div className="ttm-box-col-wrapper" key={index}>
+                        <div className="featured-imagebox featured-imagebox-blog">
+                          <div className="featured-thumbnail">
+                            <img className="img-fluid" alt={article.title} src={article.image} />
+                            <div className="ttm-blog-overlay-iconbox">
+                              <a href={process.env.PUBLIC_URL + '/article'}><i className="ti ti-plus" /></a>
+                            </div>
+                            <div className="ttm-box-view-overlay" />
                           </div>
-                          <div className="ttm-box-view-overlay" />
-                        </div>
-                        <div className="featured-content">
-                          <div className="ttm-box-post-date">
-                            <span className="ttm-entry-date">
-                              <time className="entry-date" dateTime="2019-01-16T07:07:55+00:00">{dateArr[0]}<span className="entry-month entry-year">{dateArr[1]}</span></time>
-                            </span>
+                          <div className="featured-content">
+                            <div className="ttm-box-post-date">
+                              <span className="ttm-entry-date">
+                                <time className="entry-date" dateTime="2019-01-16T07:07:55+00:00">{dateArr[0]}<span className="entry-month entry-year">{dateArr[1]}</span></time>
+                              </span>
+                            </div>
+                            <div className="featured-title">
+                              <h5><a href={process.env.PUBLIC_URL + '/article'}>{article.title}</a></h5>
+                            </div>
+                            <div className="post-meta">
+                              <span className="ttm-meta-line"><i className="fa fa-comments" />{article.nb_commentaires} commentaires</span>
+                              <span className="ttm-meta-line"><i className="fa fa-user" />{article.author_name}</span>
+                            </div>
+                            <div className="featured-desc">
+                              <p>{article.description.slice(0, 150) + "..."}</p>
+                            </div>
+                            <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/article'}>Lire plus <i className="ti ti-angle-double-right" /></a>
                           </div>
-                          <div className="featured-title">
-                            <h5><a href={process.env.PUBLIC_URL + '/article'}>{article.title}</a></h5>
-                          </div>
-                          <div className="post-meta">
-                            <span className="ttm-meta-line"><i className="fa fa-comments" />{article.nb_commentaires} commentaires</span>
-                            <span className="ttm-meta-line"><i className="fa fa-user" />{article.author_name}</span>
-                          </div>
-                          <div className="featured-desc">
-                            <p>{article.description.slice(0, 150) + "..."}</p>
-                          </div>
-                          <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/article'}>Lire plus <i className="ti ti-angle-double-right" /></a>
                         </div>
                       </div>
-                    </div>
-                  )
+                    )
 
-                })
+                  })
               }
 
             </Slider>
@@ -744,54 +762,97 @@ export class Home extends Component {
         </section>
 
         <section className="ttm-row first-row-title-section ttm-bgcolor-darkgrey ttm-textcolor-white ttm-bg ttm-bgimage-yes bg-img4">
-          <div className="ttm-row-wrapper-bg-layer ttm-bg-layer" />
-          <div className="overlay" style={{ backgroundColor: "#2D4A8A", opacity: 0.95}}>
-            <div className="container-xl" style={{ backgroundColor: "#263045", marginBottom: "2em", paddingBlock: "1em"}}>
+          {/* <div className="ttm-row-wrapper-bg-layer ttm-bg-layer" /> */}
+          <div className="overlay" style={{ backgroundColor: "#2D4A8A", opacity: 0.95 }}>
+            <div className="container-xl" style={{ padding: "1em" }}>
               <h3 className="title">Quelques références clients</h3>
-              <div className="container clients-container" style={{display: "flex", justifyContent: "center"}}>
+              <div className="container clients-container" style={{ display: "flex", justifyContent: "center", marginBottom: "2em", paddingBlock: "1em" }}>
                 {
-                      <div className="client-item w-100" style={{ display: "flex", justifyContent: "center", maxWidth: "90vw"}} >
-                          <div>
-                            
-                          </div>
-                      </div>
+                  <div className="client-item w-100" style={{ display: "flex", justifyContent: "center", width: "100vw" }} >
+                    <div>
+                      {
 
+                        <div style={{ height: 200 }}>
+                          <Marquee key={`clients-marquee`} velocity={12}>
+                            {clients.map((client) => (
+                              <ClientImage
+                                src={client.image}
+                                alt={`Logo du client ${client.name}`}
+                                key={`clients-marquee-${client.name}`}
+                                className="ttm-client-logo-tooltip"
+                                style={{
+                                  marginLeft: "7px",
+                                  marginRight: "80px",
+                                  backgroundColor: "white",
+                                  cursor: "pointer"
+                                }}
+                                data-tooltip={client.name}
+                              />
+                            ))}
+                          </Marquee>
+                        </div>
+
+                      }
+
+                    </div>
+                  </div>
                 }
               </div>
-              {/* </div> */}
             </div>
 
-            <div className="container-xl">
+            <div className="container-xl" style={{ padding: "1em", backgroundColor: "#263045" }}>
               <h3 className="title">Ils parlent de nous</h3>
               <div className="container media-container">
                 {
-                  mediaCoverage.map((item, index) => {
 
-                    return (
-                      <div className="media-item" key={index}>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer">
-                          <img src={`images/medias/${item.logo}`} alt={item.media} />
-                        </a>
-                      </div>
-                    )
-                  })
+                  <div className="client-item w-100" style={{ display: "flex", justifyContent: "center", width: "100vw" }} >
+                    <div>
+                      {
+
+                        <div style={{ height: 200 }}>
+
+                          <Marquee key={`media-marquee`}
+                            velocity={15}
+                            direction="ltr" >
+
+                            {
+                              mediaCoverage.map((item, index) => (
+                                <MediaLogo
+                                  src={item.logo}
+                                  alt={`Logo du média ${item.media}`}
+                                  key={`medias-marquee-${item.media}`}
+                                  className="ttm-client-logo-tooltip"
+                                  style={{
+                                    marginLeft: "7px",
+                                    marginRight: "80px",
+                                    backgroundColor: "white",
+                                    cursor: "pointer"
+                                  }}
+                                  onClick={() => window.open(item.url, "_blank", "noopener,noreferrer")}
+                                  data-tooltip={item.media}
+                                />
+                              ))
+                            }
+                          </Marquee>
+                        </div>
+                      }
+                    </div>
+                  </div>
                 }
               </div>
-              {/* </div> */}
             </div>
 
-            <div className="container-xl" style={{ backgroundColor: "#263045", marginBottom: "2em", paddingBlock: "1em"}}>
+            <div className="container-xl" style={{ marginBottom: "2em", paddingBlock: "1em" }}>
               <h3 className="title">Nos partenaires</h3>
-              <div className="container partners-container" style={{display: "flex", justifyContent: "center"}}>
+              <div className="container partners-container" style={{ display: "flex", justifyContent: "center" }}>
                 {
-                      <div className="partner-item w-100" style={{ display: "flex", justifyContent: "center", maxWidth: "90vw", backgroundColor: "#fff"}} >
-                          <img src="/images/partenaires/tous.png" alt="Quelques partenaires de House Innovation" style={{width: "80%"}}/>
-                      </div>
+                  <div className="partner-item w-100" style={{ display: "flex", justifyContent: "center", maxWidth: "90vw", backgroundColor: "#fff" }} >
+                    <img src="/images/partenaires/tous.png" alt="Quelques partenaires de House Innovation" style={{ width: "80%" }} />
+                  </div>
 
                 }
               </div>
 
-              {/* </div> */}
             </div>
           </div>
 
