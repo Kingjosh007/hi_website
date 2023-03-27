@@ -8,6 +8,7 @@ import 'react-image-lightbox/style.css';
 import staff from '../data/hiStaff.json';
 import mediaCoverage from '../data/mediaArticles.json';
 import clients from '../data/clients.json';
+import partners from '../data/partners.json';
 import latestProjects from '../data/projects.json';
 import articles from '../data/articles.json';
 import Marquee from "react-marquee-slider";
@@ -15,7 +16,7 @@ import styled from "styled-components";
 import { convertDateToDayMonthYearArray, dateComesBefore } from '../utils/dateUtils';
 
 const ClientImage = styled.img`
-                  width: 200px;
+                  width: 150px;
                   height: auto;
                   border-radius: 4px;
                   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
@@ -23,9 +24,17 @@ const ClientImage = styled.img`
                   object-position: top;`;
 
 const MediaLogo = styled.img`
-                  width: 200px;
+                  width: 220px;
                   height: auto;
                   border-radius: 4px;
+                  box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+                  object-fit: cover;
+                  object-position: top;`;
+
+const PartnerImage = styled.img`
+                  width: 150px;
+                  height: auto;
+                  border-radius: 15px;
                   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
                   object-fit: cover;
                   object-position: top;`;
@@ -800,8 +809,8 @@ export class Home extends Component {
               </div>
             </div>
 
-            <div className="container-xl" style={{ padding: "1em", backgroundColor: "#263045" }}>
-              <h3 className="title">Ils parlent de nous</h3>
+            <div className="container-xl" style={{ paddingBlock: "1em", backgroundColor: "#263045", height: "350px", marginBottom: "2em" }}>
+              <h3 className="title" style={{marginBottom: "1.5em"}}>Ils parlent de nous</h3>
               <div className="container media-container">
                 {
 
@@ -842,17 +851,40 @@ export class Home extends Component {
               </div>
             </div>
 
-            <div className="container-xl" style={{ marginBottom: "2em", paddingBlock: "1em" }}>
+            <div className="container-xl" style={{ padding: "1em" }}>
               <h3 className="title">Nos partenaires</h3>
-              <div className="container partners-container" style={{ display: "flex", justifyContent: "center" }}>
+              <div className="container partners-container" style={{ display: "flex", justifyContent: "center", marginBottom: "2em", paddingBlock: "1em" }}>
                 {
-                  <div className="partner-item w-100" style={{ display: "flex", justifyContent: "center", maxWidth: "90vw", backgroundColor: "#fff" }} >
-                    <img src="/images/partenaires/tous.png" alt="Quelques partenaires de House Innovation" style={{ width: "80%" }} />
-                  </div>
+                  <div className="partner-item w-100" style={{ display: "flex", justifyContent: "center", width: "100vw" }} >
+                    <div>
+                      {
 
+                        <div style={{ height: 200 }}>
+                          <Marquee key={`partners-marquee`} velocity={10}>
+                            {partners.map((partner) => (
+                              <PartnerImage
+                                src={partner.image}
+                                alt={`Logo du partenaire ${partner.name}`}
+                                key={`partners-marquee-${partner.name}`}
+                                className="ttm-partner-logo-tooltip"
+                                style={{
+                                  marginLeft: "7px",
+                                  marginRight: "80px",
+                                  backgroundColor: "white",
+                                  cursor: "pointer"
+                                }}
+                                data-tooltip={partner.name}
+                              />
+                            ))}
+                          </Marquee>
+                        </div>
+
+                      }
+
+                    </div>
+                  </div>
                 }
               </div>
-
             </div>
           </div>
 
