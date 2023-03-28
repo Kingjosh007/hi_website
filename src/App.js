@@ -3,6 +3,7 @@ import {createBrowserHistory} from 'history';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import articles from "./data/articles.json";
+import projects from "./data/projects.json";
 import BlogContext from './BlogContext';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -30,15 +31,10 @@ import AppsWeb from './components/services/AppsWeb';
 import DesignGraphique from './components/services/DesignGraphique';
 import Digitalisation from './components/services/Digitalisation';
 import SitesVitrines from './components/services/SitesVitrines';
-import Project_style1 from './components/project/Project_style1';
+import Projects from './components/project/Projects';
 import Project_style2 from './components/project/Project_style2';
-import Single_style1 from './components/project/Single_style1';
-import Single_style2 from './components/project/Single_style2';
-import Single_style3 from './components/project/Single_style3';
+import Projet from './components/project/Projet';
 import Blog from './components/blog/Blog';
-import Blog_grid from './components/blog/Blog_grid';
-import Blog_left_image from './components/blog/Blog_left_image';
-import Blog_top_image from './components/blog/Blog_top_image';
 import Article from './components/blog/Article';
 import Shop from './components/shop/Shop';
 import Product_details from './components/shop/Product_details';
@@ -90,11 +86,9 @@ const App = () => {
             <Route path="/service_design_graphique" component={DesignGraphique} />
             <Route path="/service_conseil" component={Conseil} />
 
-            <Route path="/projects" component={Project_style1} />
+            <Route path="/projects" component={Projects} />
             <Route path="/project_style2" component={Project_style2} />
-            <Route path="/single_style1" component={Single_style1} />
-            <Route path="/single_style2" component={Single_style2} />
-            <Route path="/single_style3" component={Single_style3} />
+            <Route path="/projet/:projectId" component={Projet} />
 
             <Route path="/blog" component={Blog} />
             <Route path="/article/:articleSlug" component={Article} />
@@ -113,6 +107,7 @@ const App = () => {
     </Router>  
     </div> 
     </BlogContext.Provider>
+
   );
  }
 

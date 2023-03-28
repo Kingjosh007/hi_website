@@ -693,12 +693,12 @@ export class Home extends Component {
                         <div className="ttm-box-view-overlay">
                           <div className="featured-iconbox ttm-media-link">
                             <a onClick={() => this.setState({ isOpen: true })} className="ttm_image"><i className="ti ti-search" /></a>
-                            <a href={process.env.PUBLIC_URL + '/Single_style1'} className="ttm_link"><i className="ti ti-link" /></a>
+                            <a href={process.env.PUBLIC_URL + '/Projet'} className="ttm_link"><i className="ti ti-link" /></a>
                           </div>
                         </div>
                         <div className="featured-content">
                           <div className="featured-title">
-                            <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>{project.name}</a></h5>
+                            <h5><a href={process.env.PUBLIC_URL + '/Projet'}>{project.name}</a></h5>
                           </div>
                         </div>
                       </div>

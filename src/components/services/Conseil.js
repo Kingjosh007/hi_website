@@ -34,7 +34,6 @@ export class Conseil extends Component {
 
                                         <div className="row">
                                             <p>
-                                                À House Innovation:
                                                 <ul>
                                                     <li><b> ➤ Stratégie informatique : </b> Cette activité implique de travailler avec les clients pour déterminer les meilleurs investissements à faire dans les technologies de l'information pour soutenir les objectifs de l'entreprise. Cela peut inclure l'analyse de la concurrence, l'évaluation des besoins, la planification et la mise en œuvre de projets.</li>
 

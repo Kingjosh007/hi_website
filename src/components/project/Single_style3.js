@@ -36,7 +36,7 @@ export class Single_style3 extends Component {
                                 </div>{/* /.page-title-captions */}
                                 <div className="breadcrumb-wrapper">
                                 <span>
-                                    <a title="Homepage" href={process.env.PUBLIC_URL + '/Single_style1'}><i className="ti ti-home" />&nbsp;&nbsp;Home</a>
+                                    <a title="Homepage" href={process.env.PUBLIC_URL + '/Projet'}><i className="ti ti-home" />&nbsp;&nbsp;Home</a>
                                 </span>
                                 <span className="ttm-bread-sep">&nbsp; : : &nbsp;</span>
                                 <span>Single-Style-03</span>
@@ -192,7 +192,7 @@ export class Single_style3 extends Component {
                                         <p>Business , Campaign</p>
                                     </div>
                                     <div className="featured-title">
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>Innovative Technology</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/Projet'}>Innovative Technology</a></h5>
                                     </div>
                                     </div>
                                 </div>{/* featured-imagebox */}
@@ -209,7 +209,7 @@ export class Single_style3 extends Component {
                                         <p>Campaign , Technology</p>
                                     </div>
                                     <div className="featured-title">
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>IT Management</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/Projet'}>IT Management</a></h5>
                                     </div>
                                     </div>
                                 </div>{/* featured-imagebox */}
@@ -226,7 +226,7 @@ export class Single_style3 extends Component {
                                         <p>Corporate , Workshop</p>
                                     </div>
                                     <div className="featured-title">
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>Cyber Security Analysis</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/Projet'}>Cyber Security Analysis</a></h5>
                                     </div>
                                     </div>
                                 </div>{/* featured-imagebox */}

@@ -267,7 +267,7 @@ export class Services_01 extends Component {
                                 <p>Business , Campaign</p>
                             </div>
                             <div className="featured-title">
-                                <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>Innovative Technology</a></h5>
+                                <h5><a href={process.env.PUBLIC_URL + '/Projet'}>Innovative Technology</a></h5>
                             </div>
                             </div>
                         </div>{/* featured-imagebox */}
@@ -284,7 +284,7 @@ export class Services_01 extends Component {
                                 <p>Campaign , Technology</p>
                             </div>
                             <div className="featured-title">
-                                <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>IT Management</a></h5>
+                                <h5><a href={process.env.PUBLIC_URL + '/Projet'}>IT Management</a></h5>
                             </div>
                             </div>
                         </div>{/* featured-imagebox */}
@@ -301,7 +301,7 @@ export class Services_01 extends Component {
                                 <p>Corporate , Workshop</p>
                             </div>
                             <div className="featured-title">
-                                <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>Cyber Security Analysis</a></h5>
+                                <h5><a href={process.env.PUBLIC_URL + '/Projet'}>Cyber Security Analysis</a></h5>
                             </div>
                             </div>
                         </div>{/* featured-imagebox */}
@@ -318,7 +318,7 @@ export class Services_01 extends Component {
                                 <p>Innovation , Technology</p>
                             </div>
                             <div className="featured-title">
-                                <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>Web Development</a></h5>
+                                <h5><a href={process.env.PUBLIC_URL + '/Projet'}>Web Development</a></h5>
                             </div>
                             </div>
                         </div>{/* featured-imagebox */}
@@ -335,7 +335,7 @@ export class Services_01 extends Component {
                                 <p>Corporate</p>
                             </div>
                             <div className="featured-title">
-                                <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>Neural Networking</a></h5>
+                                <h5><a href={process.env.PUBLIC_URL + '/Projet'}>Neural Networking</a></h5>
                             </div>
                             </div>
                         </div>{/* featured-imagebox */}
@@ -352,7 +352,7 @@ export class Services_01 extends Component {
                                 <p>Technology , Workshop</p>
                             </div>
                             <div className="featured-title">
-                                <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>Data Management</a></h5>
+                                <h5><a href={process.env.PUBLIC_URL + '/Projet'}>Data Management</a></h5>
                             </div>
                             </div>
                         </div>{/* featured-imagebox */}

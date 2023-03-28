@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
 
 export class Detailbox extends Component {
+
+    constructor(props) {
+        super()
+    }
+
     render() {
+
+
+        const {project} = this.props;
+
         return (
+            
             <div className="ttm-pf-single-detail-box mb-35">
                 <div className="ttm-pf-single-title">
-                <h5>Project Info</h5>
+                <h5>Détails de {project.name}</h5>
                 </div>
-                <p>Etiam volutpat ultricies est id volutpat. Maecenas finibus risus purus, id lobortis urna rutrum id. Sed pellent esquevert pharetra consequat.</p>
+                <p>{project.description}</p>
                 <ul className="ttm-pf-detailbox-list">
-                <li><i className="fa fa-user" /><span> Client : </span>John Amanda</li>
-                <li><i className="far fa-bookmark" /><span> Category :</span>Business, Campaign</li>
-                <li><i className="fa fa-calendar" /><span> Date :</span>6 June 19</li>
-                <li><i className="ti ti-world" /><span> Website : </span>IT-Tech.com</li>
-                <li><i className="fa fa-map-marker" /><span>Location : </span>New York</li>
+                <li><i className="fa fa-user" /><span> Client : </span>{project.client_name}</li>
+                <li><i className="fa fa-map-marker" /><span>Localisation: </span>{project.client_location}</li>
+                <li><i className="fa fa-calendar" /><span> Durée:</span>{project.duration}</li>
+                <li><i className="ti ti-world" /><span> Lien: </span> <a href={project.link} target="_blank" rel="noreferrer noopener">{project.link}</a></li>
+                <li><i className="far fa-bookmark" /><span> Catégories:</span>{project.categories?.join(", ") || "Digitalisation"}</li>
+                
                 </ul>
             </div>
             )

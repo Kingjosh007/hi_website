@@ -82,12 +82,12 @@ export class Project_style2 extends Component {
                                     <div className="ttm-box-view-overlay">
                                     <div className="featured-iconbox ttm-media-link">{/* ttm-media-link */}
                                         <a onClick={() => this.setState({ isOpen: true })}><i className="ti ti-search" /></a>
-                                        <a href={process.env.PUBLIC_URL + '/Single_style1'} className="ttm_link"><i className="ti ti-link" /></a>
+                                        <a href={process.env.PUBLIC_URL + '/Projet'} className="ttm_link"><i className="ti ti-link" /></a>
                                     </div>
                                     </div>{/* ttm-box-view-overlay end*/}
                                     <div className="featured-content">
                                     <div className="featured-title">{/* featured-title */}
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>Business Seminar</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/Projet'}>Business Seminar</a></h5>
                                     </div>
                                     </div>
                                 </div>{/* featured-thumbnail */}
@@ -103,12 +103,12 @@ export class Project_style2 extends Component {
                                     <div className="ttm-box-view-overlay">
                                     <div className="featured-iconbox ttm-media-link">{/* ttm-media-link */}
                                         <a onClick={() => this.setState({ isOpen: true })}><i className="ti ti-search" /></a>
-                                        <a href={process.env.PUBLIC_URL + '/Single_style1'} className="ttm_link"><i className="ti ti-link" /></a>
+                                        <a href={process.env.PUBLIC_URL + '/Projet'} className="ttm_link"><i className="ti ti-link" /></a>
                                     </div>
                                     </div>{/* ttm-box-view-overlay end*/}
                                     <div className="featured-content">
                                     <div className="featured-title">{/* featured-title */}
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>IT Management</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/Projet'}>IT Management</a></h5>
                                     </div>
                                     </div>
                                 </div>{/* featured-thumbnail */}
@@ -124,12 +124,12 @@ export class Project_style2 extends Component {
                                     <div className="ttm-box-view-overlay">
                                     <div className="featured-iconbox ttm-media-link">{/* ttm-media-link */}
                                         <a onClick={() => this.setState({ isOpen: true })}><i className="ti ti-search" /></a>
-                                        <a href={process.env.PUBLIC_URL + '/Single_style1'} className="ttm_link"><i className="ti ti-link" /></a>
+                                        <a href={process.env.PUBLIC_URL + '/Projet'} className="ttm_link"><i className="ti ti-link" /></a>
                                     </div>
                                     </div>{/* ttm-box-view-overlay end*/}
                                     <div className="featured-content">
                                     <div className="featured-title">{/* featured-title */}
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>Cyber Security Analysis</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/Projet'}>Cyber Security Analysis</a></h5>
                                     </div>
                                     </div>
                                 </div>{/* featured-thumbnail */}
@@ -145,12 +145,12 @@ export class Project_style2 extends Component {
                                     <div className="ttm-box-view-overlay">
                                     <div className="featured-iconbox ttm-media-link">{/* ttm-media-link */}
                                         <a onClick={() => this.setState({ isOpen: true })}><i className="ti ti-search" /></a>
-                                        <a href={process.env.PUBLIC_URL + '/Single_style1'} className="ttm_link"><i className="ti ti-link" /></a>
+                                        <a href={process.env.PUBLIC_URL + '/Projet'} className="ttm_link"><i className="ti ti-link" /></a>
                                     </div>
                                     </div>{/* ttm-box-view-overlay end*/}
                                     <div className="featured-content">
                                     <div className="featured-title">{/* featured-title */}
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>Neural Networking</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/Projet'}>Neural Networking</a></h5>
                                     </div>
                                     </div>
                                 </div>{/* featured-thumbnail */}
@@ -166,12 +166,12 @@ export class Project_style2 extends Component {
                                     <div className="ttm-box-view-overlay">
                                     <div className="featured-iconbox ttm-media-link">{/* ttm-media-link */}
                                         <a onClick={() => this.setState({ isOpen: true })}><i className="ti ti-search" /></a>
-                                        <a href={process.env.PUBLIC_URL + '/Single_style1'} className="ttm_link"><i className="ti ti-link" /></a>
+                                        <a href={process.env.PUBLIC_URL + '/Projet'} className="ttm_link"><i className="ti ti-link" /></a>
                                     </div>
                                     </div>{/* ttm-box-view-overlay end*/}
                                     <div className="featured-content">
                                     <div className="featured-title">{/* featured-title */}
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>Data Management</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/Projet'}>Data Management</a></h5>
                                     </div>
                                     </div>
                                 </div>{/* featured-thumbnail */}
@@ -187,12 +187,12 @@ export class Project_style2 extends Component {
                                     <div className="ttm-box-view-overlay">
                                     <div className="featured-iconbox ttm-media-link">{/* ttm-media-link */}
                                         <a onClick={() => this.setState({ isOpen: true })}><i className="ti ti-search" /></a>
-                                        <a href={process.env.PUBLIC_URL + '/Single_style1'} className="ttm_link"><i className="ti ti-link" /></a>
+                                        <a href={process.env.PUBLIC_URL + '/Projet'} className="ttm_link"><i className="ti ti-link" /></a>
                                     </div>
                                     </div>{/* ttm-box-view-overlay end*/}
                                     <div className="featured-content">
                                     <div className="featured-title">{/* featured-title */}
-                                        <h5><a href={process.env.PUBLIC_URL + '/Single_style1'}>Web Devlopment</a></h5>
+                                        <h5><a href={process.env.PUBLIC_URL + '/Projet'}>Web Devlopment</a></h5>
                                     </div>
                                     </div>
                                 </div>{/* featured-thumbnail */}
