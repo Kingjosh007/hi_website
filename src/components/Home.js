@@ -688,7 +688,7 @@ export class Home extends Component {
                     <div className="ttm-box-col-wrapper">
                       <div className="featured-imagebox featured-imagebox-portfolio style1">
                         <div className="featured-thumbnail">
-                          <img className="img-fluid" alt="" src={project.image_mini} />
+                          <img className="img-fluid" alt="" src={project.image} />
                         </div>
                         <div className="ttm-box-view-overlay">
                           <div className="featured-iconbox ttm-media-link">
