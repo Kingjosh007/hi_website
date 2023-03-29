@@ -770,11 +770,12 @@ export class Home extends Component {
           </div>
         </section>
 
-        <section className="ttm-row first-row-title-section ttm-bgcolor-darkgrey ttm-textcolor-white ttm-bg ttm-bgimage-yes bg-img4">
+        <section className="ttm-row first-row-title-section ttm-textcolor-white ttm-bg ttm-bgimage-yes bg-img4" 
+                 style={{color: "#fff", marginBottom: "2em"}}>
           {/* <div className="ttm-row-wrapper-bg-layer ttm-bg-layer" /> */}
-          <div className="overlay" style={{ backgroundColor: "#2D4A8A", opacity: 0.95 }}>
+          {/* <div className="overlay" style={{ backgroundColor: "#2D4A8A", opacity: 0.95 }}> */}
             <div className="container-xl" style={{ padding: "1em" }}>
-              <h3 className="title">Quelques références clients</h3>
+              <h3 className="title" style={{color: "#fff"}}>Quelques références clients</h3>
               <div className="container clients-container" style={{ display: "flex", justifyContent: "center", marginBottom: "2em", paddingBlock: "1em" }}>
                 {
                   <div className="client-item w-100" style={{ display: "flex", justifyContent: "center", width: "100vw" }} >
@@ -808,9 +809,13 @@ export class Home extends Component {
                 }
               </div>
             </div>
+          </section>
 
+          
+          <section>
             <div className="container-xl" style={{ paddingBlock: "1em", backgroundColor: "#263045", height: "350px", marginBottom: "2em" }}>
-              <h3 className="title" style={{marginBottom: "1.5em"}}>Ils parlent de nous</h3>
+              <h3 className="title" style={{color: "#fff"}}>Ils parlent de nous</h3>
+              <p style={{color: "#fff", marginTop: "-1em", fontStyle: "italic", marginBottom: "1.5em"}}>N'hésitez pas à cliquer sur les logos pour découvrir ce que ces médias disent à notre sujet.</p>
               <div className="container media-container">
                 {
 
@@ -852,13 +857,12 @@ export class Home extends Component {
             </div>
 
             <div className="container-xl" style={{ padding: "1em" }}>
-              <h3 className="title">Nos partenaires</h3>
+              <h3 className="title" style={{color: "#000"}}> Nos partenaires </h3>
               <div className="container partners-container" style={{ display: "flex", justifyContent: "center", marginBottom: "2em", paddingBlock: "1em" }}>
                 {
                   <div className="partner-item w-100" style={{ display: "flex", justifyContent: "center", width: "100vw" }} >
                     <div>
                       {
-
                         <div style={{ height: 200 }}>
                           <Marquee key={`partners-marquee`} velocity={10}>
                             {partners.map((partner) => (
@@ -886,7 +890,7 @@ export class Home extends Component {
                 }
               </div>
             </div>
-          </div>
+          {/* </div> */}
 
         </section>
 
