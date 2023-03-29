@@ -732,12 +732,12 @@ export class Home extends Component {
                   .map((article, index) => {
                     const dateArr = convertDateToDayMonthYearArray(article.published_at);
                     return (
-                      <div className="ttm-box-col-wrapper" key={index}>
+                      <div className="ttm-box-col-wrapper" key={`homeArticle${index}`}>
                         <div className="featured-imagebox featured-imagebox-blog">
                           <div className="featured-thumbnail">
                             <img className="img-fluid" alt={article.title} src={article.image} />
                             <div className="ttm-blog-overlay-iconbox">
-                              <a href={process.env.PUBLIC_URL + '/article'}><i className="ti ti-plus" /></a>
+                              <a href={process.env.PUBLIC_URL + '/article/' + article.slug}><i className="ti ti-plus" /></a>
                             </div>
                             <div className="ttm-box-view-overlay" />
                           </div>
