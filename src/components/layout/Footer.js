@@ -2,7 +2,7 @@ import { findByLabelText } from '@testing-library/react'
 import React, { Component } from 'react'
 import axios from 'axios';
 import { FaPaperPlane } from 'react-icons/fa';
-import { toast } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 
 import articles from '../../data/articles.json'
@@ -38,10 +38,7 @@ export class Footer extends Component {
             const response = await axios.post(`${apiLink}/newsletter/subscribe`, { email });
             console.log(response);
             if (response.status === 200) {
-              toast.success("Merci d'avoir souscrit à notre newsletter!", {
-                duration: 5000,
-                position: 'bottom-right',
-              });
+              toast.success("Merci d'avoir souscrit à notre newsletter!");
             } else {        
               toast.error("L'opération n'a pas fonctionné. Veuillez réessayer");
             }
@@ -164,7 +161,7 @@ export class Footer extends Component {
                                     <h3 className="widget-title">Newsletter</h3>
                                     <div className="textwidget widget-text">
                                         Abonnez-vous pour ne rien rater de nos actualités et annonces.
-                                        <form id="subscribe-form" className="newsletter-form" onSubmit={() => { this.handleNewsletterFormSubmit() }} data-mailchimp="true">
+                                        <form id="subscribe-form" className="newsletter-form" onSubmit={(e) => { this.handleNewsletterFormSubmit(e) }} data-mailchimp="true">
                                             <div className="mailchimp-inputbox clearfix" id="subscribe-content">
                                                 <i className="fa fa-envelope" />
                                                 <div className="row">
