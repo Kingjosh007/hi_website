@@ -7,7 +7,7 @@
         "tags": ["langages de programmation", "JavaScript", "PHP", "Flutter", "Node.js", "Next.js", "Tailwind", "Bootstrap"],
         "image": "/images/blog/programming-languages.webp",
         "category": "Technologie",
-        "author_name": "Thyonne Neyo",
+        "author": "Thyonne Neyo",
         "nb_commentaires": 13,
         "publish_at": "03-01-2023"
     },
@@ -19,7 +19,7 @@
         "tags": ["ChatGPT", "Afrique", "digital", "productivité"],
         "image": "/images/blog/chatgpt.jpg",
         "category": "Technologie",
-        "author_name": "Thyonne Neyo",
+        "author": "Thyonne Neyo",
         "nb_commentaires": 37,
         "publish_at": "17-01-2023"
     },
@@ -31,7 +31,7 @@
         "tags": ["diagramme de Gantt", "planification", "gestion de projet", "outils de gestion de projet", "Microsoft Project", "GanttProject", "Trello"],
         "image": "/images/blog/gantt.jpg",
         "category": "Gestion de projet",
-        "author_name": "Thyonne Neyo",
+        "author": "Thyonne Neyo",
         "nb_commentaires": 58,
         "publish_at": "05-11-2022"
     }

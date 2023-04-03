@@ -70,7 +70,7 @@ export class Article extends Component {
                                         <div className="entry-content">
                                             <div className="ttm-post-entry-header">
                                                 <div className="post-meta">
-                                                    <span className="ttm-meta-line byline"><i className="fa fa-user" />Par {this.state.articleToDisplay.author_name || "Auteur non identifié"}</span>
+                                                    <span className="ttm-meta-line byline"><i className="fa fa-user" />Par {this.state.articleToDisplay.author || "Auteur non identifié"}</span>
                                                     <span className="ttm-meta-line entry-date"><i className="fa fa-calendar" /><time className="entry-date published">{convertDateToReadableString(this.state.articleToDisplay.publish_at || "01-01-2023 ")}</time></span>
                                                     <span className="ttm-meta-line tags-links"><i className="far fa-comment" />{this.state.articleToDisplay.nb_commentaires || 0}</span>
                                                 </div>

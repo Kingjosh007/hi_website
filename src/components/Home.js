@@ -744,7 +744,7 @@ export class Home extends Component {
                           <div className="featured-content">
                             <div className="ttm-box-post-date">
                               <span className="ttm-entry-date">
-                                <time className="entry-date" dateTime="2019-01-16T07:07:55+00:00">{dateArr[0]}<span className="entry-month entry-year">{dateArr[1]}</span></time>
+                                <time className="entry-date">{dateArr[0]}<span className="entry-month entry-year">{dateArr[1]}</span></time>
                               </span>
                             </div>
                             <div className="featured-title">
@@ -752,7 +752,7 @@ export class Home extends Component {
                             </div>
                             <div className="post-meta">
                               <span className="ttm-meta-line"><i className="fa fa-comments" />{article.nb_commentaires} commentaires</span>
-                              <span className="ttm-meta-line"><i className="fa fa-user" />{article.author_name}</span>
+                              <span className="ttm-meta-line"><i className="fa fa-user" />{article.author}</span>
                             </div>
                             <div className="featured-desc">
                               <p>{article.description.slice(0, 150) + "..."}</p>

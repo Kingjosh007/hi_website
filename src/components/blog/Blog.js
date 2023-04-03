@@ -61,9 +61,9 @@ export class Blog extends Component {
                                                                 <div className="ttm-blog-classic-content">
                                                                     <div className="ttm-post-entry-header">
                                                                         <div className="post-meta">
-                                                                            <span className="ttm-meta-line byline"><i className="fa fa-user" />{article.author_name}</span>
+                                                                            <span className="ttm-meta-line byline"><i className="fa fa-user" />{article.author}</span>
                                                                             <span className="ttm-meta-line entry-date"><i className="fa fa-calendar" /><time>{convertDateToReadableString(article.publish_at)}</time></span>
-                                                                            <span className="ttm-meta-line tags-links"><i className="far fa-comment" />{article.nb_commentaires}</span>
+                                                                            <span className="ttm-meta-line tags-links"><i className="far fa-comment" />{article.comment_count}</span>
                                                                         </div>
                                                                     </div>
                                                                     <div className="entry-content">
