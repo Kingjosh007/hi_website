@@ -10,7 +10,6 @@ export const convertDateToReadableString = (dateString) => {
     const month = months[monthIndex];
     return `${day} ${month} ${year}`;
 }
-
 export const dateComesBefore = (date1, date2) => {
     const date1Arr = date1.split("-").map((el) => Number(el));
     const date2Arr = date2.split("-").map((el) => Number(el));
@@ -28,6 +27,30 @@ export const dateComesBefore = (date1, date2) => {
     }
     return false;
 };
+
+// Write function dateTimeComesBefore where date1 and date2 are both in the format YYYY-MM-DDTHH:MM:SS.000Z. Compare date first then time.
+export const dateTimeComesBefore = (date1, date2) => {
+    
+    const datePart1 = date1.split("T")[0];
+    const datePart2 = date2.split("T")[0];
+
+    if(datePart1 === datePart2) {
+        const timePart1 = date1.split("T")[1].split(".")[0];
+        const timePart2 = date2.split("T")[1].split(".")[0];
+
+        const hmsArr1 = timePart1.split(":").map(el => Number);
+        const hmsArr2 = timePart2.split(":").map(el => Number);
+
+        const hms1inSeconds = (hmsArr1[0] * 60 * 60) + (hmsArr1[1] * 60) + hmsArr1[2];
+        const hms2inSeconds = (hmsArr2[0] * 60 * 60) + (hmsArr2[1] * 60) + hmsArr2[2];
+
+        return hms1inSeconds < hms2inSeconds;
+    }
+
+    return dateComesBefore(datePart1, datePart2);
+}
+    
+    
 
 export const daysBetweenTwoDatesInDDMMYYYY = (date1, date2) => {
     const date1Arr = date1.split("-").map((el) => Number(el));

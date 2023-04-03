@@ -727,10 +727,10 @@ export class Home extends Component {
             </div>
             <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={3}>
               {
-                articles.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
+                articles.sort((a, b) => dateComesBefore(a.publish_at, b.publish_at) ? 1 : -1)
                   .slice(0, 3)
                   .map((article, index) => {
-                    const dateArr = convertDateToDayMonthYearArray(article.published_at);
+                    const dateArr = convertDateToDayMonthYearArray(article.publish_at);
                     return (
                       <div className="ttm-box-col-wrapper" key={`homeArticle${index}`}>
                         <div className="featured-imagebox featured-imagebox-blog">
@@ -752,7 +752,7 @@ export class Home extends Component {
                             </div>
                             <div className="post-meta">
                               <span className="ttm-meta-line"><i className="fa fa-comments" />{article.nb_commentaires} commentaires</span>
-                              <span className="ttm-meta-line"><i className="fa fa-user" />{article.author}</span>
+                              <span className="ttm-meta-line"><i className="fa fa-user" />{article.author_name}</span>
                             </div>
                             <div className="featured-desc">
                               <p>{article.description.slice(0, 150) + "..."}</p>

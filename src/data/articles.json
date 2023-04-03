@@ -7,9 +7,9 @@
         "tags": ["langages de programmation", "JavaScript", "PHP", "Flutter", "Node.js", "Next.js", "Tailwind", "Bootstrap"],
         "image": "/images/blog/programming-languages.webp",
         "category": "Technologie",
-        "author": "Thyonne Neyo",
+        "author_name": "Thyonne Neyo",
         "nb_commentaires": 13,
-        "published_at": "03-01-2023"
+        "publish_at": "03-01-2023"
     },
     {
         "title": "ChatGPT et la révolution technologique en Afrique : opportunités pour les professionnels du digital",
@@ -19,9 +19,9 @@
         "tags": ["ChatGPT", "Afrique", "digital", "productivité"],
         "image": "/images/blog/chatgpt.jpg",
         "category": "Technologie",
-        "author": "Thyonne Neyo",
+        "author_name": "Thyonne Neyo",
         "nb_commentaires": 37,
-        "published_at": "17-01-2023"
+        "publish_at": "17-01-2023"
     },
     {
         "title": "Le diagramme de Gantt, un outil de planification incontournable",
@@ -31,8 +31,8 @@
         "tags": ["diagramme de Gantt", "planification", "gestion de projet", "outils de gestion de projet", "Microsoft Project", "GanttProject", "Trello"],
         "image": "/images/blog/gantt.jpg",
         "category": "Gestion de projet",
-        "author": "Thyonne Neyo",
+        "author_name": "Thyonne Neyo",
         "nb_commentaires": 58,
-        "published_at": "05-11-2022"
+        "publish_at": "05-11-2022"
     }
 ]

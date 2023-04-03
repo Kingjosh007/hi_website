@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import * as Icon from "react-icons/fi";
 import Checkbox from "react-custom-checkbox";
 import articles from '../../data/articles.json'
-import { convertDateToDayMonthYearArray, convertDateToReadableString, dateComesBefore, daysBetweenTwoDatesInDDMMYYYY } from '../../utils/dateUtils';
-import BlogContext from '../../BlogContext';
+import { convertDateToDayMonthYearArray, convertDateToReadableString, dateComesBefore, dateTimeComesBefore, daysBetweenTwoDatesInDDMMYYYY } from '../../utils/dateUtils';
+import { BlogContext } from '../../BlogContext';
 import Blogsidebar from './Blog_sidebar';
 
 const allCategories = [...new Set(articles.map(article => article.category))]
@@ -14,7 +14,7 @@ const allTags = [...new Set(articles.map(el => el.tags).flat())]
     .map(el => el[0].toUpperCase() + el.slice(1))
     .sort((a, b) => a < b ? -1 : 1);
 
-const allDates = [...new Set(articles.map(el => el.published_at))]
+const allDates = [...new Set(articles.map(el => el.publish_at))]
     .sort((a, b) => dateComesBefore(a, b) ? 1 : -1);
 
 const allMonths = [...new Set(allDates.map(dt => {
@@ -73,26 +73,21 @@ export class ArticleSidebar extends Component {
             <BlogContext.Consumer>
                 {([blogInfos, setBlogInfos]) => {
 
-                    const recentArticles = [...blogInfos.articles].sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
+                    const recentArticles = [...blogInfos.articles].sort((a, b) => dateTimeComesBefore(a.publish_at, b.publish_at) ? 1 : -1)
                         .filter((article) => article.slug !== blogInfos.articleToDisplay.slug)
                         .slice(0, 3);
 
                     const sameCategoryArticles = findArticlesInSameCategory(blogInfos.articleToDisplay, [...blogInfos.articles])
-                        .sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
+                        .sort((a, b) => dateTimeComesBefore(a.publish_at, b.publish_at) ? 1 : -1)
                         .slice(0, 3);
 
                     const samePeriodArticles = [...blogInfos.articles].filter((article) => {
-                        console.log(article.published_at, blogInfos.articleToDisplay.published_at);
-                        const daysInterval = daysBetweenTwoDatesInDDMMYYYY(article.published_at, blogInfos.articleToDisplay.published_at)
-
+                        const daysInterval = daysBetweenTwoDatesInDDMMYYYY(article.publish_at, blogInfos.articleToDisplay.publish_at)
                         return daysInterval <= 30
                     })
                         .filter((article) => article.slug !== blogInfos.articleToDisplay.slug)
                         .slice(0, 10)
-                        .sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
-
-                    console.log(samePeriodArticles);
-
+                        .sort((a, b) => dateTimeComesBefore(a.publish_at, b.publish_at) ? 1 : -1)
 
 
                     return (
@@ -107,7 +102,7 @@ export class ArticleSidebar extends Component {
                                         (
                                             recentArticles.map((article, index) => {
 
-                                                const dtElts = convertDateToDayMonthYearArray(article.published_at);
+                                                const dtElts = convertDateToDayMonthYearArray(article.publish_at.split("T")[0]);
                                                 const month = dtElts[1].length > 4 ? dtElts[1].slice(0, 4) + "." : dtElts[1];
                                                 const shortDate = `${dtElts[0]} ${month} ${dtElts[2]}`
                                                 return (
@@ -131,8 +126,7 @@ export class ArticleSidebar extends Component {
                                         <ul className="widget-post ttm-recent-post-list">
                                             {
                                                 sameCategoryArticles.map((article, index) => {
-
-                                                    const dtElts = convertDateToDayMonthYearArray(article.published_at);
+                                                    const dtElts = convertDateToDayMonthYearArray(article.publish_at.split("T")[0]);
                                                     const month = dtElts[1].length > 4 ? dtElts[1].slice(0, 4) + "." : dtElts[1];
                                                     const shortDate = `${dtElts[0]} ${month} ${dtElts[2]}`
                                                     return (
@@ -160,7 +154,7 @@ export class ArticleSidebar extends Component {
                                             {
                                                 samePeriodArticles.map((article, index) => {
 
-                                                    const dtElts = convertDateToDayMonthYearArray(article.published_at);
+                                                    const dtElts = convertDateToDayMonthYearArray(article.publish_at.split("T")[0]);
                                                     const month = dtElts[1].length > 4 ? dtElts[1].slice(0, 4) + "." : dtElts[1];
                                                     const shortDate = `${dtElts[0]} ${month} ${dtElts[2]}`
                                                     return (

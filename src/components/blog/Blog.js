@@ -3,8 +3,8 @@ import Blogsidebar from './Blog_sidebar';
 import Header from '../layout/Header';
 import Pagination from "react-pagination-js";
 import "react-pagination-js/dist/styles.css";
-import { convertDateToReadableString, dateComesBefore } from '../../utils/dateUtils';
-import BlogContext from '../../BlogContext';
+import { convertDateToReadableString, dateTimeComesBefore } from '../../utils/dateUtils';
+import { BlogContext } from '../../BlogContext';
 
 
 export class Blog extends Component {
@@ -43,7 +43,7 @@ export class Blog extends Component {
                                         <div className="col-lg-9 content-area">
                                             {
 
-                                                blogInfos.articlesToDisplay.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
+                                                blogInfos.articlesToDisplay.sort((a, b) => dateTimeComesBefore(a.publish_at, b.publish_at) ? -1 : 1)
                                                     .map((article, index) => {
                                                         return (
                                                             <article className="post ttm-blog-classic clearfix"
@@ -61,8 +61,8 @@ export class Blog extends Component {
                                                                 <div className="ttm-blog-classic-content">
                                                                     <div className="ttm-post-entry-header">
                                                                         <div className="post-meta">
-                                                                            <span className="ttm-meta-line byline"><i className="fa fa-user" />{article.author}</span>
-                                                                            <span className="ttm-meta-line entry-date"><i className="fa fa-calendar" /><time>{convertDateToReadableString(article.published_at)}</time></span>
+                                                                            <span className="ttm-meta-line byline"><i className="fa fa-user" />{article.author_name}</span>
+                                                                            <span className="ttm-meta-line entry-date"><i className="fa fa-calendar" /><time>{convertDateToReadableString(article.publish_at)}</time></span>
                                                                             <span className="ttm-meta-line tags-links"><i className="far fa-comment" />{article.nb_commentaires}</span>
                                                                         </div>
                                                                     </div>

@@ -2,9 +2,9 @@ import React, { Component, useState } from 'react';
 import {createBrowserHistory} from 'history';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import articles from "./data/articles.json";
+// import articles from "./data/articles.json";
 import projects from "./data/projects.json";
-import BlogContext from './BlogContext';
+import BlogContext, { BlogContextProvider } from './BlogContext';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -51,10 +51,10 @@ const appHistory = {
 const history = createBrowserHistory(appHistory);
 const App = () => {
 
-  const [blogInfos, setBlogInfos] = useState({articles, articlesToDisplay: articles});
+  // const [blogInfos, setBlogInfos] = useState({articles, articlesToDisplay: articles});
 
   return (
-    <BlogContext.Provider value={[blogInfos, setBlogInfos]}>
+    <BlogContextProvider>
     <div className="page">
       <Router basename={process.env.PUBLIC_URL} history={history}>  
         <div id="preloader">
@@ -106,7 +106,7 @@ const App = () => {
         <Footer />
     </Router>  
     </div> 
-    </BlogContext.Provider>
+    </BlogContextProvider>
 
   );
  }

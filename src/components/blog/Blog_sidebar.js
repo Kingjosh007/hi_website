@@ -3,7 +3,7 @@ import * as Icon from "react-icons/fi";
 import Checkbox from "react-custom-checkbox";
 import articles from '../../data/articles.json'
 import { convertDateToDayMonthYearArray, convertDateToReadableString, dateComesBefore } from '../../utils/dateUtils';
-import BlogContext from '../../BlogContext';
+import { BlogContext } from '../../BlogContext';
 
 const allCategories = [...new Set(articles.map(article => article.category))]
     .map(el => el[0].toUpperCase() + el.slice(1))
@@ -13,7 +13,7 @@ const allTags = [...new Set(articles.map(el => el.tags).flat())]
     .map(el => el[0].toUpperCase() + el.slice(1))
     .sort((a, b) => a < b ? -1 : 1);
 
-const allDates = [...new Set(articles.map(el => el.published_at))]
+const allDates = [...new Set(articles.map(el => el.publish_at))]
     .sort((a, b) => dateComesBefore(a, b) ? 1 : -1);
 
 const allMonths = [...new Set(allDates.map(dt => {
@@ -93,7 +93,7 @@ export class Blogsidebar extends Component {
                                 || acceptedCategories.includes(article.category.toLowerCase()))
 
                             const monthsCondition = (monthsToLower.length === 0 
-                                || monthsToLower.includes(transformDateToMonthInLetters(article.published_at).toLowerCase()))
+                                || monthsToLower.includes(transformDateToMonthInLetters(article.publish_at).toLowerCase()))
                             
                             const tagsCondition = (tagsToLower.length === 0 || article.tags.map(t => t.toLowerCase()).some(t => tagsToLower.includes(t)));
                             
@@ -199,11 +199,11 @@ export class Blogsidebar extends Component {
                                 <h3 className="widget-title">Articles récents</h3>
                                 <ul className="widget-post ttm-recent-post-list">
                                     {
-                                        blogInfos.articles.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
+                                        blogInfos.articles.sort((a, b) => dateComesBefore(a.publish_at, b.publish_at) ? 1 : -1)
                                             .slice(0, 3)
                                             .map((article, index) => {
 
-                                                const dtElts = convertDateToDayMonthYearArray(article.published_at);
+                                                const dtElts = convertDateToDayMonthYearArray(article.publish_at);
                                                 const month = dtElts[1].length > 4 ? dtElts[1].slice(0, 4) + "." : dtElts[1];
                                                 const shortDate = `${dtElts[0]} ${month} ${dtElts[2]}`
                                                 return (

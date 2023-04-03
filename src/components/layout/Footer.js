@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 
 
 import articles from '../../data/articles.json'
-import { convertDateToReadableString, dateComesBefore } from '../../utils/dateUtils'
+import { convertDateToReadableString, dateComesBefore, dateTimeComesBefore } from '../../utils/dateUtils'
 
 const apiLink = "https://hi-api.up.railway.app/api";
 
@@ -138,7 +138,7 @@ export class Footer extends Component {
                                 <div className="widget widget_text clearfix">
                                     <h3 className="widget-title">Articles récents</h3>
                                     {
-                                        articles.sort((a, b) => dateComesBefore(a.published_at, b.published_at) ? 1 : -1)
+                                        articles.sort((a, b) => dateTimeComesBefore(a.publish_at, b.publish_at) ? 1 : -1)
                                                 .slice(0, 3)
                                                 .map((article, index) => {
 
@@ -147,7 +147,7 @@ export class Footer extends Component {
                                                             <li>
                                                                 <a href={process.env.PUBLIC_URL + '/article'}><img className="img-fluid" alt={article.title} src={article.image} /></a>
                                                                 <a href={process.env.PUBLIC_URL + '/article'}>{article.title.slice(0, 60) + "..."}</a>
-                                                                <span className="post-date"><i className="fa fa-calendar" />{convertDateToReadableString(article.published_at)}</span>
+                                                                <span className="post-date"><i className="fa fa-calendar" />{convertDateToReadableString(article.publish_at)}</span>
                                                             </li>
                                                         </ul>
                                                     )
