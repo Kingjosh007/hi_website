@@ -117,7 +117,7 @@ export class RobotiqueIA extends Component {
                                                         </div>
                                                         {/* separator */}
 
-                                                        <li><b> ➤ Nous construisons des robots répondant à des besoins spécifiques, quel que soit le secteur d'activité:</b> Eh oui, House Innovation intervient également en robotique mobile, en concevant des robots qui vous permettront d'alléger vos tâches quotidiennes en éliminant les tâches routinières. Nous contribuosns ainsi à l'augmentation de votre productivité et la réduction de vos coûts.</li>
+                                                        <li><b> ➤ Nous construisons des robots répondant à des besoins spécifiques, quel que soit le secteur d'activité:</b> Eh oui, House Innovation intervient également en robotique mobile, en concevant des robots qui vous permettront d'alléger vos tâches quotidiennes en éliminant les tâches routinières. Nous contribuons ainsi à l'augmentation de votre productivité et la réduction de vos coûts.</li>
 
                                                         <div className="ttm_single_image-wrapper mb-35">
                                                             <img className="img-fluid" src="/images/services/robotique_ai_robotique_mobile.png" alt="Robotique et Intelligence Artificielle" />

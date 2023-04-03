@@ -8,7 +8,7 @@ import { toast } from 'react-hot-toast';
 import articles from '../../data/articles.json'
 import { convertDateToReadableString, dateComesBefore } from '../../utils/dateUtils'
 
-const apiLink = "https://hi-backend-production.up.railway.app/api";
+const apiLink = "https://hi-api.up.railway.app/api";
 
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -42,7 +42,7 @@ export class Footer extends Component {
                 duration: 5000,
                 position: 'bottom-right',
               });
-            } else {
+            } else {        
               toast.error("L'opération n'a pas fonctionné. Veuillez réessayer");
             }
           } catch (error) {
@@ -164,7 +164,7 @@ export class Footer extends Component {
                                     <h3 className="widget-title">Newsletter</h3>
                                     <div className="textwidget widget-text">
                                         Abonnez-vous pour ne rien rater de nos actualités et annonces.
-                                        <form id="subscribe-form" className="newsletter-form" onSubmit={this.handleNewsletterFormSubmit} data-mailchimp="true">
+                                        <form id="subscribe-form" className="newsletter-form" onSubmit={() => { this.handleNewsletterFormSubmit() }} data-mailchimp="true">
                                             <div className="mailchimp-inputbox clearfix" id="subscribe-content">
                                                 <i className="fa fa-envelope" />
                                                 <div className="row">
