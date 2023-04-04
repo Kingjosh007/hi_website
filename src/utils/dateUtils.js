@@ -10,6 +10,12 @@ export const convertDateToReadableString = (dateString) => {
     const month = months[monthIndex];
     return `${day} ${month} ${year}`;
 }
+
+export const convertDateToReadableStringWithTime = (dateString) => {
+    const readableDate = convertDateToReadableString(dateString.split("T")[0]);
+    const time = dateString.split("T")[1].split(".")[0].split(":").slice(0, 2).join("h");
+    return `${readableDate} à ${time}`;
+}
 export const dateComesBefore = (date1, date2) => {
     const date1Arr = date1.split("-").map((el) => Number(el));
     const date2Arr = date2.split("-").map((el) => Number(el));
@@ -63,4 +69,26 @@ export const daysBetweenTwoDatesInDDMMYYYY = (date1, date2) => {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
     return diffDays;
+}
+
+export const daysBetweenTwoDatesInYYYYMMDD = (date1, date2) => {
+    const date1Arr = date1.split("-").map((el) => Number(el));
+    const date2Arr = date2.split("-").map((el) => Number(el));
+
+    const date1Obj = new Date(date1Arr[0], date1Arr[1] - 1, date1Arr[2]);
+    const date2Obj = new Date(date2Arr[0], date2Arr[1] - 1, date2Arr[2]);
+
+    const diffTime = Math.abs(date2Obj - date1Obj);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    return diffDays;
+}
+
+export const todayInYYYYMMDD = () => {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    const yyyy = today.getFullYear();
+
+    return `${yyyy}-${mm}-${dd}`;
 }

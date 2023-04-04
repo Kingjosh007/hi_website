@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as Icon from "react-icons/fi";
 import Checkbox from "react-custom-checkbox";
 import articles from '../../data/articles.json'
-import { convertDateToDayMonthYearArray, convertDateToReadableString, dateComesBefore, dateTimeComesBefore, daysBetweenTwoDatesInDDMMYYYY } from '../../utils/dateUtils';
+import { convertDateToDayMonthYearArray, convertDateToReadableString, dateComesBefore, dateTimeComesBefore, daysBetweenTwoDatesInDDMMYYYY, daysBetweenTwoDatesInYYYYMMDD, todayInYYYYMMDD } from '../../utils/dateUtils';
 import { BlogContext } from '../../BlogContext';
 import Blogsidebar from './Blog_sidebar';
 
@@ -73,6 +73,8 @@ export class ArticleSidebar extends Component {
             <BlogContext.Consumer>
                 {([blogInfos, setBlogInfos]) => {
 
+                    if(!blogInfos.articleToDisplay) return null;
+
                     const recentArticles = [...blogInfos.articles].sort((a, b) => dateTimeComesBefore(a.publish_at, b.publish_at) ? 1 : -1)
                         .filter((article) => article.slug !== blogInfos.articleToDisplay.slug)
                         .slice(0, 3);
@@ -82,7 +84,7 @@ export class ArticleSidebar extends Component {
                         .slice(0, 3);
 
                     const samePeriodArticles = [...blogInfos.articles].filter((article) => {
-                        const daysInterval = daysBetweenTwoDatesInDDMMYYYY(article.publish_at, blogInfos.articleToDisplay.publish_at)
+                        const daysInterval = daysBetweenTwoDatesInYYYYMMDD((article.publish_at || todayInYYYYMMDD()).split("T")[0] || todayInYYYYMMDD(), blogInfos.articleToDisplay.publish_at?.split("T")[0] || todayInYYYYMMDD()) || 1000;
                         return daysInterval <= 30
                     })
                         .filter((article) => article.slug !== blogInfos.articleToDisplay.slug)
