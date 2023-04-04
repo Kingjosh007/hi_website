@@ -16,6 +16,26 @@ export const convertDateToReadableStringWithTime = (dateString) => {
     const time = dateString.split("T")[1].split(".")[0].split(":").slice(0, 2).join("h");
     return `${readableDate} à ${time}`;
 }
+
+export const dateTimeNowInYYYYMMDDTHHMMSS = () => {
+    // Pad with zeros when necessary
+    const pad = (num, size) => {
+        let s = num + "";
+        while (s.length < size) s = "0" + s;
+        return s;
+    }
+
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = pad(date.getMonth() + 1, 2);
+    const day = pad(date.getDate(), 2);
+    const hours = pad(date.getHours(), 2);
+    const minutes = pad(date.getMinutes(), 2);
+    const seconds = pad(date.getSeconds(), 2);
+
+    return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}.000Z`;
+}
+
 export const dateComesBefore = (date1, date2) => {
     const date1Arr = date1.split("-").map((el) => Number(el));
     const date2Arr = date2.split("-").map((el) => Number(el));

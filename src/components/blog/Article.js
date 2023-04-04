@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import Blogsidebar from './Blog_sidebar';
 import Header from '../layout/Header';
 import { BlogContext } from '../../BlogContext';
-import { convertDateToReadableString, convertDateToReadableStringWithTime, dateTimeComesBefore } from '../../utils/dateUtils';
+import { convertDateToReadableString, convertDateToReadableStringWithTime, dateTimeComesBefore, dateTimeNowInYYYYMMDDTHHMMSS } from '../../utils/dateUtils';
 import ArticleSidebar from './ArticleSidebar';
 import ReactMarkdown from 'react-markdown';
 import { render } from '@testing-library/react';
@@ -17,7 +17,12 @@ export class Article extends Component {
     state = {
         articleToDisplay: {},
         shouldSetArticle: false,
-        nbSet: 0
+        nbSet: 0,
+        commentor_comment: "",
+        commentor_name: localStorage.getItem("hi_commentor_name") || "",
+        commentor_email: localStorage.getItem("hi_commentor_email") || "",
+        should_save_commentor: JSON.parse(localStorage.getItem("hi_commentor_should_save")) || false,
+        session_comments: []
     }
 
     constructor(props) {
@@ -36,6 +41,53 @@ export class Article extends Component {
 
     componentDidMount() {
         this.fetchArticle();
+    }
+
+    handleSubmitComment = (e) => {
+
+        e.preventDefault();
+        const articleSlug = this.props.match.params.articleSlug;
+        const { commentor_comment, commentor_name, commentor_email, should_save_commentor } = this.state;
+
+        if(should_save_commentor)
+        {
+            localStorage.setItem("hi_commentor_name", commentor_name);
+            localStorage.setItem("hi_commentor_email", commentor_email);
+            localStorage.setItem("hi_commentor_should_save", should_save_commentor);
+        }
+
+        const urlToFetch = `${apiBaseUrl}/articles/${articleSlug}/comments`;
+        const dataToPost = {
+            content: commentor_comment,
+            author: commentor_name,
+            email: commentor_email
+        }
+
+        fetch(urlToFetch, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dataToPost)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                const commentData = data.data.comment;
+                const commentWithDateTime = {
+                    ...commentData,
+                    created_at: dateTimeNowInYYYYMMDDTHHMMSS()
+                }
+
+                this.setState({ session_comments: [...this.state.session_comments, commentWithDateTime] })
+                // Clear fields
+                this.setState({ commentor_comment: "" })
+                if(!should_save_commentor)
+                {
+                    this.setState({ commentor_name: "" })
+                    this.setState({ commentor_email: "" })
+                }
+            })
     }
 
 
@@ -59,8 +111,6 @@ export class Article extends Component {
                             ...blogInfos,
                             articleToDisplay: thisArticle
                         })
-
-                        console.log(blogInfos.articleToDisplay);
 
                         this.setState({ nbSet: this.state.nbSet + 1 })
                     }
@@ -91,6 +141,7 @@ export class Article extends Component {
                                                                 <div className="post-meta">
                                                                     <span className="ttm-meta-line byline"><i className="fa fa-user" />Par {this.state.articleToDisplay?.author || "Auteur non identifié"}</span>
                                                                     <span className="ttm-meta-line entry-date"><i className="fa fa-calendar" /><time className="entry-date published">{convertDateToReadableStringWithTime(this.state.articleToDisplay?.publish_at || "01-01-2023")}</time></span>
+                                                                    <span className="ttm-meta-line"> Dans la catégorie <b>{this.state.articleToDisplay?.category || "Non classé"}</b></span>
                                                                     <span className="ttm-meta-line tags-links"><i className="far fa-comment" />{this.state.articleToDisplay?.comment_count || 0}</span>
                                                                 </div>
                                                             </div>
@@ -111,14 +162,21 @@ export class Article extends Component {
 
                                                             }
 
-
-
                                                             <p>
                                                                 <ReactMarkdown>
                                                                     {this.state.articleToDisplay?.content}
                                                                 </ReactMarkdown>
-
                                                             </p>
+
+                                                            <div>
+                                                                <b style={{ color: "#000", marginRight: "1em" }}>Tags: </b> {this.state.articleToDisplay?.tags?.map(tag => {
+                                                                    return (
+                                                                        <span className="badge badge-primary" style={{ marginRight: "0.5em", fontSize: "0.8em" }}>
+                                                                            {tag}
+                                                                        </span>
+                                                                    )
+                                                                })}
+                                                            </div>
 
 
 
@@ -126,8 +184,8 @@ export class Article extends Component {
                                                                 <div id="comments" className="comments-area">
                                                                     <h2 className="comments-title">
                                                                         {
-                                                                            this.state.articleToDisplay?.comments.length === 0 ?
-                                                                                ("Aucun commentaire pour le moment") : (this.state.articleToDisplay?.comments.length === 1 ?
+                                                                            this.state.articleToDisplay?.comments?.length === 0 ?
+                                                                                ("Aucun commentaire pour le moment") : (this.state.articleToDisplay?.comments?.length === 1 ?
                                                                                     ("1 commentaire") : (this.state.articleToDisplay?.comments.length + " commentaires"))
 
                                                                         }
@@ -138,7 +196,7 @@ export class Article extends Component {
 
                                                                             <ol className="comment-list">
                                                                                 {
-                                                                                    this.state.articleToDisplay?.comments.sort((a, b) => {
+                                                                                    this.state.articleToDisplay.comments?.sort((a, b) => {
                                                                                         return dateTimeComesBefore(a.created_at, b.created_at) ? -1 : 1;
                                                                                     }).map((comment, index) => {
                                                                                         return (
@@ -166,30 +224,81 @@ export class Article extends Component {
                                                                         )
                                                                     }
 
+                                                                    {
+                                                                        this.state.session_comments.length > 0 && (
+                                                                            <ol className="comment-list">
+                                                                                {
+                                                                                    this.state.session_comments?.sort((a, b) => {
+                                                                                        return dateTimeComesBefore(a.created_at, b.created_at) ? -1 : 1;
+                                                                                    }).map((comment, index) => {
+                                                                                        console.log(comment)
+                                                                                        return (
+                                                                                            <li className="children comment">
+                                                                                                <div className="comment-body">
+                                                                                                    <div className="comment-box">
+                                                                                                        <div className="comment-meta">
+                                                                                                            <h5 className="ttm-comment-owner">{comment.author}</h5>
+                                                                                                            <a>{convertDateToReadableStringWithTime(comment.created_at)}</a>
+                                                                                                        </div>
+                                                                                                        <div className="author-content-wrap">
+                                                                                                            <p>{comment.content}</p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                        )
+                                                                                    })
+                                                                                }
+
+                                                                            </ol>
+                                                                        )
+                                                                    }
+
 
 
 
                                                                     <div className="comment-respond">
-                                                                        <h3 className="comment-reply-title">Laisser un commentaire</h3>
+                                                                        <h3 className="comment-reply-title">Laissez un commentaire</h3>
                                                                         <p className="comment-notes">Votre adresse email ne sera pas affichée </p>
-                                                                        <form id="ttm-comment-form" className="row comment-form clearfix" method="post" action="#">
+
+                                                                        <form id="ttm-comment-form" className="row comment-form clearfix" onSubmit={(e) => { this.handleSubmitComment(e) }}>
                                                                             <div className="col-sm-12 col-md-12">
                                                                                 <div className="form-group">
-                                                                                    <textarea name="Massage" rows={5} placeholder="Votre commentaire" required="required" className="form-control with-grey-bg" defaultValue={""} />
+                                                                                    <textarea name="message" rows={5} placeholder="Votre commentaire" required="required" className="form-control with-grey-bg" defaultValue={""}
+                                                                                        value={this.state.commentor_comment}
+                                                                                        onChange={
+                                                                                            (e) => { this.setState({ commentor_comment: e.target.value }) }
+                                                                                        }
+                                                                                    />
                                                                                 </div>
                                                                             </div>
                                                                             <div className="col-sm-12 col-md-4">
                                                                                 <div className="form-group">
-                                                                                    <input name="name" type="text" className="form-control with-grey-bg" placeholder="Nom (requis)" required="required" />
+                                                                                    <input name="name" type="text" className="form-control with-grey-bg" placeholder="Nom (requis)" required="required"
+                                                                                        value={this.state.commentor_name}
+                                                                                        onChange={
+                                                                                            (e) => { this.setState({ commentor_name: e.target.value }) }
+                                                                                        }
+                                                                                    />
                                                                                 </div>
                                                                             </div>
                                                                             <div className="col-sm-12 col-md-4">
                                                                                 <div className="form-group">
-                                                                                    <input name="email" type="text" placeholder="Email (requis)" required="required" className="form-control with-grey-bg" />
+                                                                                    <input name="email" type="text" placeholder="Email (requis)" required="required" className="form-control with-grey-bg"
+                                                                                        value={this.state.commentor_email}
+                                                                                        onChange={
+                                                                                            (e) => { this.setState({ commentor_email: e.target.value }) }
+                                                                                        }
+                                                                                    />
                                                                                 </div>
                                                                             </div>
                                                                             <div className="col-md-12 mb-2">
-                                                                                <input id="comment-cookies-consent" name="comment-cookies-consent" type="checkbox" defaultValue="yes" />&nbsp; &nbsp;
+                                                                                <input id="comment-cookies-consent" name="comment-cookies-consent" type="checkbox" defaultValue="yes"
+                                                                                    checked={this.state.should_save_commentor}
+                                                                                    onChange={
+                                                                                        (e) => { this.setState({ should_save_commentor: e.target.checked }) }
+                                                                                    }
+                                                                                />&nbsp; &nbsp;
                                                                                 <label htmlFor="comment-cookies-consent">Enregistrer mes informations pour mes futurs commentaires</label>
                                                                             </div>
                                                                             <div className="col-md-12">
@@ -212,7 +321,7 @@ export class Article extends Component {
                                             <div className="col-lg-3 widget-area">
                                                 {
                                                     this.state.nbSet >= 1 && (
-                                                        <ArticleSidebar />
+                                                        <ArticleSidebar slugToExclude={this.props.match.params.articleSlug} />
                                                     )
                                                 }
 
