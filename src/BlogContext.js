@@ -26,7 +26,6 @@ const BlogContextProvider = ({ children }) => {
             fetch(urlToFetch)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
                     setBlogInfos({
                         ...blogInfos,
                         articles: data.data,
