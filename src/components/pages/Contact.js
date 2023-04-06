@@ -1,7 +1,66 @@
 import React, { Component } from 'react';
+import toast from 'react-hot-toast';
 import Header from '../layout/Header';
 
-export class Contact_01 extends Component {
+export class Contact extends Component {
+
+
+    constructor(props) {
+        super();
+    }
+
+    state = {
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+    }
+
+    handleSubmitContactForm = (e) => {
+        e.preventDefault();
+        const apiUrl = "https://hi-api.up.railway.app/api/send-mail";
+
+        const { name, email, phone, subject, message } = this.state;
+
+        const dataToPost = {
+            subject,
+            contact: {
+                name,
+                email,
+                phone
+            },
+            body: message
+        };
+
+        fetch(apiUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dataToPost)
+        })
+        .then(res => res.json())
+        .then(res => {
+            console.log(res);
+            if (res.statusCode === 200) {
+                toast.success("Votre message a été envoyé avec succès.")
+                this.setState({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    subject: "",
+                    message: "",
+                })
+            }
+            else {
+                toast.error("Une erreur s'est produite lors de l'envoi de votre message.")
+            }
+           
+        })
+
+    }
+
     render() {
         
         return (
@@ -103,35 +162,66 @@ export class Contact_01 extends Component {
                                 <h2 className="title">Laissez un message</h2>
                             </div>
                             </div>{/* section title end */}
-                            <form id="ttm-quote-form" className="row ttm-quote-form clearfix" method="post" action="#">
+                            <form id="ttm-quote-form" className="row ttm-quote-form clearfix" method="post" onSubmit={this.handleSubmitContactForm}>
                             <div className="col-sm-6 col-md-6">
                                 <div className="form-group">
-                                <input name="name" type="text" className="form-control bg-white" placeholder="Votre nom complet*" required="required" />
+                                <input name="name"
+                                       type="text"
+                                       value={this.state.name}
+                                       onChange={(e) => {this.setState({name: e.target.value})}}
+                                       className="form-control bg-white"
+                                       placeholder="Votre nom complet*"
+                                       required="required" />
                                 </div>
                             </div>
                             <div className="col-sm-6 col-md-6">
                                 <div className="form-group">
-                                <input name="phone" type="text" placeholder="Numéro de téléphone*" required="required" className="form-control bg-white" />
+                                <input name="phone" 
+                                       type="text" 
+                                       value={this.state.phone}
+                                       onChange={(e) => {this.setState({phone: e.target.value})}}
+                                       placeholder="Numéro de téléphone*" 
+                                       required="required" 
+                                       className="form-control bg-white" />
                                 </div>
                             </div>
                             <div className="col-sm-6 col-md-6">
                                 <div className="form-group">
-                                <input name="address" type="text" placeholder="Adresse email*" required="required" className="form-control bg-white" />
+                                <input name="email"
+                                       type="email" 
+                                       value={this.state.email} 
+                                       onChange={(e) => {this.setState({email: e.target.value})}}
+                                       placeholder="Adresse email*" 
+                                       required="required"
+                                       className="form-control bg-white" />
                                 </div>
                             </div>
                             <div className="col-sm-6 col-md-6">
                                 <div className="form-group">
-                                <input name="subject" type="text" placeholder="Sujet" required="required" className="form-control bg-white" />
+                                <input name="subject" 
+                                       type="text" 
+                                       value={this.state.subject} 
+                                       onChange={(e) => {this.setState({subject: e.target.value})}}
+                                       placeholder="Sujet"
+                                       required="required"
+                                       className="form-control bg-white" />
                                 </div>
                             </div>
                             <div className="col-sm-12 col-md-12">
                                 <div className="form-group">
-                                <textarea name="Massage" rows={6} placeholder="Votre message ici..." required="required" className="form-control bg-white" defaultValue={""} />
+                                <textarea name="message" 
+                                          rows={6} 
+                                          placeholder="Votre message ici..."
+                                          required="required"
+                                          className="form-control bg-white" 
+                                          value={this.state.message}
+                                          onChange={(e) => {this.setState({message: e.target.value})}}
+                                    />
                                 </div>
                             </div>
                             <div className="col-md-12">
                                 <div className="text-left">
-                                <button type="submit" id="submit" className="mt-3 ttm-btn ttm-btn-size-md ttm-bgcolor-skincolor" value>
+                                <button type="submit" id="submit" className="mt-3 ttm-btn ttm-btn-size-md ttm-bgcolor-skincolor ripple" value>
                                     Envoyer
                                 </button>
                                 </div>
@@ -157,4 +247,4 @@ export class Contact_01 extends Component {
 }
 
 
-export default Contact_01;
+export default Contact;

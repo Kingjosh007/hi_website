@@ -21,7 +21,7 @@ import Services_02 from './components/pages/Services_02';
 import Staff from './components/pages/Staff';
 import Team_detail from './components/pages/Team_detail';
 import Faq from './components/pages/Faq';
-import Contact_01 from './components/pages/Contact_01';
+import Contact from './components/pages/Contact';
 import Contact_02 from './components/pages/Contact_02';
 import Error from './components/pages/Error';
 import Element from './components/pages/Element';
@@ -72,7 +72,7 @@ const App = () => {
             <Route path="/staff" component={Staff} />
             <Route path="/team_detail" component={Team_detail} />
             <Route path="/faq" component={Faq} />
-            <Route path="/contact" component={Contact_01} />
+            <Route path="/contact" component={Contact} />
             <Route path="/contact_02" component={Contact_02} />
             <Route path="/error" component={Error} />
             <Route path="/element" component={Element} />

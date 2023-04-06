@@ -16,7 +16,7 @@ export class Menu extends Component {
                             {/* <li><a href={process.env.PUBLIC_URL + '/Services_01'}>Services 1</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Services_02'}>Services 2</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Faq'}>FAQs</a></li>
-                            <li><a href={process.env.PUBLIC_URL + '/Contact_01'}>Contact Us 1</a></li>
+                            <li><a href={process.env.PUBLIC_URL + '/Contact'}>Contact Us 1</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Contact_02'}>Contact Us 2</a></li>                                                    
                             <li><a href={process.env.PUBLIC_URL + '/Error'}>Error Page</a></li>
                             <li><a href={process.env.PUBLIC_URL + '/Element'}>Elements</a></li> */}
