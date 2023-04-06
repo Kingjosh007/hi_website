@@ -58,11 +58,9 @@ const findArticlesInSameCategory = (art, listOfArt) => {
 export class ArticleSidebar extends Component {
 
     state = {
-        isSearchButtonClicked: false,
-        filterText: "",
-        categories: allCategories.map(category => ({ category, selected: true })),
         tags: allTags.map(tag => ({ tag, selected: false })),
         months: monthsInLetters.map(month => ({ month, selected: true })),
+
     }
 
     constructor(props) {
@@ -94,8 +92,6 @@ export class ArticleSidebar extends Component {
 
                     return (
                         <div>
-
-
                             <aside className="widget post-widget">
                                 <h3 className="widget-title">Articles récents</h3>
                                 <ul className="widget-post ttm-recent-post-list">

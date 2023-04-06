@@ -26,7 +26,13 @@ export class Article extends Component {
     }
 
     constructor(props) {
-        super();
+        super(props);
+        this.textAreaRef = React.createRef();
+    }
+
+    handleReagirClick = (e) => {
+        e.preventDefault();
+        this.textAreaRef.current.focus();
     }
 
     fetchArticle = () => {
@@ -184,9 +190,9 @@ export class Article extends Component {
                                                                 <div id="comments" className="comments-area">
                                                                     <h2 className="comments-title">
                                                                         {
-                                                                            this.state.articleToDisplay?.comments?.length === 0 ?
-                                                                                ("Aucun commentaire pour le moment") : (this.state.articleToDisplay?.comments?.length === 1 ?
-                                                                                    ("1 commentaire") : (this.state.articleToDisplay?.comments.length + " commentaires"))
+                                                                            [...this.state.articleToDisplay?.comments, ...this.state.session_comments].length === 0 ?
+                                                                                ("Aucun commentaire pour le moment") : ([...this.state.articleToDisplay?.comments, ...this.state.session_comments].length === 1 ?
+                                                                                    ("1 commentaire") : ([...this.state.articleToDisplay?.comments, ...this.state.session_comments].length + " commentaires"))
 
                                                                         }
                                                                     </h2>
@@ -211,7 +217,7 @@ export class Article extends Component {
                                                                                                             <p>{comment.content}</p>
                                                                                                         </div>
                                                                                                         <div className="reply">
-                                                                                                            <a rel="nofollow" className="comment-reply-link">Réagir</a>
+                                                                                                            <a rel="nofollow" className="comment-reply-link" onClick={this.handleReagirClick}>Réagir</a>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -264,7 +270,13 @@ export class Article extends Component {
                                                                         <form id="ttm-comment-form" className="row comment-form clearfix" onSubmit={(e) => { this.handleSubmitComment(e) }}>
                                                                             <div className="col-sm-12 col-md-12">
                                                                                 <div className="form-group">
-                                                                                    <textarea name="message" rows={5} placeholder="Votre commentaire" required="required" className="form-control with-grey-bg" defaultValue={""}
+                                                                                    <textarea name="message" 
+                                                                                              rows={5}
+                                                                                              placeholder="Votre commentaire"
+                                                                                              required="required"
+                                                                                              className="form-control with-grey-bg"
+                                                                                              defaultValue={""}
+                                                                                              ref={this.textAreaRef}
                                                                                         value={this.state.commentor_comment}
                                                                                         onChange={
                                                                                             (e) => { this.setState({ commentor_comment: e.target.value }) }
