@@ -16,7 +16,7 @@ export class Article extends Component {
 
     state = {
         articleToDisplay: {},
-        shouldSetArticle: false,
+        shouldSetArticle: true,
         nbSet: 0,
         commentor_comment: "",
         commentor_name: localStorage.getItem("hi_commentor_name") || "",
@@ -30,9 +30,11 @@ export class Article extends Component {
         this.textAreaRef = React.createRef();
     }
 
-    handleReagirClick = (e) => {
+    handleReagirClick = (e, params) => {
         e.preventDefault();
+        const { author, datetime } = params;
         this.textAreaRef.current.focus();
+        this.setState({ commentor_comment: `En réaction au commentaire de @${author} posté le ${datetime}\n` })
     }
 
     fetchArticle = () => {
@@ -109,17 +111,23 @@ export class Article extends Component {
 
                 {([blogInfos, setBlogInfos]) => {
 
-                    if (articleSlug.length > 0 && this.state.shouldSetArticle && this.state.nbSet <= 1) {
-                        const thisArticle = (blogInfos.articles || []).find(article => article.slug === articleSlug);
-                        this.setState({ articleToDisplay: thisArticle });
+                    if(this.state.articleToDisplay && Object.keys(this.state.articleToDisplay).length > 5) {
 
-                        setBlogInfos({
-                            ...blogInfos,
-                            articleToDisplay: thisArticle
-                        })
+                    if (articleSlug.length > 0 && this.state.shouldSetArticle && blogInfos.articleToDisplay.slug.length === 0) {
+                        const thisArticle = this.state.articleToDisplay;
+                        if(Object.keys(thisArticle).length > 1)
+                        {
+                                this.setState({ articleToDisplay: thisArticle });
+                                setBlogInfos({
+                                    ...blogInfos,
+                                    articleToDisplay: thisArticle
+                                })
 
-                        this.setState({ nbSet: this.state.nbSet + 1 })
+                                this.setState({ nbSet: this.state.nbSet + 1, 
+                                                shouldSetArticle: false })
+                        }
                     }
+
                     return (
                         this.state.articleToDisplay && Object.keys(this.state.articleToDisplay).length > 0 &&
                         (
@@ -189,11 +197,11 @@ export class Article extends Component {
                                                             <div className="ttm-blog-classic-box-comment">
                                                                 <div id="comments" className="comments-area">
                                                                     <h2 className="comments-title">
-                                                                        {
-                                                                            [...this.state.articleToDisplay?.comments, ...this.state.session_comments].length === 0 ?
-                                                                                ("Aucun commentaire pour le moment") : ([...this.state.articleToDisplay?.comments, ...this.state.session_comments].length === 1 ?
-                                                                                    ("1 commentaire") : ([...this.state.articleToDisplay?.comments, ...this.state.session_comments].length + " commentaires"))
-
+                                                                        {  Object.keys(this.state.articleToDisplay).length > 0 && (
+                                                                            [...this.state.articleToDisplay.comments, ...this.state.session_comments].length === 0 ?
+                                                                                ("Aucun commentaire pour le moment") : ([...this.state.articleToDisplay.comments, ...this.state.session_comments].length === 1 ?
+                                                                                    ("1 commentaire") : ([...this.state.articleToDisplay.comments, ...this.state.session_comments].length + " commentaires"))
+                                                                           )
                                                                         }
                                                                     </h2>
 
@@ -217,7 +225,12 @@ export class Article extends Component {
                                                                                                             <p>{comment.content}</p>
                                                                                                         </div>
                                                                                                         <div className="reply">
-                                                                                                            <a rel="nofollow" className="comment-reply-link" onClick={this.handleReagirClick}>Réagir</a>
+                                                                                                            <a rel="nofollow" className="comment-reply-link" onClick={(e) => {
+                                                                                                                this.handleReagirClick(e, {
+                                                                                                                    author: comment.author,
+                                                                                                                    datetime: convertDateToReadableStringWithTime(comment.created_at),
+                                                                                                                })
+                                                                                                            }}>Réagir</a>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -275,7 +288,6 @@ export class Article extends Component {
                                                                                               placeholder="Votre commentaire"
                                                                                               required="required"
                                                                                               className="form-control with-grey-bg"
-                                                                                              defaultValue={""}
                                                                                               ref={this.textAreaRef}
                                                                                         value={this.state.commentor_comment}
                                                                                         onChange={
@@ -333,7 +345,7 @@ export class Article extends Component {
                                             <div className="col-lg-3 widget-area">
                                                 {
                                                     this.state.nbSet >= 1 && (
-                                                        <ArticleSidebar slugToExclude={this.props.match.params.articleSlug} />
+                                                        <ArticleSidebar slugToExclude={this.props.match.params.articleSlug} category={this.state.articleToDisplay.category} />
                                                     )
                                                 }
 
@@ -345,6 +357,7 @@ export class Article extends Component {
                         )
                     )
                 }}
+                }
             </BlogContext.Consumer>
         )
     }
