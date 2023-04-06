@@ -10,10 +10,10 @@ import mediaCoverage from '../data/mediaArticles.json';
 import clients from '../data/clients.json';
 import partners from '../data/partners.json';
 import latestProjects from '../data/projects.json';
-import articles from '../data/articles.json';
 import Marquee from "react-marquee-slider";
 import styled from "styled-components";
-import { convertDateToDayMonthYearArray, dateComesBefore } from '../utils/dateUtils';
+import { convertDateToDayMonthYearArray, dateComesBefore, dateTimeComesBefore } from '../utils/dateUtils';
+import { BlogContext } from '../BlogContext';
 
 const ClientImage = styled.img`
                   width: 150px;
@@ -44,12 +44,18 @@ const images = latestProjects.map(p => p.image_mini);
 export class Home extends Component {
   constructor(props) {
     super(props);
+  }
 
-    this.state = {
+  state = {
       photoIndex: 0,
       isOpen: false,
-    };
+  };
+
+  navigateTo = (url) => {
+    const { history } = this.props;
+    history.push(url);
   }
+
   render() {
     const { photoIndex, isOpen } = this.state;
     var slick_slider = {
@@ -551,7 +557,7 @@ export class Home extends Component {
                         </div>
                         <div className="featured-content box-shadow">
                           <div className="featured-title">{/* featured-title */}
-                            <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>{staffMember.surname} {staffMember.name.toUpperCase()}</a></h5>
+                            <h5><a href={process.env.PUBLIC_URL + '/staff'}>{staffMember.surname} {staffMember.name.toUpperCase()}</a></h5>
                           </div>
                           <p className="category">{staffMember.role}</p>{/* category */}
                         </div>
@@ -725,48 +731,67 @@ export class Home extends Component {
                 </div>
               </div>
             </div>
-            <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={3}>
-              {
-                articles.sort((a, b) => dateComesBefore(a.publish_at, b.publish_at) ? 1 : -1)
-                  .slice(0, 3)
-                  .map((article, index) => {
-                    const dateArr = convertDateToDayMonthYearArray(article.publish_at);
-                    return (
-                      <div className="ttm-box-col-wrapper" key={`homeArticle${index}`}>
-                        <div className="featured-imagebox featured-imagebox-blog">
-                          <div className="featured-thumbnail">
-                            <img className="img-fluid" alt={article.title} src={article.image} />
-                            <div className="ttm-blog-overlay-iconbox">
-                              <a href={process.env.PUBLIC_URL + '/article/' + article.slug}><i className="ti ti-plus" /></a>
-                            </div>
-                            <div className="ttm-box-view-overlay" />
-                          </div>
-                          <div className="featured-content">
-                            <div className="ttm-box-post-date">
-                              <span className="ttm-entry-date">
-                                <time className="entry-date">{dateArr[0]}<span className="entry-month entry-year">{dateArr[1]}</span></time>
-                              </span>
-                            </div>
-                            <div className="featured-title">
-                              <h5><a href={process.env.PUBLIC_URL + '/article'}>{article.title}</a></h5>
-                            </div>
-                            <div className="post-meta">
-                              <span className="ttm-meta-line"><i className="fa fa-comments" />{article.nb_commentaires} commentaires</span>
-                              <span className="ttm-meta-line"><i className="fa fa-user" />{article.author}</span>
-                            </div>
-                            <div className="featured-desc">
-                              <p>{article.description.slice(0, 150) + "..."}</p>
-                            </div>
-                            <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/article'}>Lire plus <i className="ti ti-angle-double-right" /></a>
-                          </div>
-                        </div>
-                      </div>
-                    )
 
-                  })
-              }
+            <BlogContext.Consumer>
+                {([blogInfos, setBlogInfos]) => {
 
-            </Slider>
+                    if(blogInfos.articles && blogInfos.articles.length > 0) {
+
+                      return (
+                        <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={3}>
+                          {
+                            blogInfos.articles.sort((a, b) => dateTimeComesBefore(a.publish_at, b.publish_at) ? 1 : -1)
+                              .slice(0, 3)
+                              .map((article, index) => {
+                                const dateArr = convertDateToDayMonthYearArray(article.publish_at);
+                                return (
+                                  <div className="ttm-box-col-wrapper" key={`homeArticle${index}`}>
+                                    <div className="featured-imagebox featured-imagebox-blog">
+                                      <div className="featured-thumbnail">
+                                        <img className="img-fluid" alt={article.title} src={article.image} />
+                                        <div className="ttm-blog-overlay-iconbox">
+                                          <a href={process.env.PUBLIC_URL + '/article/' + article.slug}><i className="ti ti-plus" /></a>
+                                        </div>
+                                        <div className="ttm-box-view-overlay" />
+                                      </div>
+                                      <div className="featured-content">
+                                        <div className="ttm-box-post-date">
+                                          <span className="ttm-entry-date">
+                                            <time className="entry-date">{dateArr[2]}<span className="entry-month entry-year">{dateArr[1]}</span></time>
+                                          </span>
+                                        </div>
+                                        <div className="featured-title">
+                                          <h5><a href={process.env.PUBLIC_URL + '/article/' + article.slug }>{article.title}</a></h5>
+                                        </div>
+                                        <div className="post-meta">
+                                          <span className="ttm-meta-line"><i className="fa fa-comments" />{article.comment_count} commentaires</span>
+                                          <span className="ttm-meta-line"><i className="fa fa-user" />{article.author}</span>
+                                        </div>
+                                        <div className="featured-desc">
+                                          <p>{article.description.slice(0, 150) + "..."}</p>
+                                        </div>
+                                        <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/article/' + article.slug}>Lire plus <i className="ti ti-angle-double-right" /></a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                )
+            
+                              })
+                          }
+            
+                        </Slider>
+                        )
+                    } else {
+
+                        return (
+                          <>
+                            <p>Chargement des articles...</p>
+                          </>
+                        )
+                    }
+                    
+                  }}
+              </BlogContext.Consumer>
           </div>
         </section>
 

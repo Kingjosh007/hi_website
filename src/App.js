@@ -18,7 +18,7 @@ import Presentation from './components/pages/Presentation';
 import Aboutus_02 from './components/pages/Aboutus_02';
 import Services_01 from './components/pages/Services_01';
 import Services_02 from './components/pages/Services_02';
-import Our_expert from './components/pages/Our_expert';
+import Staff from './components/pages/Staff';
 import Team_detail from './components/pages/Team_detail';
 import Faq from './components/pages/Faq';
 import Contact_01 from './components/pages/Contact_01';
@@ -69,7 +69,7 @@ const App = () => {
             <Route path="/aboutus_02" component={Aboutus_02} />
             <Route path="/services_01" component={Services_01} />
             <Route path="/services_02" component={Services_02} />
-            <Route path="/staff" component={Our_expert} />
+            <Route path="/staff" component={Staff} />
             <Route path="/team_detail" component={Team_detail} />
             <Route path="/faq" component={Faq} />
             <Route path="/contact" component={Contact_01} />

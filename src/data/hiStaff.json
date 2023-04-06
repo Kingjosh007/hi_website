@@ -103,20 +103,5 @@
             "link": "",
             "display": true
         }
-    },
-    {
-        "id": "hi-8",
-        "name": "Donfack",
-        "surname": "Eddy Harold",
-        "role": "Software Engineer",
-        "photo": "/images/staff-hi/donfack-harold.jpeg",
-        "linkedin": {
-            "link": "https://www.linkedin.com/in/donfack-eddy-harold/",
-            "display": true
-        },
-        "twitter": {
-            "link": "",
-            "display": true
-        }
     }
 ]

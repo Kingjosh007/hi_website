@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../layout/Header';
 import staff from '../../data/hiStaff.json';
 
-export class Our_expert extends Component {
+export class Staff extends Component {
     render() {
         return (
             <div className="site-main">
@@ -43,7 +43,7 @@ export class Our_expert extends Component {
                                         </div> 
                                         <div className="featured-content box-shadow">
                                         <div className="featured-title">{/* featured-title */}
-                                            <h5><a href={process.env.PUBLIC_URL + '/Team_detail'}>{staffMember.surname} {staffMember.name.toUpperCase()}</a></h5>
+                                            <h5><div>{staffMember.surname} {staffMember.name.toUpperCase()}</div></h5>
                                         </div>
                                         <p className="category">{staffMember.role}</p>{/* category */}
                                         </div>
@@ -62,4 +62,4 @@ export class Our_expert extends Component {
 }
 
 
-export default Our_expert;
+export default Staff;
