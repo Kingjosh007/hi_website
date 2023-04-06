@@ -4,8 +4,8 @@ import Slider from 'react-slick';
 import CountUp from 'react-countup';
 import Header from '../layout/Header';
 import partners from '../../data/partners.json';
-import articles from '../../data/articles.json';
 import { convertDateToDayMonthYearArray, dateTimeComesBefore } from '../../utils/dateUtils';
+import { BlogContext } from '../../BlogContext';
 
 export class Presentation extends Component {
     render() {
@@ -263,7 +263,7 @@ export class Presentation extends Component {
                                                 <div className="client-box ttm-box-view-boxed-logo">
                                                     <div className="client">
                                                         <div className="ttm-client-logo-tooltip" data-tooltip={partner.name}>
-                                                            <img className="img-fluid" src={partner.image} alt={`Logo du partenaire ${partner.name}`} style={{height: "50px"}} />
+                                                            <img className="img-fluid" src={partner.image} alt={`Logo du partenaire ${partner.name}`} style={{ height: "50px" }} />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -293,48 +293,59 @@ export class Presentation extends Component {
                                 </div>{/* section title end */}
                             </div>
                         </div>
-                        <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={3}>
-              {
-                articles.sort((a, b) => dateTimeComesBefore(a.publish_at, b.publish_at) ? 1 : -1)
-                        .slice(0, 3)
-                        .map((article, index) => {
-                    const dateArr = convertDateToDayMonthYearArray(article.publish_at);
-                  return (
-                    <div className="ttm-box-col-wrapper">
-                      <div className="featured-imagebox featured-imagebox-blog">
-                        <div className="featured-thumbnail">
-                          <img className="img-fluid" alt={article.title} src={article.image} />
-                          <div className="ttm-blog-overlay-iconbox">
-                            <a href={process.env.PUBLIC_URL + '/article'}><i className="ti ti-plus" /></a>
-                          </div>
-                          <div className="ttm-box-view-overlay" />
-                        </div>
-                        <div className="featured-content">
-                          <div className="ttm-box-post-date">
-                            <span className="ttm-entry-date">
-                              <time className="entry-date" dateTime="2019-01-16T07:07:55+00:00">{dateArr[0]}<span className="entry-month entry-year">{dateArr[1]}</span></time>
-                            </span>
-                          </div>
-                          <div className="featured-title">
-                            <h5><a href={process.env.PUBLIC_URL + '/article'}>{article.title}</a></h5>
-                          </div>
-                          <div className="post-meta">
-                            <span className="ttm-meta-line"><i className="fa fa-comments" />{article.nb_commentaires} commentaires</span>
-                            <span className="ttm-meta-line"><i className="fa fa-user" />{article.author}</span>
-                          </div>
-                          <div className="featured-desc">
-                            <p>{article.description.slice(0, 150) + "..."}</p>
-                          </div>
-                          <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/article'}>Lire plus <i className="ti ti-angle-double-right" /></a>
-                        </div>
-                      </div>
-                    </div>
-                  )
 
-                })
-              }
+                        <BlogContext.Consumer>
+                            {([blogInfos, setBlogInfos]) => {
 
-            </Slider>
+                                if (blogInfos.articles && blogInfos.articles.length > 0) {
+
+                                    return (
+                                        <Slider className="row slick_slider ttm-boxes-spacing-30px" {...slick_slider} slidesToShow={3}>
+                                            {
+                                                blogInfos.articles.sort((a, b) => dateTimeComesBefore(a.publish_at, b.publish_at) ? 1 : -1)
+                                                    .slice(0, 3)
+                                                    .map((article, index) => {
+                                                        const dateArr = convertDateToDayMonthYearArray(article.publish_at);
+                                                        return (
+                                                            <div className="ttm-box-col-wrapper">
+                                                                <div className="featured-imagebox featured-imagebox-blog">
+                                                                    <div className="featured-thumbnail">
+                                                                        <img className="img-fluid" alt={article.title} src={article.image} />
+                                                                        <div className="ttm-blog-overlay-iconbox">
+                                                                            <a href={process.env.PUBLIC_URL + '/article'}><i className="ti ti-plus" /></a>
+                                                                        </div>
+                                                                        <div className="ttm-box-view-overlay" />
+                                                                    </div>
+                                                                    <div className="featured-content">
+                                                                        <div className="ttm-box-post-date">
+                                                                            <span className="ttm-entry-date">
+                                                                                <time className="entry-date" dateTime="2019-01-16T07:07:55+00:00">{dateArr[2]}<span className="entry-month entry-year">{dateArr[1]}</span></time>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div className="featured-title">
+                                                                            <h5><a href={process.env.PUBLIC_URL + '/article/' + article.slug}>{article.title}</a></h5>
+                                                                        </div>
+                                                                        <div className="post-meta">
+                                                                            <span className="ttm-meta-line"><i className="fa fa-comments" />{article.comment_count} commentaires</span>
+                                                                            <span className="ttm-meta-line"><i className="fa fa-user" />{article.author}</span>
+                                                                        </div>
+                                                                        <div className="featured-desc">
+                                                                            <p>{article.description.slice(0, 150) + "..."}</p>
+                                                                        </div>
+                                                                        <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href={process.env.PUBLIC_URL + '/article/' + article.slug}>Lire plus <i className="ti ti-angle-double-right" /></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        )
+
+                                                    })
+                                            }
+
+                                        </Slider>
+                                    )
+                                }
+                            }}
+                        </BlogContext.Consumer>
                     </div>
                 </section>
                 {/* blog-section end */}
