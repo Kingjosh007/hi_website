@@ -44,6 +44,7 @@ import ScrollToTop from './components/layout/Gotop';
 import ComingSoon from './components/pages/ComingSoon';
 import RobotiqueIA from './components/services/RobotiqueIA';
 import Conseil from './components/services/Conseil';
+import Carrieres from './components/pages/Carrieres';
 
 const appHistory = {
   basename: process.env.PUBLIC_URL
@@ -93,7 +94,8 @@ const App = () => {
             <Route path="/blog" component={Blog} />
             <Route path="/article/:articleSlug" component={Article} />
 
-            <Route path="/carrieres" component={ComingSoon} />
+            {/* <Route path="/carrieres" component={ComingSoon} /> */}
+            <Route path="/carrieres" component={Carrieres} />
 
             {/* <Route path="/blog_grid" component={Blog_grid} /> */}
             {/* <Route path="/blog_left_image" component={Blog_left_image} />

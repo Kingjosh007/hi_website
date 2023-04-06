@@ -270,7 +270,7 @@ export class Home extends Component {
                     <div className="ttm-historybox-description">
                       Conception, hébergement et maintenance de vos landing pages et sites vitrines.
                     </div>
-                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" >En savoir plus <i className="ti ti-angle-double-right" /></a>
+                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href="/service_sites_vitrines" target="_blank" rel="noopener noreferrer">En savoir plus <i className="ti ti-angle-double-right" /></a>
                   </div>
                 </div>
               </div>
@@ -293,7 +293,7 @@ export class Home extends Component {
                     <div className="ttm-historybox-description">{/* description  */}
                       Dashboards, e-boutiques, progiciels, applications spécialisées...
                     </div>
-                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" >En savoir plus <i className="ti ti-angle-double-right" /></a>
+                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href="/service_progiciels" target="_blank" rel="noopener noreferrer" >En savoir plus <i className="ti ti-angle-double-right" /></a>
                   </div>
                 </div>
               </div>
@@ -316,7 +316,7 @@ export class Home extends Component {
                     <div className="ttm-historybox-description">{/* description  */}
                       Conception, développement, maintenance et sécurité de vos applications mobiles.
                     </div>
-                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" >En savoir plus <i className="ti ti-angle-double-right" /></a>
+                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href="/service_apps_mobiles" target="_blank" rel="noopener noreferrer" >En savoir plus <i className="ti ti-angle-double-right" /></a>
                   </div>
                 </div>
               </div>
@@ -339,7 +339,7 @@ export class Home extends Component {
                     <div className="ttm-historybox-description">{/* description  */}
                       Technologies automatisées et intelligentes à l'aide d'algorithmes complexes.
                     </div>
-                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" >En savoir plus <i className="ti ti-angle-double-right" /></a>
+                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href="/service_robotique_ia" target="_blank" rel="noopener noreferrer"> En savoir plus <i className="ti ti-angle-double-right" /></a>
                   </div>
                 </div>
               </div>
@@ -362,7 +362,7 @@ export class Home extends Component {
                     <div className="ttm-historybox-description">{/* description  */}
                       Votre identité visuelle et vos supports de communication en ligne et hors ligne.
                     </div>
-                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20">En savoir plus <i className="ti ti-angle-double-right" /></a>
+                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href="/service_design_graphique" target="_blank" rel="noopener noreferrer" >En savoir plus <i className="ti ti-angle-double-right" /></a>
                   </div>
                 </div>
               </div>
@@ -385,7 +385,7 @@ export class Home extends Component {
                     <div className="ttm-historybox-description">{/* description  */}
                       Solutions pour aider votre entreprise à optimiser son utilisation de la technologie.
                     </div>
-                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" >En savoir plus <i className="ti ti-angle-double-right" /></a>
+                    <a className="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href="/service_conseil" target="_blank" rel="noopener noreferrer">En savoir plus <i className="ti ti-angle-double-right" /></a>
                   </div>
                 </div>
               </div>
